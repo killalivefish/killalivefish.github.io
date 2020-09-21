@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-21T03:27:12-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">盖伦的钢铁营地</title><subtitle>我的个人博客，草.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2020/09/21/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-09-21T02:14:16-05:00</published><updated>2020-09-21T02:14:16-05:00</updated><id>http://localhost:4000/jekyll/update/2020/09/21/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2020/09/21/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Vue</title><link href="http://localhost:4000/2020/09/02/Vue.html" rel="alternate" type="text/html" title="Vue" /><published>2020-09-02T00:00:00-05:00</published><updated>2020-09-02T00:00:00-05:00</updated><id>http://localhost:4000/2020/09/02/Vue</id><content type="html" xml:base="http://localhost:4000/2020/09/02/Vue.html">&lt;h1 id=&quot;vue&quot;&gt;Vue&lt;/h1&gt;
+
+&lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;组件页面&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;公用组件&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;路由相关&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;不同页面组件通讯&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;问题还是看官网教程就行&quot;&gt;问题：还是看官网教程就行&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;组件&lt;/li&gt;
+  &lt;li&gt;引用别的js&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;暂时处理&quot;&gt;暂时处理:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;静态化&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;目标-1&quot;&gt;目标：&lt;/h2&gt;
+
+&lt;p&gt;生成静态页面—github.io使用&lt;/p&gt;
+
+&lt;h2 id=&quot;开始旋转&quot;&gt;开始旋转&lt;/h2&gt;
+
+&lt;p&gt;v-model:绑定表单元素数据&lt;/p&gt;
+
+&lt;p&gt;v-show&lt;/p&gt;
+
+&lt;p&gt;v-for&lt;/p&gt;
+
+&lt;p&gt;v-bind–: 绑定HTML属性，如href、class&lt;/p&gt;
+
+&lt;p&gt;v-on–@：v-on:”方法名”，$event&lt;/p&gt;
+
+&lt;p&gt;v-cloak:网速较慢时会显示,加上这个可以解决&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;v-cloak&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+		&lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;v-once:只渲染一次&lt;/p&gt;
+
+&lt;p&gt;v-if、v-else-if、v-else&lt;/p&gt;
+
+&lt;p&gt;v-for:value、key、index&lt;/p&gt;
+
+&lt;p&gt;computed:写复杂的逻辑代码，get初始化数据时调用，set绑定数据变化时调用。&lt;/p&gt;
+
+&lt;p&gt;​		    可以依赖别的computed；&lt;/p&gt;
+
+&lt;p&gt;​		    可以依赖别的Vue实例数据。&lt;/p&gt;
+
+&lt;p&gt;computed和methods区别：computed具有缓存性质，只有绑定的数据变化的时候才会调用，而methods每次都					  会调用&lt;/p&gt;
+
+&lt;p&gt;组件：&lt;/p&gt;
+
+&lt;p&gt;​	部分HTML元素不能使用组件，如&amp;lt;table&amp;gt;必须使用&amp;lt;tbody is=&quot;my_component&quot;&amp;gt;&amp;lt;/tbody&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;​	组件的data必须是函数&lt;/p&gt;
+
+&lt;p&gt;​	模板内容 复用&lt;/p&gt;
+
+&lt;p&gt;​	模板间通讯：父组件-&amp;gt;子组件 props(字符串数组/对象)&lt;/p&gt;
+
+&lt;p&gt;​				子组件-&amp;gt;父组件 子组件中定义data重新将props的值绑定到自己上使用&lt;/p&gt;
+
+&lt;p&gt;​							     computed属性&lt;/p&gt;
+
+&lt;p&gt;​				事件的传递：$emit&lt;/p&gt;
+
+&lt;p&gt;​							v-model&lt;/p&gt;
+
+&lt;p&gt;​				Vue1.X中有   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$dispatch()     $broadcast()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;​				Vue2.X使用空的Vue实例 用作bus&lt;/p&gt;
+
+&lt;p&gt;​				vuex&lt;/p&gt;
+
+&lt;p&gt;​				this.$parent&lt;/p&gt;
+
+&lt;p&gt;​				this.$child&lt;/p&gt;
+
+&lt;p&gt;​	混合组件：solt&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue</summary></entry><entry><title type="html">Fuckthecss</title><link href="http://localhost:4000/2020/08/18/FuckTheCSS.html" rel="alternate" type="text/html" title="Fuckthecss" /><published>2020-08-18T00:00:00-05:00</published><updated>2020-08-18T00:00:00-05:00</updated><id>http://localhost:4000/2020/08/18/FuckTheCSS</id><content type="html" xml:base="http://localhost:4000/2020/08/18/FuckTheCSS.html">&lt;h1 id=&quot;fuck-the-css&quot;&gt;Fuck &lt;strong&gt;The&lt;/strong&gt; CSS&lt;/h1&gt;
+
+&lt;p&gt;放弃了 左右布局&lt;/p&gt;
+
+&lt;h2 id=&quot;选择器&quot;&gt;选择器&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;属性选择器：含有’[]’；&lt;/li&gt;
+  &lt;li&gt;伪类选择器：带有’:’；&lt;/li&gt;
+  &lt;li&gt;微元素选择器：带有’::’；&lt;/li&gt;
+  &lt;li&gt;关系选择器、后代选择器；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;html元素的分类&quot;&gt;HTML元素的分类&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;块级：换行特性，占一行，多了就换行，可用clear清除浮动影响。div、li、p、span。display属性和内联不同&lt;/li&gt;
+  &lt;li&gt;内联：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;box-model.png&quot; alt=&quot;盒子模型&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;设置width属性时实际作用在盒子模型的content-box上，但可以通过设置box-sizing将width的设置作用在border(border-box )，padding（padding-box）上。&lt;/p&gt;
+
+&lt;p&gt;宽度分离：外层增加div只设置width,内部div设置其他属性。width会破坏浮动。&lt;/p&gt;</content><author><name></name></author><summary type="html">Fuck The CSS</summary></entry><entry><title type="html">Spring</title><link href="http://localhost:4000/2020/08/17/Spring.html" rel="alternate" type="text/html" title="Spring" /><published>2020-08-17T00:00:00-05:00</published><updated>2020-08-17T00:00:00-05:00</updated><id>http://localhost:4000/2020/08/17/Spring</id><content type="html" xml:base="http://localhost:4000/2020/08/17/Spring.html">&lt;h1 id=&quot;spring&quot;&gt;Spring&lt;/h1&gt;
+
+&lt;p&gt;[TOC]&lt;/p&gt;
+
+&lt;h2 id=&quot;ioc&quot;&gt;IOC&lt;/h2&gt;
+
+&lt;p&gt;​	不需要new对象，由框架的容器通过注解或者xml配置来创建对象，即依赖倒置。&lt;/p&gt;
+
+&lt;h3 id=&quot;实现&quot;&gt;实现：&lt;/h3&gt;
+
+&lt;h2 id=&quot;di&quot;&gt;DI&lt;/h2&gt;
+
+&lt;p&gt;​	创建的对象可能包含其他对象，在创建时需要将所需对象也创建出来，即依赖注入。&lt;/p&gt;
+
+&lt;h3 id=&quot;实现-1&quot;&gt;实现：&lt;/h3&gt;
+
+&lt;h2 id=&quot;aop&quot;&gt;AOP&lt;/h2&gt;
+
+&lt;p&gt;​	通过反射机制获取执行的方法对方法执行之前、之后进行操作，即面向切面。主要用于日志、事务、异常等。&lt;/p&gt;
+
+&lt;h3 id=&quot;实现-2&quot;&gt;实现：&lt;/h3&gt;
+
+&lt;h2 id=&quot;mvc&quot;&gt;MVC&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对前台请求的URL解析（localhost:8080/user/getAll），user,getAll;&lt;/li&gt;
+  &lt;li&gt;框架已经将类和方法上@Requestmapping所注解的值拼接装进map&amp;lt;url,controller&amp;gt;；&lt;/li&gt;
+  &lt;li&gt;通过url和和map找出对应的controller即（处理器handler）;（注：还要经过前端控制器）&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;实现-3&quot;&gt;实现：&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;通过注释的实现机制&quot;&gt;通过注释的实现机制&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;自定义注解，主要配置是在方法、属性、类上作用还是多种场景；&lt;/li&gt;
+  &lt;li&gt;配置需要扫描的包或者类；&lt;/li&gt;
+  &lt;li&gt;通过反射判断扫描到的包或者类上的注解，按注解的类型归类，如@Autowried将通过注解创建对象，@RequestMapping将获取对应注解的url及作用的类或方法；&lt;/li&gt;
+  &lt;li&gt;将上一步已经映射好的数据用于对象的创建或者url的映射。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;通过xml的实现机制&quot;&gt;通过xml的实现机制&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;实现和通过注解类似，主要是xml的解析和配置&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Spring</summary></entry></feed>

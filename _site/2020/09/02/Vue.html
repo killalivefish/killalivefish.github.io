@@ -1,0 +1,93 @@
+<h1 id="vue">Vue</h1>
+
+<h2 id="目标">目标</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />组件页面</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />公用组件</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />路由相关</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />不同页面组件通讯</li>
+</ul>
+
+<h2 id="问题还是看官网教程就行">问题：还是看官网教程就行</h2>
+
+<ol>
+  <li>组件</li>
+  <li>引用别的js</li>
+</ol>
+
+<h2 id="暂时处理">暂时处理:</h2>
+
+<ol>
+  <li>静态化</li>
+</ol>
+
+<h2 id="目标-1">目标：</h2>
+
+<p>生成静态页面—github.io使用</p>
+
+<h2 id="开始旋转">开始旋转</h2>
+
+<p>v-model:绑定表单元素数据</p>
+
+<p>v-show</p>
+
+<p>v-for</p>
+
+<p>v-bind–: 绑定HTML属性，如href、class</p>
+
+<p>v-on–@：v-on:”方法名”，$event</p>
+
+<p>v-cloak:网速较慢时会显示,加上这个可以解决</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span><span class="nt">v-cloak</span><span class="o">]</span><span class="p">{</span>
+
+		<span class="nl">display</span><span class="p">:</span><span class="nb">none</span><span class="p">;</span>
+
+	<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>v-once:只渲染一次</p>
+
+<p>v-if、v-else-if、v-else</p>
+
+<p>v-for:value、key、index</p>
+
+<p>computed:写复杂的逻辑代码，get初始化数据时调用，set绑定数据变化时调用。</p>
+
+<p>​		    可以依赖别的computed；</p>
+
+<p>​		    可以依赖别的Vue实例数据。</p>
+
+<p>computed和methods区别：computed具有缓存性质，只有绑定的数据变化的时候才会调用，而methods每次都					  会调用</p>
+
+<p>组件：</p>
+
+<p>​	部分HTML元素不能使用组件，如&lt;table&gt;必须使用&lt;tbody is="my_component"&gt;&lt;/tbody&gt;</p>
+
+<p>​	组件的data必须是函数</p>
+
+<p>​	模板内容 复用</p>
+
+<p>​	模板间通讯：父组件-&gt;子组件 props(字符串数组/对象)</p>
+
+<p>​				子组件-&gt;父组件 子组件中定义data重新将props的值绑定到自己上使用</p>
+
+<p>​							     computed属性</p>
+
+<p>​				事件的传递：$emit</p>
+
+<p>​							v-model</p>
+
+<p>​				Vue1.X中有   <code class="language-plaintext highlighter-rouge">$dispatch()     $broadcast()</code></p>
+
+<p>​				Vue2.X使用空的Vue实例 用作bus</p>
+
+<p>​				vuex</p>
+
+<p>​				this.$parent</p>
+
+<p>​				this.$child</p>
+
+<p>​	混合组件：solt</p>

@@ -1,0 +1,26 @@
+I"�<h1 id="fuck-the-css">Fuck <strong>The</strong> CSS</h1>
+
+<p>放弃了 左右布局</p>
+
+<h2 id="选择器">选择器</h2>
+
+<ul>
+  <li>属性选择器：含有’[]’；</li>
+  <li>伪类选择器：带有’:’；</li>
+  <li>微元素选择器：带有’::’；</li>
+  <li>关系选择器、后代选择器；</li>
+</ul>
+
+<h2 id="html元素的分类">HTML元素的分类</h2>
+
+<ul>
+  <li>块级：换行特性，占一行，多了就换行，可用clear清除浮动影响。div、li、p、span。display属性和内联不同</li>
+  <li>内联：</li>
+</ul>
+
+<p><img src="box-model.png" alt="盒子模型" /></p>
+
+<p>设置width属性时实际作用在盒子模型的content-box上，但可以通过设置box-sizing将width的设置作用在border(border-box )，padding（padding-box）上。</p>
+
+<p>宽度分离：外层增加div只设置width,内部div设置其他属性。width会破坏浮动。</p>
+:ET
