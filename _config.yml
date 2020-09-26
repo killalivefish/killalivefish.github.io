@@ -9,6 +9,13 @@ github_username:  jekyll
 paginate: 5
 paginate_path: "/_posts"
 theme: minima
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+      
 plugins:
   - jekyll-feed
 
