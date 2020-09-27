@@ -1,31 +1,36 @@
 <div class="main">
 	{% for post in site.posts %}
-	  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-	  <p class="author">
-		<span class="author">{{ post.author }}</span>
-		<span class="date">{{ post.date }}</span>
-	  </p>
-	  <div class="content">
-		{{ post.excerpt }}
-	  </div>
+	<div class="content_main well">
+		<div class="content_head">
+			<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+			<p class="author">
+				<span class="author">{{ post.author }}</span>
+				<sapn>---------------------</sapn>
+				<span class="date">{{ post.date }}</span>
+			</p>
+		</div>
+		<div class="content">
+			{{ post.excerpt }}
+		</div>
+	</div>
 	{% endfor %}
 
 	<!-- Pagination links -->
 	<div class="pagination">
-	  {% if paginator.previous_page %}
+		{% if paginator.previous_page %}
 		<a href="{{ paginator.previous_page_path }}" class="previous">
-		  Previous
+			Previous
 		</a>
-	  {% else %}
+		{% else %}
 		<span class="previous">Previous</span>
-	  {% endif %}
-	  <span class="page_number ">
-		Page: {{ paginator.page }} of {{ paginator.total_pages }}
-	  </span>
-	  {% if paginator.next_page %}
+		{% endif %}
+		<span class="page_number ">
+			Page: {{ paginator.page }} of {{ paginator.total_pages }}
+		</span>
+		{% if paginator.next_page %}
 		<a href="{{ paginator.next_page_path }}" class="next">Next</a>
-	  {% else %}
+		{% else %}
 		<span class="next ">Next</span>
-	  {% endif %}
+		{% endif %}
 	</div>
 </div>
