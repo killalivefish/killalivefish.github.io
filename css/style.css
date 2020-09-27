@@ -2,7 +2,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 }
 
 .my_body {
@@ -65,7 +65,8 @@
     height: 120px;
     -moz-border-radius: 60px;
     -webkit-border-radius: 60px;
-    border-radius: 60px;
+	border-radius: 60px;
+	padding-bottom: 10px;
 }
 
 .aside_scolelr {
@@ -142,11 +143,6 @@ li {
 	display: none;
 }
 
-.blog_head{
-	width:50px;
-	height:50px;
-}
-
 .header{
 	display:none;
 }
@@ -162,7 +158,7 @@ li {
     margin-bottom: 20px;
     background-color: #f5f5f5;
     border: 1px solid #e3e3e3;
-    border-radius: 4px;
+    border-radius: 6px;
     -webkit-box-shadow: inset 0 1x 1px rgba(0,0,0,.05);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
@@ -214,5 +210,35 @@ a:hover{
 
 	.header{
 		display:block;
+		background: #2980B9;
+		color: #fff;
+		position: relative;
+		line-height: 50px;
+		text-align: center;
+		font-size: 100%;
+		*zoom: 1;
+	}
+
+	.header a{
+		color: white;
+		font-weight: bold;
+	}
+
+	.header-left-icon{
+		position: absolute;
+		top:5px;
+		left:5px;
+		cursor:pointer;
+	}
+
+	.header-right-icon{
+		position: absolute;
+		top:5px;
+		right:20px;
+		cursor:pointer;
+	}
+
+	.header-right-icon:checked .aside{
+		display: block;
 	}
 }
