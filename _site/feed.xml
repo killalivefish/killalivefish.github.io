@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-27T08:11:50-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HuBo awesome title</title><subtitle>My Blog For Something.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/2020/09/25/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-09-25T03:15:40-05:00</published><updated>2020-09-25T03:15:40-05:00</updated><id>http://localhost:4000/jekyll/2020/09/25/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/09/25/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-28T08:15:12-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">刻章办证|房顶漏水|活鱼现杀</title><subtitle>My Blog For Something.</subtitle><entry><title type="html">Jekyll+Github搭建博客</title><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" title="Jekyll+Github搭建博客" /><published>2020-09-24T22:15:40-05:00</published><updated>2020-09-24T22:15:40-05:00</updated><id>http://localhost:4000/Jekyll+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="http://localhost:4000/blog/">&lt;p&gt;​	使用Github.io搭建自己的博客，github默认使用的是jekyll，但是也可以用hexo或者vue等其他的自行搭建，是一个展示自己能力的地方，而且不用买域名什么的。以下是一个简单的使用方法，持续更新。详细的jekyll可以访问https://jekyllrb.com进行了解，官网上已经很详细了。&lt;/p&gt;
+
+&lt;h1 id=&quot;jekyllgithubio搭建博客&quot;&gt;Jekyll+Github.io搭建博客&lt;/h1&gt;
+
+&lt;h2 id=&quot;jekyll安装&quot;&gt;jekyll安装&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jekyll用Ruby语言开发，所以首先要下载Ruby&lt;/li&gt;
+  &lt;li&gt;接下来需要安装gem（类似npm这种包管理的东西），安装后要将下载的地址改为国内镜像，不然很慢&lt;/li&gt;
+  &lt;li&gt;用gem安装bundle和jekyll
+到此需要安装的东西就完成成了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyll本地调试&quot;&gt;jekyll本地调试&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;进入文件目录&lt;/li&gt;
+  &lt;li&gt;运行bundle exec jekyll server,启动服务&lt;/li&gt;
+  &lt;li&gt;访问127.0.0.0：4000进行调试&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyll文件结构&quot;&gt;jekyll文件结构&lt;/h2&gt;
+
+&lt;h2 id=&quot;jekyll分页&quot;&gt;jekyll分页&lt;/h2&gt;</content><author><name>Hubo</name></author><category term="Jekyll" /><category term="Jekyll" /><summary type="html">​ 使用Github.io搭建自己的博客，github默认使用的是jekyll，但是也可以用hexo或者vue等其他的自行搭建，是一个展示自己能力的地方，而且不用买域名什么的。以下是一个简单的使用方法，持续更新。详细的jekyll可以访问https://jekyllrb.com进行了解，官网上已经很详细了。</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-09-24T22:15:40-05:00</published><updated>2020-09-24T22:15:40-05:00</updated><id>http://localhost:4000/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/blog/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
 
@@ -64,33 +87,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;实现和通过注解类似，主要是xml的解析和配置&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Hubo</name></author><category term="spring" /><category term="spring" /><summary type="html">关于Spring的IOC、DI、AOP的实现及基础使用</summary></entry><entry><title type="html">Fuck CSS</title><link href="http://localhost:4000/css/2020/08/17/FuckTheCSS.html" rel="alternate" type="text/html" title="Fuck CSS" /><published>2020-08-17T15:00:00-05:00</published><updated>2020-08-17T15:00:00-05:00</updated><id>http://localhost:4000/css/2020/08/17/FuckTheCSS</id><content type="html" xml:base="http://localhost:4000/css/2020/08/17/FuckTheCSS.html">&lt;p&gt;CSS简单，但做起来和实际想的不一样&lt;/p&gt;
-
-&lt;h1 id=&quot;fuck-the-css&quot;&gt;Fuck &lt;strong&gt;The&lt;/strong&gt; CSS&lt;/h1&gt;
-
-&lt;p&gt;放弃了 左右布局&lt;/p&gt;
-
-&lt;h2 id=&quot;选择器&quot;&gt;选择器&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;属性选择器：含有’[]’；&lt;/li&gt;
-  &lt;li&gt;伪类选择器：带有’:’；&lt;/li&gt;
-  &lt;li&gt;微元素选择器：带有’::’；&lt;/li&gt;
-  &lt;li&gt;关系选择器、后代选择器；&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;html元素的分类&quot;&gt;HTML元素的分类&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;块级：换行特性，占一行，多了就换行，可用clear清除浮动影响。div、li、p、span。display属性和内联不同&lt;/li&gt;
-  &lt;li&gt;内联：&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;box-model.png&quot; alt=&quot;盒子模型&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;设置width属性时实际作用在盒子模型的content-box上，但可以通过设置box-sizing将width的设置作用在border(border-box )，padding（padding-box）上。&lt;/p&gt;
-
-&lt;p&gt;宽度分离：外层增加div只设置width,内部div设置其他属性。width会破坏浮动。&lt;/p&gt;</content><author><name>Hubo</name></author><category term="CSS" /><category term="CSS" /><summary type="html">CSS简单，但做起来和实际想的不一样</summary></entry><entry><title type="html">Vue</title><link href="http://localhost:4000/vue/2020/08/17/Vue.html" rel="alternate" type="text/html" title="Vue" /><published>2020-08-17T15:00:00-05:00</published><updated>2020-08-17T15:00:00-05:00</updated><id>http://localhost:4000/vue/2020/08/17/Vue</id><content type="html" xml:base="http://localhost:4000/vue/2020/08/17/Vue.html">&lt;h1 id=&quot;vue&quot;&gt;Vue&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>Hubo</name></author><category term="spring" /><category term="spring" /><summary type="html">关于Spring的IOC、DI、AOP的实现及基础使用</summary></entry><entry><title type="html">Vue</title><link href="http://localhost:4000/vue/2020/08/17/Vue.html" rel="alternate" type="text/html" title="Vue" /><published>2020-08-17T15:00:00-05:00</published><updated>2020-08-17T15:00:00-05:00</updated><id>http://localhost:4000/vue/2020/08/17/Vue</id><content type="html" xml:base="http://localhost:4000/vue/2020/08/17/Vue.html">&lt;h1 id=&quot;vue&quot;&gt;Vue&lt;/h1&gt;
 
 &lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
 
@@ -182,4 +179,30 @@
 
 &lt;p&gt;​				this.$child&lt;/p&gt;
 
-&lt;p&gt;​	混合组件：solt&lt;/p&gt;</content><author><name>Hubo</name></author><category term="Vue" /><category term="Vue" /><summary type="html">Vue</summary></entry></feed>
+&lt;p&gt;​	混合组件：solt&lt;/p&gt;</content><author><name>Hubo</name></author><category term="Vue" /><category term="Vue" /><summary type="html">Vue</summary></entry><entry><title type="html">Fuck CSS</title><link href="http://localhost:4000/css/2020/08/17/FuckTheCSS.html" rel="alternate" type="text/html" title="Fuck CSS" /><published>2020-08-17T15:00:00-05:00</published><updated>2020-08-17T15:00:00-05:00</updated><id>http://localhost:4000/css/2020/08/17/FuckTheCSS</id><content type="html" xml:base="http://localhost:4000/css/2020/08/17/FuckTheCSS.html">&lt;p&gt;CSS简单，但做起来和实际想的不一样&lt;/p&gt;
+
+&lt;h1 id=&quot;fuck-the-css&quot;&gt;Fuck &lt;strong&gt;The&lt;/strong&gt; CSS&lt;/h1&gt;
+
+&lt;p&gt;放弃了 左右布局&lt;/p&gt;
+
+&lt;h2 id=&quot;选择器&quot;&gt;选择器&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;属性选择器：含有’[]’；&lt;/li&gt;
+  &lt;li&gt;伪类选择器：带有’:’；&lt;/li&gt;
+  &lt;li&gt;微元素选择器：带有’::’；&lt;/li&gt;
+  &lt;li&gt;关系选择器、后代选择器；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;html元素的分类&quot;&gt;HTML元素的分类&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;块级：换行特性，占一行，多了就换行，可用clear清除浮动影响。div、li、p、span。display属性和内联不同&lt;/li&gt;
+  &lt;li&gt;内联：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;box-model.png&quot; alt=&quot;盒子模型&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;设置width属性时实际作用在盒子模型的content-box上，但可以通过设置box-sizing将width的设置作用在border(border-box )，padding（padding-box）上。&lt;/p&gt;
+
+&lt;p&gt;宽度分离：外层增加div只设置width,内部div设置其他属性。width会破坏浮动。&lt;/p&gt;</content><author><name>Hubo</name></author><category term="CSS" /><category term="CSS" /><summary type="html">CSS简单，但做起来和实际想的不一样</summary></entry></feed>

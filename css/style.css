@@ -16,6 +16,8 @@
 	height: 100%;
 }
 
+/* 侧边栏相关内容 */
+
 .aside {
 	width: 85%;
 	left: 0;
@@ -109,7 +111,7 @@ li {
 }
 
 .asie_list a {
-	display: inline-block;
+	/* display: inline-block; */
 	line-height: 18px;
 	padding: .4045em 1.618em;
 	display: block;
@@ -118,26 +120,39 @@ li {
 	color: #b3b3b3;
 }
 
-.asie_list li span.toctree-expand {
-	float: left;
-	margin-left: -1.2em;
-	font-size: .8em;
-	line-height: 1.6em;
-	color: #4d4d4d;
+.aside_category:before{
+	content:"田"
 }
 
-.asie_list ul {
-	display: block;
+.aside_category{
+	color:#4e4a4a;
+	cursor: pointer;
 }
 
-.asie_list li {
-	display: block;
+.aside_category:hover{
+	background-color: #b3b3b3;
 }
 
-.asie_list li a {
-	display: block;
-	color: #b3b3b3;
+.aside_category > ul{
+	display: none;
 }
+.aside_category > ul>li{
+	display: none;
+}
+.aside_category > ul>li>a{
+	display: none;
+}
+/* .aside_title{
+	color:white;
+	display: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.aside_category:active .aside_title{
+	color:white;
+	display: block;
+} */
 
 .pc_show {
 	display: none;

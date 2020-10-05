@@ -1,13 +1,13 @@
-title: HuBo awesome title
+title: "刻章办证|房顶漏水|活鱼现杀"
 email: 969559629@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
     My Blog For Something.
 baseurl: ""
 url: ""
-github_username:  jekyll
+github_username:  killalivefish
 
 paginate: 5
-paginate_path: "/_posts"
+paginate_path: "_includes/:num"
 theme: minima
 
 defaults:
@@ -18,4 +18,5 @@ defaults:
       
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
