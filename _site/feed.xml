@@ -1,4 +1,143 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-28T08:15:12-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">刻章办证|房顶漏水|活鱼现杀</title><subtitle>My Blog For Something.</subtitle><entry><title type="html">Jekyll+Github搭建博客</title><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" title="Jekyll+Github搭建博客" /><published>2020-09-24T22:15:40-05:00</published><updated>2020-09-24T22:15:40-05:00</updated><id>http://localhost:4000/Jekyll+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="http://localhost:4000/blog/">&lt;p&gt;​	使用Github.io搭建自己的博客，github默认使用的是jekyll，但是也可以用hexo或者vue等其他的自行搭建，是一个展示自己能力的地方，而且不用买域名什么的。以下是一个简单的使用方法，持续更新。详细的jekyll可以访问https://jekyllrb.com进行了解，官网上已经很详细了。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-10T09:00:59-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">刻章办证 | 房顶漏水 | 活鱼现杀</title><subtitle>My Blog For Something.</subtitle><entry><title type="html">Mysql零散</title><link href="http://localhost:4000/2020/10/09/Mysql%E9%9B%B6%E6%95%A3.html" rel="alternate" type="text/html" title="Mysql零散" /><published>2020-10-09T00:00:00-05:00</published><updated>2020-10-09T00:00:00-05:00</updated><id>http://localhost:4000/2020/10/09/Mysql%E9%9B%B6%E6%95%A3</id><content type="html" xml:base="http://localhost:4000/2020/10/09/Mysql%E9%9B%B6%E6%95%A3.html">&lt;p&gt;Mysql：&lt;/p&gt;
+
+&lt;p&gt;​	备份：&lt;/p&gt;
+
+&lt;p&gt;​		https://www.cnblogs.com/f-ck-need-u/p/9013458.html#auto_id_4&lt;/p&gt;
+
+&lt;p&gt;​		mysqldump -uroot -p [-A -B] databaseName &amp;gt; file.sql;&lt;/p&gt;
+
+&lt;p&gt;​	用户：&lt;/p&gt;
+
+&lt;p&gt;​		https://blog.csdn.net/lu1171901273/article/details/91635417&lt;/p&gt;
+
+&lt;p&gt;​		CREATE USER ‘username’@’host’ IDENTIFIED BY ‘password’;&lt;/p&gt;
+
+&lt;p&gt;​	权限：&lt;/p&gt;
+
+&lt;p&gt;​		GRANT privileges ON databasename.tablename TO ‘username’@’host’&lt;/p&gt;
+
+&lt;p&gt;CSS定位–flex&lt;/p&gt;
+
+&lt;p&gt;display: -webkit-flex;
+			display:flex;
+			flex-direction:column;
+			flex-wrap: wrap; 
+			justify-content: flex-start;&lt;/p&gt;</content><author><name></name></author><summary type="html">Mysql：</summary></entry><entry><title type="html">Echart使用</title><link href="http://localhost:4000/%E5%9B%BE%E8%A1%A8/2020/10/04/Echart%E4%BD%BF%E7%94%A8.html" rel="alternate" type="text/html" title="Echart使用" /><published>2020-10-04T22:15:40-05:00</published><updated>2020-10-04T22:15:40-05:00</updated><id>http://localhost:4000/%E5%9B%BE%E8%A1%A8/2020/10/04/Echart%E4%BD%BF%E7%94%A8</id><content type="html" xml:base="http://localhost:4000/%E5%9B%BE%E8%A1%A8/2020/10/04/Echart%E4%BD%BF%E7%94%A8.html">&lt;h1 id=&quot;echart使用&quot;&gt;Echart使用&lt;/h1&gt;
+
+&lt;p&gt;https://echarts.apache.org/zh&lt;/p&gt;
+
+&lt;p&gt;干啥：&lt;/p&gt;
+
+&lt;p&gt;1.作者 –oo数量 点击显示 作者每一个图片的时间折线图&lt;/p&gt;
+
+&lt;p&gt;2.每日目标完成度 折线图 完成的工作和未完成工作的饼图&lt;/p&gt;
+
+&lt;p&gt;3.文章和类型的饼图—南丁格尔图&lt;/p&gt;
+
+&lt;p&gt;配置+数据驱动——入门比D3.js要简单，直接使用都是可以的&lt;/p&gt;
+
+&lt;p&gt;配置坐标系 多个坐标系则数组中多个&lt;/p&gt;
+
+&lt;p&gt;配置图表类型&lt;/p&gt;</content><author><name>Hubo</name></author><category term="图表" /><category term="图表" /><summary type="html">Echart使用</summary></entry><entry><title type="html">微信小程序入门</title><link href="http://localhost:4000/wechatprogramer/2020/09/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A5%E9%97%A8.html" rel="alternate" type="text/html" title="微信小程序入门" /><published>2020-09-30T15:15:40-05:00</published><updated>2020-09-30T15:15:40-05:00</updated><id>http://localhost:4000/wechatprogramer/2020/09/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A5%E9%97%A8</id><content type="html" xml:base="http://localhost:4000/wechatprogramer/2020/09/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A5%E9%97%A8.html">&lt;p&gt;​	《微信小程序入门与实践》笔记。整体还是使用的是HTML、CSS、JS,组件的思想类似Vue,文件后缀和文件结构和通常的有区别。注意小程序的wxml和HTML类似但是没有DOM的概念。Flex布局&lt;/p&gt;
+
+&lt;h2 id=&quot;文件结构&quot;&gt;文件结构&lt;/h2&gt;
+
+&lt;h3 id=&quot;pages各页面&quot;&gt;Pages各页面&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;​&lt;/td&gt;
+      &lt;td&gt;——index&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;​&lt;/td&gt;
+      &lt;td&gt;——index.js：该页面的js代码&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;​&lt;/td&gt;
+      &lt;td&gt;——index.json：组件相关&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;​&lt;/td&gt;
+      &lt;td&gt;——index.wxml：该页面的HTML&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;​&lt;/td&gt;
+      &lt;td&gt;——index.wxss：该页面的CSS&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;appjs&quot;&gt;APP.js&lt;/h3&gt;
+
+&lt;p&gt;{&lt;/p&gt;
+
+&lt;p&gt;“pages”: [————————————————–URL对应文件的结构&lt;/p&gt;
+
+&lt;p&gt;​    “pages/welcome/welcome”,&lt;/p&gt;
+
+&lt;p&gt;​    “pages/posts/post”,&lt;/p&gt;
+
+&lt;p&gt;​    “pages/index/index”,&lt;/p&gt;
+
+&lt;p&gt;​    “pages/logs/logs”&lt;/p&gt;
+
+&lt;p&gt;],&lt;/p&gt;
+
+&lt;p&gt;“window”: {————————————————界面的设置&lt;/p&gt;
+
+&lt;p&gt;​    “backgroundTextStyle”: “light”,&lt;/p&gt;
+
+&lt;p&gt;​    “navigationBarBackgroundColor”: “#4A6100”,&lt;/p&gt;
+
+&lt;p&gt;​    “navigationBarTitleText”: “Weixin”,&lt;/p&gt;
+
+&lt;p&gt;​    “navigationBarTextStyle”: “black”&lt;/p&gt;
+
+&lt;p&gt;},&lt;/p&gt;
+
+&lt;p&gt;“style”: “v2”,&lt;/p&gt;
+
+&lt;p&gt;“sitemapLocation”: “sitemap.json”&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;h2 id=&quot;文件描述&quot;&gt;文件描述&lt;/h2&gt;
+
+&lt;h2 id=&quot;内置命令&quot;&gt;内置命令&lt;/h2&gt;
+
+&lt;h3 id=&quot;循环wxfor&quot;&gt;循环：wx:for&lt;/h3&gt;
+
+&lt;h3 id=&quot;判断wxif--wxelif-wxelse&quot;&gt;判断：wx:if  wx:elif wx:else&lt;/h3&gt;
+
+&lt;h2 id=&quot;请求&quot;&gt;请求&lt;/h2&gt;
+
+&lt;h2 id=&quot;组件&quot;&gt;组件&lt;/h2&gt;
+
+&lt;h2 id=&quot;缓存&quot;&gt;缓存&lt;/h2&gt;</content><author><name>Hubo</name></author><category term="weChatProgramer" /><category term="weChatProgramer" /><summary type="html">​ 《微信小程序入门与实践》笔记。整体还是使用的是HTML、CSS、JS,组件的思想类似Vue,文件后缀和文件结构和通常的有区别。注意小程序的wxml和HTML类似但是没有DOM的概念。Flex布局</summary></entry><entry><title type="html">Jekyll+Github搭建博客</title><link href="http://localhost:4000/jekyll/2020/09/24/Jekyll+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html" rel="alternate" type="text/html" title="Jekyll+Github搭建博客" /><published>2020-09-24T22:15:40-05:00</published><updated>2020-09-24T22:15:40-05:00</updated><id>http://localhost:4000/jekyll/2020/09/24/Jekyll+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/09/24/Jekyll+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html">&lt;p&gt;​	使用Github.io搭建自己的博客，github默认使用的是jekyll，但是也可以用hexo或者vue等其他的自行搭建，是一个展示自己能力的地方，而且不用买域名什么的。以下是一个简单的使用方法，持续更新。详细的jekyll可以访问https://jekyllrb.com进行了解，官网上已经很详细了。&lt;/p&gt;
 
 &lt;h1 id=&quot;jekyllgithubio搭建博客&quot;&gt;Jekyll+Github.io搭建博客&lt;/h1&gt;
 
