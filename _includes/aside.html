@@ -1,4 +1,4 @@
-<div class="aside">
+<div id="aside" class="aside">
 	<div class="aside_scolelr">
 		<div class="aside_header">
 			{% include icon-home-filling.svg %}
@@ -12,8 +12,8 @@
 			<ul>
 				{% for category in site.categories %}
 				<li>
-					<a class="aside_category" href="#">{{ category[0] }}</a>
-					<ul class="inner_category">
+					<a class="aside_category" href="#" onclick="showInnerItem('{{ category[0] }}')">{{ category[0] }}</a>
+					<ul id="{{ category[0] }}" class="inner_category">
 						{% for post in category[1] %}
 						<li><a class="aside_title" href="{{ post.url }}">{{ post.title }}</a></li>
 						{% endfor %}

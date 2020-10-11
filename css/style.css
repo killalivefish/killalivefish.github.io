@@ -140,6 +140,10 @@ li {
 	display:none;
 }
 
+.inner_category{
+	display: none;
+}
+
 /* 文章相关 */
 .content_main{
 	width: 90%;
@@ -186,8 +190,6 @@ a:hover{
 @media screen and (max-width: 768px) {
 	.aside {
 		display: none;
-		width: 85%;
-		left: 0;
 	}
 
 	.main {
