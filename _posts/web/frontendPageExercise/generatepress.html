@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>generatepress</title>
+	<style>
+		* {
+			margin: 0px 0px;
+			padding: 0px 0px;
+		}
+		#root{
+			background-color: rgb(199, 197, 197);
+		}
+		.head-nav {
+			display: flex;
+			flex: row;
+			/* border: 1px solid; */
+			align-items: center;
+			background-color: white;
+			width: 100%;
+			padding: 1em 5em;
+		}
+
+		.header-a {
+			/* border: 1px solid; */
+			/* margin-left: %; */
+			font-size: 25px;
+			font-weight: 700;
+			/* margin-right: auto; */
+		}
+
+		.header-nav {
+			margin-left: 20%;
+		}
+
+		.header-parent-nav {
+			list-style: none;
+			display: flex;
+			align-items: center;
+
+		}
+
+		.header-parent-nav li {
+			margin-left: 1em;
+		}
+
+		.header-chaild-nav {
+			display: block;
+			box-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+			position: absolute;
+			left: -99999px;
+
+			overflow: hidden;
+			list-style: none;
+			background-color: gray;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* text-align: left; */
+		}
+
+		.header-chaild-nav li {
+			text-align: left;
+		}
+
+		/* container */
+		.container {
+			display: flex;
+			flex-flow: column;
+			align-items: flex-start;
+			background-color: rgb(199, 197, 197);
+		}
+
+		.inside-article {
+			background-color: white;
+			width: 60%;
+			margin-left: 10%;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			padding: 1em;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.article-footer {
+			list-style: none;
+		}
+
+		.article-footer a {
+			margin-left: 0.5em;
+		}
+	</style>
+</head>
+
+<body id="root">
+	<header>
+		<div class="head-nav">
+			<div class="header-a"><a>GeneratePress</a></div>
+			<nav class="header-nav">
+				<ul class="header-parent-nav">
+					<li>About</li>
+					<li><a>Parent Page<span><svg viewBox="0 0 330 512" aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+									<path
+										d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z">
+									</path>
+								</svg></span></a>
+						<ul class="header-chaild-nav">
+							<li><a>sub</a></li>
+							<li><a>sub</a></li>
+							<li><a>sub</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="container">
+		<div class="inside-article">
+			<header>
+				<h2><a>Worth A Thousand Words</a></h2>
+			</header>
+			<div class="entry-meta">
+				<span class="post-time">October 17, 2008</span>
+				<span class="post-by">by Theme Admin</span>
+			</div>
+			<div class="entry-summary">
+				<p>
+					The purpose of this HTML is to help determine what default settings are with CSS and to make sure
+					that all possible HTML Elements are included in this HTML so as to not miss any possible Elements
+					when designing a site. Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 [top] Paragraph …
+				</p>
+				<a>Read more</a>
+			</div>
+			<footer>
+				<ul class="article-footer">
+					<li><span><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+								width="1em" height="1em">
+								<path
+									d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+								</path>
+							</svg></span><a href="">Uncategorized</a></li>
+					<li><span><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+								width="1em" height="1em">
+								<path
+									d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+								</path>
+							</svg></span><a href="">Uncategorized</a></li>
+				</ul>
+			</footer>
+		</div>
+	</div>
+	<footer>
+		<p></p>
+	</footer>
+</body>
+
+</html>

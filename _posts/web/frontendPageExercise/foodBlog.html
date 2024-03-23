@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>temp</title>
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+			font-family: "Inter", sans-serif;
+		}
+
+		#main {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		#header {
+			background-color: black;
+			height: 550px;
+			font-size: 16px;
+			color: white;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.container {
+			height: 30px;
+			border-bottom: 1px solid white;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			align-items: center;
+			font-size: 13px;
+		}
+
+		#topRight {
+			color: rebeccapurple;
+		}
+
+		#topLeft {
+			margin-right: 20px;
+			color: aqua;
+		}
+
+		/* 第二个选项栏 */
+		.top-nav-sec {
+			/* border-bottom: 1px solid white; */
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+			justify-content: center;
+
+			color: white;
+		}
+
+		.leftSide {
+			box-sizing: border-box;
+			margin-left: auto;
+			padding: 0px 40px;
+			font-size: 38px;
+			font-weight: bolder;
+			/* border: 1px solid; */
+		}
+
+		.top-nav-sec ul {
+			display: flex;
+			list-style: none;
+
+		}
+
+		.top-nav-sec ul li {
+			padding: 10px 10px;
+		}
+
+		.top-nav-sec-right-side {
+			margin-right: auto;
+		}
+
+		.top-nav-sec a {
+			text-decoration: none;
+			color: white;
+			font-weight: bold;
+		}
+
+		.head-title {
+			/* border-bottom: 1px solid white; */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			text-align: center;
+		}
+
+		.head-title-one {
+			font-size: 30px;
+			font-weight: bolder;
+			margin-bottom: 1em;
+		}
+
+		.head-title-sec {
+			width: 50%;
+		}
+
+		.head-title-thrid {
+			width: 90%;
+			display: flex;
+			flex: row wrap;
+			background-color: white;
+			padding: 10px;
+			border-radius: 10px;
+			margin-top: 1em;
+		}
+
+		.head-title-thrid-box {
+			position: relative;
+			height: 200px;
+			background-color: black;
+			margin: 10px;
+		}
+
+		.head-title-thrid-box img {
+			/* z-index: 1; */
+		}
+
+		.head-title-thrid-box h1 {
+			position: absolute;
+			top: 110px;
+			font-size: 25px;
+		}
+
+		.head-title-thrid p {
+			position: absolute;
+			top: 180px;
+			font-size: 12px;
+		}
+
+		/* mide item */
+		.mide-title {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 50%;
+			margin: 1em auto;
+			text-align: center;
+		}
+
+		.mide-title-first {
+			font-size: medium;
+			font-weight: 500;
+			margin-bottom: 1em;
+		}
+
+		.mide-title h2 {
+			padding-bottom: 0.5em;
+		}
+
+		.mide-title hr {
+			background-color: red;
+			height: 0.1em;
+			width: 10%;
+			margin-bottom: 1em;
+		}
+
+		.mide-title-sec {
+			color: #666666;
+			margin-bottom: 1em;
+		}
+
+		/* pic list */
+		.mide-pic-list {
+			display: flex;
+			flex: row wrap;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			text-align: center;
+
+			margin-bottom: 2em;
+		}
+
+		.mide-pic-list figure {
+			margin: 10px 80px;
+		}
+
+		/* footer */
+		.footer-one {
+			display: flex;
+			flex: row;
+			align-items: flex-start;
+			justify-content: space-around;
+
+			background-color: black;
+			color: white;
+			font-weight: bold;
+		}
+
+		.one{
+			width: 25%;
+			padding: 1em 2em;
+		}
+
+		.footer-one  h2{
+			margin-bottom: 2em;
+		}
+		.footer-one nav ul{
+			list-style: none;
+		}
+
+		.footer-one nav ul li{
+			padding: 0.3em;
+		}
+
+		.footer-sec {
+			display: flex;
+			flex: row;
+			align-items: flex-start;
+			justify-content: space-around;
+
+			background-color: orangered;
+			color: white;
+		}
+		
+		.footer-sec nav ul{
+			display: flex;
+			list-style: none;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div id="">
+		<div id="header">
+			<!-- <div class="top-nav"> -->
+			<div class="container ">
+				<div id="topLeft">
+					<p>support@example.com</p>
+				</div>
+				<div id="topRight">
+					<p>Upgrade Your cooking game with our ultimate recipe E-book, packed with 50+ mouth-watering
+						recipes.</p>
+				</div>
+			</div>
+			<!-- </div> -->
+			<div class="top-nav-sec">
+				<span class="leftSide">FSE Foodie<br> Blog</span>
+				<nav>
+					<ul>
+						<li><a href="">Home</a></li>
+						<li><a href="">About us</a></li>
+						<li><a href="">Resume</a></li>
+						<li><a href="">Services</a></li>
+						<li><a href="">Portfolio</a></li>
+						<li><a href="">Blogs</a></li>
+						<li><a href="">Contact us</a></li>
+					</ul>
+				</nav>
+				<div>temp</div>
+				<div class="top-nav-sec-right-side">Me</div>
+			</div>
+			<div class="head-title">
+				<div class="head-title-one">
+					<p>A Food Lovers Guide To<br>Delicious Eats</p>
+				</div>
+				<div class="head-title-sec">
+					<p>Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown
+						printer
+						took a galley of type and scrambled it to make a type specimen book.</p>
+				</div>
+				<div class="head-title-thrid">
+					<div class="head-title-thrid-box">
+						<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/post-1.png">
+						<h1>How to make pizza in Dutch oven with camping?</h1>
+						<p>Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown
+							printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+					<div class="head-title-thrid-box">
+						<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/post-1.png">
+						<h1>How to make pizza in Dutch oven with camping?</h1>
+						<p>Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown
+							printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mide-title">
+			<p class="mide-title-first">BROWSE BY CATEGORY</p>
+			<h2>Spice Up Your Life</h2>
+			<hr />
+			<p class="mide-title-sec">Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when
+				an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+		</div>
+		<div class="mide-pic-list">
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+			<figure>
+				<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/appetizers.png">
+				<h3>APPETIZERS</h3>
+			</figure>
+		</div>
+
+		<footer class="footer-one">
+			<div class="one">
+				<h2>FSE Foodie Blog</h2>
+				<p>Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer
+					took a galley of type and scrambled it to make a type specimen book.</p>
+				<div></div>
+			</div>
+			<div class="one">
+				<h2>Shop</h2>
+				<nav>
+					<ul>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="one">
+				<h2>Company</h2>
+				<nav>
+					<ul>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+						<li><a>Specials</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="one">
+				<h2>Get In Touch</h2>
+				<div>
+					<figure>
+						<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/envelope.png">
+					</figure>
+					<p>support@example.com</p>
+				</div>
+				<div>
+					<figure>
+						<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/phone.png">
+					</figure>
+					<p>+1001-111-222-3334</p>
+				</div>
+				<div>
+					<figure>
+						<img src="https://wp-themes.com/wp-content/themes/fse-foodie-blog/assets/images/clock.png">
+					</figure>
+					<p>Mon – Fri 8:00 AM to 5:00 PM SUNDAY – </p>
+				</div>
+			</div>
+		</footer>
+		<footer class="footer-sec">
+			<div>
+				<p>© 2023 All Rights Reserved.</p>
+			</div>
+			<nav>
+				<ul>
+					<li><a>Home</a></li>
+					<li><a>Home</a></li>
+					<li><a>Home</a></li>
+					<li><a>Home</a></li>
+					<li><a>Home</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</div>
+</body>
+
+</html>

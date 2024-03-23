@@ -1,0 +1,55 @@
+永久添加alias
+
+```shell
+cd /etc/profile.d
+vim alias_bash.sh
+
+#输入下面的命令
+alias to_script='cd /myWorkSpace/script/ && ls -ltr'
+
+source alias_bash.sh
+```
+
+查看系统信息`hostnamectl`
+
+## VIM操作
+
+显示行号：num
+
+删除行：dd
+
+复制一行：yy复制 p粘贴
+
+到文末：G
+
+到第一行：gg
+
+当前行向上移动：
+
+查询：/
+
+## 复制虚拟机
+
+1. 关闭virtrualBox
+2. 右键复制
+3. 修改network中的mac地址，点击刷新
+4. 开启新的虚拟机
+5. 执行`uuidgen`生成新的UUID
+6. 执行`ifconfig -a`查看新的mac地址
+
+   ```console
+   [root@localhost ~]# ifconfig
+   enp0s4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+           inet 192.168.1.151  netmask 255.255.255.0  broadcast 192.168.1.255
+           inet6 fe80::a60f:74fa:c87d:adb0  prefixlen 64  scopeid 0x20<link>
+           inet6 2409:8a70:a3f:bba0:de0d:93c6:8132:23b1  prefixlen 64  scopeid 0x0<global>
+           ether 08:00:27:19:ff:8e  txqueuelen 1000  (Ethernet)
+           RX packets 227  bytes 31110 (30.3 KiB)
+           RX errors 0  dropped 52  overruns 0  frame 0
+           TX packets 211  bytes 25214 (24.6 KiB)
+           TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+   ```
+
+7. `cd /etc/sysconfig/network-scripts/ && vim ifcfg-enp0s4`修改UUID、IPADDR、HWADDR、DEVICE、NAME 
+8. 重启虚拟机
+9. 测试ping 百度、ping 主机、ping另外一台虚拟机

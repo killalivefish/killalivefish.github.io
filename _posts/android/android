@@ -1,0 +1,128 @@
+###数据存储
+1.存储在文件中默认在/data/data路径下，读写形式和java读写文件相同
+2.存储在SharedPreferences，键值对，数据默认会在data/data/{package_name}/shared_prefs/data.xml
+> 写数据
+
+```
+ SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE).edit();
+                editor.putString("name","Tom");
+                editor.putInt("age",30);
+                editor.putBoolean("married",true);
+                editor.apply();
+```
+> 数据内容
+```
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="name">Tom</string>
+    <boolean name="married" value="true" />
+    <int name="age" value="30" />
+</map>
+```
+
+> 读取数据
+```
+SharedPreferences pref = getSharedPreferences("data",MODE_PRIVATE);
+                String name = pref.getString("name", "");
+                int age = pref.getInt("age", 0);
+                boolean married = pref.getBoolean("married", false);
+```
+
+3.存储在SQLite数据库
+> 创建数据库和表
+```
+public class MyDatabaseHelper extends SQLiteOpenHelper {
+    public static final String CREATE_BOOOK = "CREATE TABLE Book(\n" +
+            "    id integer primary key autoincrement,\n" +
+            "    author text,\n" +
+            "    price real,\n" +
+            "    pages integer,\n" +
+            "    name text\n" +
+            ")";
+
+    private static final String CREATE_CATEGORY= "CREATE TABLE Category(\n" +
+            "    id integer primary key autoincrement,\n" +
+            "    category_name text,\n" +
+            "    category_code integer\n" +
+            ")";
+
+    private Context mContext;
+
+    public MyDatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+        this.mContext = context;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL(CREATE_BOOOK);
+        sqLiteDatabase.execSQL(CREATE_CATEGORY);
+        Toast.makeText(mContext,"Create successed",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("drop table if exists Book");
+        sqLiteDatabase.execSQL("drop table if exists Category");
+        onCreate(sqLiteDatabase);
+    }
+}
+```
+> 查询数据
+```
+ SQLiteDatabase db = dbHelper.getWritableDatabase();
+                Cursor cursor = db.query("Book", null, null, null, null, null, null);
+                if(cursor.moveToFirst()){
+                    do{
+                       String name = cursor.getString(cursor.getColumnIndex("name"));
+                        String author = cursor.getString(cursor.getColumnIndex("author"));
+                        int pages = cursor.getInt(cursor.getColumnIndex("pages"));
+                        double price = cursor.getDouble(cursor.getColumnIndex("price"));
+
+                        Log.i(TAG, "booke name is "+name);
+                        Log.i(TAG, "booke author is "+author);
+                        Log.i(TAG, "booke pages is "+pages);
+                        Log.i(TAG, "booke price is "+price);
+                    }while (cursor.moveToNext());
+                }
+                cursor.close();
+```
+> 插入数据
+```
+ SQLiteDatabase db = dbHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put("name","Tom and Jerry");
+                values.put("author","tt");
+                values.put("page",454);
+                values.put("price",16.96);
+                db.insert("Book",null,values);
+
+                values.clear();
+                values.put("name","The king of th ring");
+                values.put("author","R.T.Toerjin");
+                values.put("page",10025);
+                values.put("price",369);
+                db.insert("Book",null,values);
+```
+> 更新和删除
+```
+
+```
+
+4.使用第三方库 litepal---https://blog.csdn.net/qq_46078469/article/details/123790565
+> https://blog.csdn.net/A125679880/article/details/132195925
+> https://blog.csdn.net/qq_29152729/article/details/126318077
+> https://blog.csdn.net/qq_46078469/article/details/123790565
+> https://blog.csdn.net/AliEnCheng/article/details/103613159
+
+>EROOR
+>1.Toast不显示，清除缓存
+>https://blog.csdn.net/weixin_70837985/article/details/129191055
+>2.引入Litepal报错
+>
+>3.设备管理器显示便携设备
+>https://blog.csdn.net/SJ1551/article/details/106337025
+>4.Android studio连接真机以及找不到设备问题解决
+>https://blog.csdn.net/m0_57561029/article/details/122708764
+>5.比较全面的解决
+>https://blog.csdn.net/GoodburghCottage/article/details/128245018

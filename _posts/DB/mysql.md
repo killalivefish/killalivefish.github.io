@@ -1,0 +1,446 @@
+---
+记录msql的相关操作和学习笔记
+---
+
+
+
+## 安装Mysql
+
+[https://cloud.tencent.com/developer/article/2372374](https://cloud.tencent.com/developer/article/2372374)
+
+## 创建Mysql数据库
+
+- 安装包安装：
+
+  1. 解压MySQL安装包：tar -zxvf mysql-xxx.tar.gz
+  2. 进入解压后的目录：cd mysql-xxx/
+  3. 创建MySQL的数据目录：mkdir data
+  4. 初始化数据库：./bin/mysqld --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --initialize
+  5. 启动MySQL服务：./bin/mysqld_safe --user=mysql &
+  6. 查看进程：ps -ef | grep mysql
+
+- docker安装:
+
+# ERROR
+
+issue:  
+2023-10-13T13:40:58.289650Z mysqld_safe error: log-error set to '/var/log/mariadb/mariadb.log', however file don't exists. Create writable for user 'mysql'.
+
+solve:  
+sudo mkdir -p /var/log/mariadb/  
+sudo chown mysql:mysql /var/log/mariadb/  
+sudo chmod 755 /var/log/mariadb/  
+sudo service mysql restart 或者 sudo systemctl restart mysql
+
+issues:
+
+start failed
+
+solve:  
+service mysql restart
+
+systemctl status mysqld.service
+
+### 创建用户
+
+```sql
+create user 'readonly'@'localhost' IDENTIFIED BY 'readonly';
+flush privileges;
+```
+
+### 创建只读用户
+
+```sql
+grant select on jiandan.* TO 'readonly'@'localhost';
+flush privileges;
+```
+
+### 创建对某个库有操作的用户
+
+```sql
+grant all privileges on  nacos.* to 'nacos'@'localhost';
+flush privileges;
+```
+
+### 查看用户权限
+
+```sql
+use mysql;
+select * from user\G;
+```
+
+### 创建授予用户远程访问权限
+
+```sql
+use mysql;
+update user set host='%' where user='root';
+GRANT ALL ON jiandan.* TO 'root'@'192.168.*' IDENTIFIED BY 'root';
+flush privileges;
+```
+
+### 创建数据库的远程访问权限
+
+```sql
+GRANT ALL PRIVILEGES ON databse_name.nacos TO 'nacos'@'%';
+flush privileges;
+```
+
+### 远程连接mysql
+
+```sql
+mysql -h 192.168.* -P 3306 -u nacos -pnacos
+```
+
+
+
+### 重启windows上的mysql
+
+1. win+R
+2. 输入services.msc
+3. 找到mysql，右键选择重启
+
+## 函数
+
+| 函数                                  | 描述                                                                 |
+| ------------------------------------- | -------------------------------------------------------------------- |
+| SUBSTRING(column_name, start, length) | 这将从列的值中提取一个子字符串，从指定的起始位置开始，直到指定的长度 |
+| UPPER(expression)                     | 这会将字符串表达式转换为大写                                         |
+| LOWER(expression)                     | 这会将字符串表达式转换为小写                                         |
+| CONCAT(string1, string2, ...)         | 这会将两个或多个字符串连接成一个字符串                               |
+| length(string1)                       | 字符串长度                                                           |
+
+## 技巧
+
+1. mysql group by的时候会生成一个临时表，可以通过`SUM`或`MAX`等聚合函数来取其中的某一个值，会遍历，不然`case when`会有null
+
+```DB
++------+---------+-------+
+| id   | revenue | month |
++------+---------+-------+
+|      | 8000    | Jan   |
+| 1    | 7000    | Feb   |
+|      | 6000    | Mar   |
++------+---------+-------+
+| 2    | 9000    | Jan   |
++------+---------+-------+
+| 3    | 10000   | Feb   |
++------+---------+-------+
+```
+
+leetcode相关题目:[重新格式化部门表](https://leetcode.cn/problems/reformat-department-table/)
+
+## 索引
+
+索引本质是帮助快速查询的一种排好序的数据结构，Mysql InnoDB采用B+树的结构来实现。索引会占存储空间，索引太多会导致存储空间过大。
+
+删除数据会造成存储碎片的问题？
+
+frm文件---表结构
+
+ibd文件---表数据
+
+### 1.索引类型和创建
+
+| 索引     | 创建                                                          |
+| -------- | ------------------------------------------------------------- |
+| 主键     |                                                               |
+| 唯一索引 | CREATE UNIQUE INDEX index_name ON table_name (column_name);   |
+| 普通索引 | CREATE INDEX index_name ON table_name (column_name);          |
+| 组合索引 | CREATE INDEX index_name ON table_name (colum1, column2, ...); |
+| 全文索引 | CREATE FULLTEXT INDEX index_name ON table_name (column_name); |
+
+### 2.索引失效
+
+1. 索引字段参与运算容易导致失效
+2. 最左前缀没有匹配到导致后面的索引用不到，不参与计算
+3. 
+
+## 事务
+
+- 原子性A---undo日志回滚保证
+- 一致性C
+- 隔离性I--多个事务执行的时候的隔离级别 `tx_isolation`
+
+  - 读未提交`read-uncommited`--会读到未提交的数据（脏读）
+  - 读已提交`read-commited`--只能读到已经提交的数据（不可重复读）
+  - 可重复读`repeatable-read`---脏写
+  - 串行`serializable`---加锁保证---性能差
+
+- 持久性D--redolog
+
+MVCC
+
+解决不可重复读-乐观锁 加个version
+
+在sql中查询更新
+
+## SQL性能
+
+## 数据备份
+
+[https://developer.aliyun.com/article/1337702](https:/developer.aliyun.com/article/1337702)
+
+### mysqldump导出数据
+
+1. 导出全部数据
+
+   ```cmd
+   mysqldump -uroot -proot --all-databases > all.sql
+   ```
+
+2. 导出某个库的数据
+
+   ```cmd
+   mysqldump -u root -p nacos > D:\myWorkSpace\nacos.sql
+   ```
+
+3. 导出某个库中某个表的数据
+
+   ```cmd
+   mysqldump -uroot -proot --databases db1 --tables a1 a2  >/tmp/db1.sql
+   ```
+
+4. **只导出表结构不导出数据**
+
+   ```cmd
+   mysqldump -uroot -proot --no-data --databases db1 >/tmp/db1.sql
+   ```
+
+
+[https://zhuanlan.zhihu.com/p/598774723?utm_id=0&wd=&eqid=ff3fb82200036b31000000066498e33a](https:/zhuanlan.zhihu.com/p/598774723?utm_id=0&wd=&eqid=ff3fb82200036b31000000066498e33a)
+
+### mysqldump导入数据
+
+1. 创建Database后直接导入
+
+   ```sql
+   mysql -u root -p nacos < /approval/app/nacos.sql
+   ```
+
+2. 进入mysql后导入
+
+   ```sql
+   [root@localhost bin]# mysql -u root -p
+   mysql> create databse nacos;
+   mysql> use nacos;
+   Database changed
+   mysql> source /approval/app/nacos.sql;
+   ```
+
+
+[https://www.bilibili.com/read/cv18306709/](https:/www.bilibili.com/read/cv18306709/)
+
+## 日志
+
+整体介绍：
+
+[https://cloud.tencent.com/developer/article/2050007](https:/cloud.tencent.com/developer/article/2050007)
+
+[https://baijiahao.baidu.com/s?id=1756269953427429926&wfr=spider&for=pc](https:/baijiahao.baidu.com/s?id=1756269953427429926&wfr=spider&for=pc)
+
+### 1.慢查询日志
+
+默认不开启，执行时间超过10s的会被记录。
+
+```ini
+# 控制慢查询日志是否开启，可取值：1 和 0，1 代表开启，0 代表关闭
+slow_query_log=1
+​
+# 指定慢查询日志的文件名
+slow_query_log_file=/var/lib/mysql/slow_query.log
+​
+# 配置查询的时间限制，超过这个时间将认为值慢查询，将需要进行日志记录，默认10s
+long_query_time=10
+```
+
+```cmd
+mysql> show variables like '%quer%';
++----------------------------------------+-----------------------------------+
+| Variable_name                          | Value                             |
++----------------------------------------+-----------------------------------+
+| binlog_rows_query_log_events           | OFF                               |
+| ft_query_expansion_limit               | 20                                |
+| have_query_cache                       | NO                                |
+| log_queries_not_using_indexes          | OFF                               |
+| log_throttle_queries_not_using_indexes | 0                                 |
+| long_query_time                        | 10.000000                         |
+| query_alloc_block_size                 | 8192                              |
+| query_prealloc_size                    | 8192                              |
+| slow_query_log                         | OFF                               |
+| slow_query_log_file                    | /var/lib/mysql/localhost-slow.log |
++----------------------------------------+-----------------------------------+
+
+```
+
+查询慢查询的log内容
+
+```cmd
+mysqldumpslow -s t /var/lib/mysql/slow.log
+```
+
+
+
+### 2.redolog
+
+利用WAL技术(Write-Ahead-Logging, 即先写日志，后写磁盘)推迟物理数据页的刷新，从而提升数据库吞吐，有效降低了访问时延。
+
+物理日志，记录的是在某一个数据页面上做了什么修改
+
+[https://www.cnblogs.com/WangXianSCU/p/15061753.html](https:/www.cnblogs.com/WangXianSCU/p/1506)
+
+### 3.undolog
+
+InnoDB存储引擎不但会产生Redo，还会产生一定量的Undo。这样如果用户执行的事务或语句由于某种原因失败了，又或者用户一条ROLLBACK语句请求回滚，就可以利用这些Undo信息将数据库回滚到修改之前的样子。
+
+记录的是数据的逻辑变化
+
+### 4.binlog
+
+binlog是MySQL的Service层实现的，所有的引擎都可以使用
+
+逻辑日志，记录的是这个语句的原始逻辑，不包含查询数据的 SQL 语句
+
+日志格式
+
+# 配置二进制日志的格式
+
+binlog_format=MIXED
+
+| 格式      | 说明                             |
+| --------- | -------------------------------- |
+| STATEMENT | 记录的都是SQL语句（statement）   |
+| ROW       | 记录的是每一行的数据变更         |
+| MIXED     | 混合了 STATEMENT 和 ROW 两种格式 |
+
+## 主从库配置
+
+1. 主库修改mysql的配置
+
+```ini
+[mysql]
+log-bin=mysql-bin
+server-id=1
+```
+
+2. 从库修改mysql的配置
+
+```ini
+[mysql]
+server-id=2
+```
+
+3. 在主库创建可以连接从库的账户
+
+```cmd
+mysql> CREATE USER 'mtos'@'192.168.*' IDENTIFIED WITH mysql_native_password BY 'mtos';
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> GRANT REPLICATION SLAVE ON *.* TO 'mtos'@'192.168.*';
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>
+mysql> flush privileges;
+Query OK, 0 rows affected (0.02 sec)
+```
+
+4. 获取主库的binary log的文件名和位置
+
+```cmd
+mysql> show master status;
++---------------+----------+--------------+------------------+-------------------+
+| File          | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++---------------+----------+--------------+------------------+-------------------+
+| binlog.000352 |     1553 |              |                  |                   |
++---------------+----------+--------------+------------------+-------------------+
+1 row in set (0.00 sec)
+```
+
+5. 从库上设置主节点的参数
+
+   ```cmd
+   mysql> CHANGE MASTER TO
+       -> MASTER_HOST='192.168.*',
+       -> MASTER_USER='mtos',
+       -> MASTER_PASSWORD='mtos',
+       -> MASTER_LOG_FILE='binlog.000352',
+       -> MASTER_LOG_POS=1553;
+   Query OK, 0 rows affected, 8 warnings (0.02 sec)
+   ```
+
+6. 查看主从同步的状态
+
+   ```cmd
+   mysql> show slave status\G;
+   *************************** 1. row ***************************
+                  Slave_IO_State:
+                     Master_Host: 192.168.*
+                     Master_User: mtos
+                     Master_Port: 3306
+                   Connect_Retry: 60
+                 Master_Log_File: binlog.000352
+             Read_Master_Log_Pos: 1553
+                  Relay_Log_File: localhost-relay-bin.000001
+                   Relay_Log_Pos: 4
+           Relay_Master_Log_File: binlog.000352
+                Slave_IO_Running: No
+               Slave_SQL_Running: No
+   
+   ```
+
+7. 开启主从同步
+
+```cmd
+mysql> start slave;
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+```
+
+8. 再次查询主从同步状态
+
+   ```cmd
+   mysql> show slave status\G;
+   *************************** 1. row ***************************
+                  Slave_IO_State: Waiting for source to send event
+                     Master_Host: 192.168.*
+                     Master_User: mtos
+                     Master_Port: 3306
+                   Connect_Retry: 60
+                 Master_Log_File: binlog.000352
+             Read_Master_Log_Pos: 1553
+                  Relay_Log_File: localhost-relay-bin.000002
+                   Relay_Log_Pos: 323
+           Relay_Master_Log_File: binlog.000352
+                Slave_IO_Running: Yes
+               Slave_SQL_Running: Yes
+   ```
+
+
+## 读写分离
+
+
+
+## 分库分表
+
+1. 分库
+
+   - 垂直分库: 按业务将不同的表放到不同的库
+   - 水平分库: 多个库的表相同，数据进行划分
+
+2. 分表
+
+   - 垂直分表
+   - 水平分表
+
+
+什么时候进行
+
+- 单表的数据达到千万级别以上，数据库读写速度比较缓慢。
+- 数据库中的数据占用的空间越来越大，备份时间越来越长。
+- 应用的并发量太大。
+
+带来哪些问题
+
+Mycat
+
+分布式事务
+
+## 性能测试

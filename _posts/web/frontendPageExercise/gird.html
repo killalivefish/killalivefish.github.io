@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ideal</title>
+	<meta charset="utf-8">
+	<style>
+		#results li.pass {
+			color: green;
+		}
+
+		#results li.fail {
+			color: red;
+		}
+
+		#first {
+			color: green;
+		}
+
+		#second {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<ul id="results"></ul>
+	<ul id="first"></ul>
+
+	<ul id="second"></ul>
+
+	<button id="test">Clikc me!</button>
+
+	<div id="box1">First Box</div>
+
+	<script>
+		function assert(value, desc) {
+			var li = document.createElement("li");
+			li.className = value ? "pass" : "fail";
+			li.appendChild(document.createTextNode(desc));
+			document.getElementById("results").appendChild(li);
+		}
+
+		function report(text) {
+			assert(true, text);
+		}
+
+		function Person() { };
+		Person.prototype.dance = function () { assert(true, "danceing"); };
+
+		function Student() { };
+		// Student.prototype = {dance: Person.prototype.dance};
+		Student.prototype = new Person();
+
+		const tom = new Student();
+		assert(tom instanceof Student, "tom is a student");
+		assert(tom instanceof Person, "tom is a Person");
+		assert(tom instanceof Object, "tom is a Object");
+
+		tom.dance();
+		assert(tom.constructor === Person, "tom is a cons is person!");
+		assert(tom.constructor === Student, "tom is a cons is Student!");
+		Object.defineProperty(Student.prototype, "constructor", {
+			enumerable: false,
+			value: Student,
+			writable: true
+		});
+		assert(tom.constructor === Student, "tom is a cons is Student!");
+
+		function Driver() {
+			let carType;
+
+			get
+
+			this.getCarType = () => carType;
+
+			this.setCarType = value => { carType = value; };
+		}
+
+		let busDriver = new Driver();
+		busDriver.setCarType("金龙大客");
+		assert(true, busDriver.getCarType());
+		assert(true, busDriver.getCarType());
+		assert(true, Driver.carType);
+
+	</script>
+</body>
+
+</html>
