@@ -7,7 +7,9 @@ categories: [Jekyll]
 tags: [Jekyll]
 permalink: /blog/
 ---
-
+Test Test
+* hell0
+* jeeee
 ​	使用Github.io搭建自己的博客，github默认使用的是jekyll，但是也可以用hexo或者vue等其他的自行搭建，是一个展示自己能力的地方，而且不用买域名什么的。以下是一个简单的使用方法，持续更新。详细的jekyll可以访问https://jekyllrb.com进行了解，官网上已经很详细了。
 
 # Jekyll+Github.io搭建博客
