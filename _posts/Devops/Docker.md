@@ -3,8 +3,8 @@ layout: post
 title: "Docker" 
 date: 2024-03-12 20:00:00
 author: HB
-categories: [Docker]
-tags: [Docker]
+categories: [Devops]
+tags: [Devops]
 ---
 
 - 官网：[https://docs.docker.com/desktop/install/windows-install/](https:/docs.docker.com/desktop/install/windows-install/)
