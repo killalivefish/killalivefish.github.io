@@ -5,6 +5,7 @@ date: 2024-03-12 20:00:00
 author: HB
 categories: [Devops]
 tags: [Devops]
+permalink: /blog/
 ---
 
 - 官网：[https://docs.docker.com/desktop/install/windows-install/](https:/docs.docker.com/desktop/install/windows-install/)
