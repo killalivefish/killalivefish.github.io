@@ -231,7 +231,7 @@ a:hover{
 		line-height: 50px;
 		text-align: center;
 		font-size: 100%;
-		*zoom: 1;
+		zoom: 1;
 	}
 
 	.header a{

@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Docker" 
+date: 2024-03-12 20:00:00
+author: HB
+categories: [Docker]
+tags: [Docker]
+---
+
 - 官网：[https://docs.docker.com/desktop/install/windows-install/](https:/docs.docker.com/desktop/install/windows-install/)
 - Docker入门到实践：[https://yeasy.gitbook.io/docker_practice/install](https:/yeasy.gitbook.io/docker_practice/install)
 
@@ -20,7 +29,8 @@
 1. vim /etc/docker/daemon.json
 
    ```json
-   {
+   {
+
        "registry-mirrors": [
            "https://registry.hub.docker.com",
            "http://hub-mirror.c.163.com",
@@ -154,7 +164,8 @@ docker run -p 3306:3306 --name mysql -v /opt/docker_v/mysql/conf:/etc/mysql/conf
 
    ```json
    {
-       "insecure-registries": ["192.168.1.150:5000"],
+       "insecure-registries": ["192.168.1.150:5000"],
+
        "registry-mirrors": [
            "https://registry.hub.docker.com",
            "http://hub-mirror.c.163.com",
