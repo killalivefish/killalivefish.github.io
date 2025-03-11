@@ -1,0 +1,56 @@
+<style>
+    .article-container {
+        height: 100%;
+        margin: 1em auto;
+    }
+
+    #breadbcrumb {
+        padding: 0.5em;
+        background-color: #e2e2e2;
+        border-bottom: 1px solid rgb(180, 175, 175);
+        color: #2c2c2c;
+    }
+
+    .article-container{
+        display: flex;
+        flex-direction: row;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .article{
+        width: 80%;
+    }
+
+    .article-title{
+        color: #1b1b1b;
+    }
+
+    .article-contentsss{
+        color: #1b1b1b;
+    }
+
+    .article-directorie{
+        width: 20%;
+    }
+</style>
+
+{% include head.html %}
+{% include header.html %}
+<div id="breadbcrumb">{{ page.categories }}>{{ page.title }}</div>
+<div class="article-container">
+        <article class="article">
+            <h1 class="article-title">{{ page.title }}</h1>
+            <div class="article-contentsss">
+                {{ page.content }}
+            </div>
+        </article>
+        <aside class="article-directorie">
+            {% include toc.html html=content max_depth=6 %}
+        </aside>
+</div>
+{% include footer.html %}
+
+<script>
+    console.log("this is article!");
+</script>

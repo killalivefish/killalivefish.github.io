@@ -1,0 +1,17 @@
+---
+toc:
+  enabled: true
+  headings:
+    - level: 2
+      exclude: false
+    - level: 3
+      exclude: false
+  exclude_classes:
+    - "no-toc"
+  custom_ids:
+    - "section-1"
+    - "section-2"
+  css_classes:
+    - "custom-toc-class"
+  responsive_design: true
+---

@@ -1,208 +1,653 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-28T08:15:12-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">刻章办证|房顶漏水|活鱼现杀</title><subtitle>My Blog For Something.</subtitle><entry><title type="html">Jekyll+Github搭建博客</title><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" title="Jekyll+Github搭建博客" /><published>2020-09-24T22:15:40-05:00</published><updated>2020-09-24T22:15:40-05:00</updated><id>http://localhost:4000/Jekyll+Github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2</id><content type="html" xml:base="http://localhost:4000/blog/">&lt;p&gt;​	使用Github.io搭建自己的博客，github默认使用的是jekyll，但是也可以用hexo或者vue等其他的自行搭建，是一个展示自己能力的地方，而且不用买域名什么的。以下是一个简单的使用方法，持续更新。详细的jekyll可以访问https://jekyllrb.com进行了解，官网上已经很详细了。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-11T16:27:02+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My blog</title><subtitle>My blog.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/jekyll/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-&lt;h1 id=&quot;jekyllgithubio搭建博客&quot;&gt;Jekyll+Github.io搭建博客&lt;/h1&gt;
+<p>Jekyll requires blog post files to be named according to the following format:</p>
 
-&lt;h2 id=&quot;jekyll安装&quot;&gt;jekyll安装&lt;/h2&gt;
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
 
-&lt;ul&gt;
-  &lt;li&gt;jekyll用Ruby语言开发，所以首先要下载Ruby&lt;/li&gt;
-  &lt;li&gt;接下来需要安装gem（类似npm这种包管理的东西），安装后要将下载的地址改为国内镜像，不然很慢&lt;/li&gt;
-  &lt;li&gt;用gem安装bundle和jekyll
-到此需要安装的东西就完成成了&lt;/li&gt;
-&lt;/ul&gt;
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-&lt;h2 id=&quot;jekyll本地调试&quot;&gt;jekyll本地调试&lt;/h2&gt;
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;进入文件目录&lt;/li&gt;
-  &lt;li&gt;运行bundle exec jekyll server,启动服务&lt;/li&gt;
-  &lt;li&gt;访问127.0.0.0：4000进行调试&lt;/li&gt;
-&lt;/ul&gt;
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-&lt;h2 id=&quot;jekyll文件结构&quot;&gt;jekyll文件结构&lt;/h2&gt;
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[test excerptexcerptexcerpt]]></summary></entry><entry><title type="html">SpringCloud</title><link href="http://localhost:4000/springcloud/SpringCloud/" rel="alternate" type="text/html" title="SpringCloud" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springcloud/SpringCloud</id><content type="html" xml:base="http://localhost:4000/springcloud/SpringCloud/"><![CDATA[<h1 id="mulesoft-anypoint">mulesoft-anypoint</h1>
 
-&lt;h2 id=&quot;jekyll分页&quot;&gt;jekyll分页&lt;/h2&gt;</content><author><name>Hubo</name></author><category term="Jekyll" /><category term="Jekyll" /><summary type="html">​ 使用Github.io搭建自己的博客，github默认使用的是jekyll，但是也可以用hexo或者vue等其他的自行搭建，是一个展示自己能力的地方，而且不用买域名什么的。以下是一个简单的使用方法，持续更新。详细的jekyll可以访问https://jekyllrb.com进行了解，官网上已经很详细了。</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-09-24T22:15:40-05:00</published><updated>2020-09-24T22:15:40-05:00</updated><id>http://localhost:4000/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/blog/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<p><a href="https:/docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4">https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4</a></p>
 
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+<p>网关和API的管理控制</p>
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+<h1 id="kong">Kong</h1>]]></content><author><name></name></author><category term="SpringCloud" /><summary type="html"><![CDATA[SpringCloud笔记]]></summary></entry><entry><title type="html">SpringCloud alibaba</title><link href="http://localhost:4000/springcloud/SpringCloudAlibaba/" rel="alternate" type="text/html" title="SpringCloud alibaba" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springcloud/SpringCloudAlibaba</id><content type="html" xml:base="http://localhost:4000/springcloud/SpringCloudAlibaba/"><![CDATA[<p>spring cloud alibaba官方文档：</p>
 
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+<p><a href="https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/">https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/</a></p>
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+<p><a href="https:/www.bilibili.com/read/cv10201049/">https://www.bilibili.com/read/cv10201049/</a></p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<h2 id="nacos">Nacos</h2>
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>hubo</name></author><category term="Jekyll" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Spring基础</title><link href="http://localhost:4000/spring/2020/08/17/Spring.html" rel="alternate" type="text/html" title="Spring基础" /><published>2020-08-17T15:00:00-05:00</published><updated>2020-08-17T15:00:00-05:00</updated><id>http://localhost:4000/spring/2020/08/17/Spring</id><content type="html" xml:base="http://localhost:4000/spring/2020/08/17/Spring.html">&lt;p&gt;关于Spring的IOC、DI、AOP的实现及基础使用&lt;/p&gt;
+<blockquote>
+  <p>官网：<a href="https:/nacos.io/">https://nacos.io/</a></p>
 
-&lt;h1 id=&quot;spring&quot;&gt;Spring&lt;/h1&gt;
+  <p>1.微服务的注册中心</p>
 
-&lt;p&gt;[TOC]&lt;/p&gt;
+  <p>2.配置中心</p>
+</blockquote>
 
-&lt;h2 id=&quot;ioc&quot;&gt;IOC&lt;/h2&gt;
+<p>相当于spring cloud netfliex的eureka和spring cloud config</p>
 
-&lt;p&gt;​	不需要new对象，由框架的容器通过注解或者xml配置来创建对象，即依赖倒置。&lt;/p&gt;
+<h3 id="配置db">配置DB</h3>
 
-&lt;h3 id=&quot;实现&quot;&gt;实现：&lt;/h3&gt;
+<p><code class="language-plaintext highlighter-rouge">nacos\conf\application.properties</code>中配置DB相关字段</p>
 
-&lt;h2 id=&quot;di&quot;&gt;DI&lt;/h2&gt;
+<p>容易忽略的参数：</p>
 
-&lt;p&gt;​	创建的对象可能包含其他对象，在创建时需要将所需对象也创建出来，即依赖注入。&lt;/p&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;&lt;span style="color:rgba(244,63,94,1)"&gt;spring.datasource.platform=mysql	&lt;/span&gt;&lt;/b&gt;
+</code></pre></div></div>
 
-&lt;h3 id=&quot;实现-1&quot;&gt;实现：&lt;/h3&gt;
+<p><b><span style="color:rgba(244,63,94,1)">	db.num=1</span></b></p>
 
-&lt;h2 id=&quot;aop&quot;&gt;AOP&lt;/h2&gt;
+<h3 id="配置集群">配置集群</h3>
 
-&lt;p&gt;​	通过反射机制获取执行的方法对方法执行之前、之后进行操作，即面向切面。主要用于日志、事务、异常等。&lt;/p&gt;
+<p><code class="language-plaintext highlighter-rouge">nacos\conf\cluster.conf</code>中配置所有的节点</p>
 
-&lt;h3 id=&quot;实现-2&quot;&gt;实现：&lt;/h3&gt;
+<h3 id="配置nginx">配置Nginx</h3>
 
-&lt;h2 id=&quot;mvc&quot;&gt;MVC&lt;/h2&gt;
+<p><a href="https:/blog.csdn.net/A0415_1119/article/details/134496259?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%257Edefault%257ECTRLIST%257ERate-1-134496259-blog-123233138.235%255Ev43%255Epc_blog_bottom_relevance_base7&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%257Edefault%257ECTRLIST%257ERate-1-134496259-blog-123233138.235%255Ev43%255Epc_blog_bottom_relevance_base7&amp;utm_relevant_index=2">https://blog.csdn.net/A0415_1119/article/details/134496259?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-134496259-blog-123233138.235%5Ev43%5Epc_blog_bottom_relevance_base7&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-134496259-blog-123233138.235%5Ev43%5Epc_blog_bottom_relevance_base7&amp;utm_relevant_index=2</a></p>
 
-&lt;ol&gt;
-  &lt;li&gt;对前台请求的URL解析（localhost:8080/user/getAll），user,getAll;&lt;/li&gt;
-  &lt;li&gt;框架已经将类和方法上@Requestmapping所注解的值拼接装进map&amp;lt;url,controller&amp;gt;；&lt;/li&gt;
-  &lt;li&gt;通过url和和map找出对应的controller即（处理器handler）;（注：还要经过前端控制器）&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
+<p>docker部署</p>
 
-&lt;h3 id=&quot;实现-3&quot;&gt;实现：&lt;/h3&gt;
+<p><a href="https:/blog.csdn.net/m0_53151031/article/details/123118920">https://blog.csdn.net/m0_53151031/article/details/123118920</a></p>
 
-&lt;hr /&gt;
+<p>差异：</p>
 
-&lt;h2 id=&quot;通过注释的实现机制&quot;&gt;通过注释的实现机制&lt;/h2&gt;
+<p>nacos启动报错</p>
 
-&lt;ul&gt;
-  &lt;li&gt;自定义注解，主要配置是在方法、属性、类上作用还是多种场景；&lt;/li&gt;
-  &lt;li&gt;配置需要扫描的包或者类；&lt;/li&gt;
-  &lt;li&gt;通过反射判断扫描到的包或者类上的注解，按注解的类型归类，如@Autowried将通过注解创建对象，@RequestMapping将获取对应注解的url及作用的类或方法；&lt;/li&gt;
-  &lt;li&gt;将上一步已经映射好的数据用于对象的创建或者url的映射。&lt;/li&gt;
-&lt;/ul&gt;
+<p>问题：本地启动报错</p>
 
-&lt;h2 id=&quot;通过xml的实现机制&quot;&gt;通过xml的实现机制&lt;/h2&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Caused by: java.net.UnknownHostException: jmenv.tbsite.net
+        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:221)
+        at java.base/java.net.PlainSocketImpl.connect(PlainSocketImpl.java:148)
+        at java.base/java.net.Socket.connect(Socket.java:591)
+        at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+        at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+        at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+        at java.base/sun.net.www.http.HttpClient.&lt;init&gt;(HttpClient.java:242)
+        at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+        at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1242)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1181)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1075)
+        at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1009)
+        at com.alibaba.nacos.common.http.client.request.JdkHttpClientRequest.execute(JdkHttpClientRequest.java:112)
+        at com.alibaba.nacos.common.http.client.NacosRestTemplate.execute(NacosRestTemplate.java:482)
+        at com.alibaba.nacos.common.http.client.NacosRestTemplate.get(NacosRestTemplate.java:72)
+        at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.syncFromAddressUrl(AddressServerMemberLookup.java:143)
+        at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.run(AddressServerMemberLookup.java:111)
+        ... 125 common frames omitted
+2024-02-20 20:21:52,238 WARN [WatchFileCenter] start close
+</code></pre></div></div>
 
-&lt;ul&gt;
-  &lt;li&gt;实现和通过注解类似，主要是xml的解析和配置&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Hubo</name></author><category term="spring" /><category term="spring" /><summary type="html">关于Spring的IOC、DI、AOP的实现及基础使用</summary></entry><entry><title type="html">Vue</title><link href="http://localhost:4000/vue/2020/08/17/Vue.html" rel="alternate" type="text/html" title="Vue" /><published>2020-08-17T15:00:00-05:00</published><updated>2020-08-17T15:00:00-05:00</updated><id>http://localhost:4000/vue/2020/08/17/Vue</id><content type="html" xml:base="http://localhost:4000/vue/2020/08/17/Vue.html">&lt;h1 id=&quot;vue&quot;&gt;Vue&lt;/h1&gt;
+<p>解决：<a href="https://blog.csdn.net/ityw520/article/details/123149849">https://blog.csdn.net/ityw520/article/details/123149849</a></p>
 
-&lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
+<p>读取不到extension-configs的配置文件–TODO</p>
 
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;组件页面&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;公用组件&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;路由相关&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;不同页面组件通讯&lt;/li&gt;
-&lt;/ul&gt;
+<h3 id="源码">源码</h3>
 
-&lt;h2 id=&quot;问题还是看官网教程就行&quot;&gt;问题：还是看官网教程就行&lt;/h2&gt;
+<ul>
+  <li>登陆和权限spring security+JWT token</li>
+  <li>config版本控制</li>
+  <li>如何实现的注册和配置</li>
+</ul>
 
-&lt;ol&gt;
-  &lt;li&gt;组件&lt;/li&gt;
-  &lt;li&gt;引用别的js&lt;/li&gt;
-&lt;/ol&gt;
+<h2 id="sentinel">Sentinel</h2>
 
-&lt;h2 id=&quot;暂时处理&quot;&gt;暂时处理:&lt;/h2&gt;
+<blockquote>
+  <p>官网：<a href="https:/sentinelguard.io/">https://sentinelguard.io/</a></p>
 
-&lt;ol&gt;
-  &lt;li&gt;静态化&lt;/li&gt;
-&lt;/ol&gt;
+  <p>1.限流</p>
 
-&lt;h2 id=&quot;目标-1&quot;&gt;目标：&lt;/h2&gt;
+  <p>2.熔断</p>
 
-&lt;p&gt;生成静态页面—github.io使用&lt;/p&gt;
+  <p>3.服务降级</p>
+</blockquote>
 
-&lt;h2 id=&quot;开始旋转&quot;&gt;开始旋转&lt;/h2&gt;
+<p>限流报错的内容自定义—通过@SentinelResource中fallback或者fallback class定义的方法名称去匹配和返回</p>
 
-&lt;p&gt;v-model:绑定表单元素数据&lt;/p&gt;
+<p><a href="https:/zhuanlan.zhihu.com/p/446532710">https://zhuanlan.zhihu.com/p/446532710</a></p>
 
-&lt;p&gt;v-show&lt;/p&gt;
+<p><a href="https:/www.cnblogs.com/FlyGoldfish/articles/1">https://www.cnblogs.com/FlyGoldfish/articles/14269621.html</a></p>
 
-&lt;p&gt;v-for&lt;/p&gt;
+<p>SentinelResource的value要和接口请求的路径一样吗—-不用直接通过value中的值进行设置就行</p>
 
-&lt;p&gt;v-bind–: 绑定HTML属性，如href、class&lt;/p&gt;
+<p><img src="../.images/18dfab29676.png" alt="" /></p>
 
-&lt;p&gt;v-on–@：v-on:”方法名”，$event&lt;/p&gt;
+<h3 id="持久化">持久化</h3>
 
-&lt;p&gt;v-cloak:网速较慢时会显示,加上这个可以解决&lt;/p&gt;
+<p>TODO</p>
 
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;v-cloak&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+<h3 id="问题">问题</h3>
 
-		&lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+<ul>
+  <li>
+    <p>创建流控规则时报错，而且显示的IP不正确</p>
 
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    <p><img src="../.images/18df7f39b4d.png" alt="" /></p>
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+    <pre><code class="language-log">2024-02-29 21:46:11.917 ERROR 2421 --- [pool-2-thread-1] c.a.c.s.dashboard.metric.MetricFetcher   : Failed to fetch metric from &lt;http://169.254.54.211:9001/metric?startTime=1709261036000&amp;endTime=1709261042000&amp;refetch=false&gt; (ConnectionException: Connection timed out)
+2024-02-29 21:46:18.958 ERROR 2421 --- [pool-2-thread-1] c.a.c.s.dashboard.metric.MetricFetcher   : Failed to fetch metric from &lt;http://169.254.54.211:9001/metric?startTime=1709261043000&amp;endTime=1709261049000&amp;refetch=false&gt; (ConnectionException: Connection timed out)
+  
+</code></pre>
 
-&lt;p&gt;v-once:只渲染一次&lt;/p&gt;
+    <p>原因：sentinel的dashboard会安装<a href="http://client-ip:port%E6%8B%89%E5%8F%96%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%B2%A1%E6%9C%89%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%9D%E4%BC%9A%E5%88%86%E9%85%8D%E4%B8%80%E4%B8%AA">http://client-ip:port拉取数据，没有配置的话会分配一个</a></p>
 
-&lt;p&gt;v-if、v-else-if、v-else&lt;/p&gt;
+    <p>解决：在yaml配置文件中加上client-ip和client-ip</p>
 
-&lt;p&gt;v-for:value、key、index&lt;/p&gt;
+    <p><img src="../.images/18df7fa2898.png" alt="" /></p>
 
-&lt;p&gt;computed:写复杂的逻辑代码，get初始化数据时调用，set绑定数据变化时调用。&lt;/p&gt;
+    <p>参考链接：<a href="https:/blog.csdn.net/hjg719/article/details/128095358">https://blog.csdn.net/hjg719/article/details/128095358</a></p>
+  </li>
+</ul>
 
-&lt;p&gt;​		    可以依赖别的computed；&lt;/p&gt;
+<h2 id="gateway">Gateway</h2>
 
-&lt;p&gt;​		    可以依赖别的Vue实例数据。&lt;/p&gt;
+<blockquote>
+  <p>1.路由请求</p>
 
-&lt;p&gt;computed和methods区别：computed具有缓存性质，只有绑定的数据变化的时候才会调用，而methods每次都					  会调用&lt;/p&gt;
+  <p>2.整合Nacos和Ribbon实现动态服务治理和负载均衡</p>
 
-&lt;p&gt;组件：&lt;/p&gt;
+  <p>3.整合Sentinel实现Sentinel的防护效</p>
+</blockquote>
 
-&lt;p&gt;​	部分HTML元素不能使用组件，如&amp;lt;table&amp;gt;必须使用&amp;lt;tbody is=&quot;my_component&quot;&amp;gt;&amp;lt;/tbody&amp;gt;&lt;/p&gt;
+<h3 id="灰度发布">灰度发布</h3>
 
-&lt;p&gt;​	组件的data必须是函数&lt;/p&gt;
+<h3 id="问题-1">问题</h3>
 
-&lt;p&gt;​	模板内容 复用&lt;/p&gt;
+<ol>
+  <li>
+    <p>启动失败</p>
 
-&lt;p&gt;​	模板间通讯：父组件-&amp;gt;子组件 props(字符串数组/对象)&lt;/p&gt;
+    <pre><code class="language-log">parameter 0 of method modifyrequestbodygatewayfilterfactory in org.springfra
+</code></pre>
 
-&lt;p&gt;​				子组件-&amp;gt;父组件 子组件中定义data重新将props的值绑定到自己上使用&lt;/p&gt;
+    <p>原因：是由于依赖冲突，spring-cloud-starter-gateway与spring-boot-starter-web和spring-boot-starter-webflux依赖冲突</p>
 
-&lt;p&gt;​							     computed属性&lt;/p&gt;
+    <p>解决：</p>
 
-&lt;p&gt;​				事件的传递：$emit&lt;/p&gt;
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework.cloud<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-gateway<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;exclusions&gt;</span>
+                <span class="nt">&lt;exclusion&gt;</span>
+                    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+                    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;/exclusion&gt;</span>
+                <span class="nt">&lt;exclusion&gt;</span>
+                    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+                    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-webflux<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;/exclusion&gt;</span>
+            <span class="nt">&lt;/exclusions&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>整合Sentinel启动失败</p>
 
-&lt;p&gt;​							v-model&lt;/p&gt;
+    <p>原因：高版本的需要引入Sentinel对于Spring Cloud Gateway的依赖，注意版本解决冲突可以处理掉一些启动失败和报错的问题</p>
+  </li>
+</ol>
 
-&lt;p&gt;​				Vue1.X中有   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$dispatch()     $broadcast()&lt;/code&gt;&lt;/p&gt;
+<h2 id="openfegin">OpenFegin</h2>
 
-&lt;p&gt;​				Vue2.X使用空的Vue实例 用作bus&lt;/p&gt;
+<blockquote>
+  <p>让服务间的调用变简单</p>
+</blockquote>
 
-&lt;p&gt;​				vuex&lt;/p&gt;
+<h2 id="dubbo">Dubbo</h2>
 
-&lt;p&gt;​				this.$parent&lt;/p&gt;
+<blockquote>
+  <p>RPC，服务间调用通过RPC协议，性能更好</p>
+</blockquote>
 
-&lt;p&gt;​				this.$child&lt;/p&gt;
+<h3 id="3问题">3.问题</h3>
 
-&lt;p&gt;​	混合组件：solt&lt;/p&gt;</content><author><name>Hubo</name></author><category term="Vue" /><category term="Vue" /><summary type="html">Vue</summary></entry><entry><title type="html">Fuck CSS</title><link href="http://localhost:4000/css/2020/08/17/FuckTheCSS.html" rel="alternate" type="text/html" title="Fuck CSS" /><published>2020-08-17T15:00:00-05:00</published><updated>2020-08-17T15:00:00-05:00</updated><id>http://localhost:4000/css/2020/08/17/FuckTheCSS</id><content type="html" xml:base="http://localhost:4000/css/2020/08/17/FuckTheCSS.html">&lt;p&gt;CSS简单，但做起来和实际想的不一样&lt;/p&gt;
+<ol>
+  <li>
+    <p>启动报错: Address already in use: bind</p>
 
-&lt;h1 id=&quot;fuck-the-css&quot;&gt;Fuck &lt;strong&gt;The&lt;/strong&gt; CSS&lt;/h1&gt;
+    <p>原因：dubbo消费放的dubbo端口被占用，配置上新的的端口号就行</p>
+  </li>
+  <li>服务放调用不到接口</li>
+  <li>nacos上消费方的ip不是主机的ip</li>
+</ol>
 
-&lt;p&gt;放弃了 左右布局&lt;/p&gt;
+<h2 id="spring-stream">Spring Stream</h2>
 
-&lt;h2 id=&quot;选择器&quot;&gt;选择器&lt;/h2&gt;
+<blockquote>
+  <p>封装使用MQ的代码，简化MQ的使用</p>
+</blockquote>
 
-&lt;ul&gt;
-  &lt;li&gt;属性选择器：含有’[]’；&lt;/li&gt;
-  &lt;li&gt;伪类选择器：带有’:’；&lt;/li&gt;
-  &lt;li&gt;微元素选择器：带有’::’；&lt;/li&gt;
-  &lt;li&gt;关系选择器、后代选择器；&lt;/li&gt;
-&lt;/ul&gt;
+<h2 id="seata">Seata</h2>
 
-&lt;h2 id=&quot;html元素的分类&quot;&gt;HTML元素的分类&lt;/h2&gt;
+<h2 id="skywalking">Skywalking</h2>
 
-&lt;ul&gt;
-  &lt;li&gt;块级：换行特性，占一行，多了就换行，可用clear清除浮动影响。div、li、p、span。display属性和内联不同&lt;/li&gt;
-  &lt;li&gt;内联：&lt;/li&gt;
-&lt;/ul&gt;
+<blockquote>
+  <p>ARM，服务间的监控</p>
+</blockquote>
 
-&lt;p&gt;&lt;img src=&quot;box-model.png&quot; alt=&quot;盒子模型&quot; /&gt;&lt;/p&gt;
+<p><a href="https:/zhuanlan.zhihu.com/p/660828898">https://zhuanlan.zhihu.com/p/660828898</a></p>
 
-&lt;p&gt;设置width属性时实际作用在盒子模型的content-box上，但可以通过设置box-sizing将width的设置作用在border(border-box )，padding（padding-box）上。&lt;/p&gt;
+<ul>
+  <li>JDK 11</li>
+  <li>Elasticsearch <a href="https:/www.elastic.co/cn/downloads/past-releases/elasticsearch-7-17-1">https://www.elastic.co/cn/downloads/past-releases/elasticsearch-7-17-1</a></li>
+  <li>Skywalking <a href="https:/archive.apache.org/dist/skywalking/8.9.0/">https://archive.apache.org/dist/skywalking/8.9.0/</a></li>
+</ul>
 
-&lt;p&gt;宽度分离：外层增加div只设置width,内部div设置其他属性。width会破坏浮动。&lt;/p&gt;</content><author><name>Hubo</name></author><category term="CSS" /><category term="CSS" /><summary type="html">CSS简单，但做起来和实际想的不一样</summary></entry></feed>
+<h2 id="docker">Docker</h2>
+
+<h2 id="kubernets">Kubernets</h2>
+
+<h2 id="jenkins">Jenkins</h2>
+
+<h2 id="splunk">Splunk</h2>]]></content><author><name></name></author><category term="SpringCloud" /><summary type="html"><![CDATA[SpringCloud alibaba笔记]]></summary></entry><entry><title type="html">Spring事件监听器</title><link href="http://localhost:4000/spring/Spring%E7%9B%91%E5%90%AC/" rel="alternate" type="text/html" title="Spring事件监听器" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/spring/Spring%E7%9B%91%E5%90%AC</id><content type="html" xml:base="http://localhost:4000/spring/Spring%E7%9B%91%E5%90%AC/"><![CDATA[<p>Spring 事件监听器可以应用于很多业务场景中，以下是一些常见的应用场景：</p>
+
+<ol>
+  <li>数据更新时的通知：在数据库表中对数据进行插入、更新和删除操作时，可以使用 Spring 事件机制来通知应用程序中其他的组件及时更新数据缓存或执行相关操作。</li>
+  <li>异步处理：在一些需要异步处理的业务场景中，可以使用 Spring 事件来触发后台任务的执行，并通过事件监听器来记录任务执行状态、处理异常等。</li>
+  <li>管理事件和通知状态：在应用程序的生命周期中，可以使用 Spring 事件来记录相关的状态，以便后续实现应用程序的监控和管理。</li>
+  <li>插件化扩展：在支持插件化扩展的系统中，可以使用 Spring 事件来扩展系统的功能，例如通过发布插件加载事件实现动态加载插件。同时，插件可以通过订阅其他事件来响应系统的其他业务行为。</li>
+  <li>系统日志记录：在系统运行过程中，可以使用 Spring 事件来记录关键事件和异常信息，并通过事件监听器将这些信息记录到系统日志中。</li>
+</ol>
+
+<p>以上这些场景只是 Spring 事件监听器应用的一部分，实际上可以根据业务需要灵活应用。在使用 Spring 事件监听器时，需要注意事件的发布和处理是同步的，可能会影响系统的性能，因此应该根据实际业务需求来选择合适的事件机制。</p>
+
+<p><a href="https:/cloud.tencent.com/developer/article/2332860">https://cloud.tencent.com/developer/article/2332860</a></p>]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring事件监听器]]></summary></entry><entry><title type="html">Spring过滤器和拦截器</title><link href="http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="alternate" type="text/html" title="Spring过滤器和拦截器" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8</id><content type="html" xml:base="http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/"><![CDATA[]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring过滤器和拦截器]]></summary></entry><entry><title type="html">Nacos笔记</title><link href="http://localhost:4000/nacos/Nacos/" rel="alternate" type="text/html" title="Nacos笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/nacos/Nacos</id><content type="html" xml:base="http://localhost:4000/nacos/Nacos/"><![CDATA[<h2 id="表结构">表结构</h2>
+
+<p><img src="../.images/18ec8c71009.png" alt="" /></p>
+
+<p><img src="../.images/18ec8c74112.png" alt="" /></p>
+
+<h2 id="请求入参处理">请求入参处理</h2>
+
+<h2 id="权限注解校验">权限注解校验</h2>
+
+<h2 id="心跳">心跳</h2>
+
+<h2 id="全局异常处理">全局异常处理</h2>
+
+<h2 id="aop">AOP</h2>
+
+<h2 id="自定义注解">自定义注解</h2>
+
+<h2 id="接口返回数据结构">接口返回数据结构</h2>
+
+<h2 id="log的打印">log的打印</h2>
+
+<h2 id="异常的处理">异常的处理</h2>]]></content><author><name></name></author><category term="Nacos" /><summary type="html"><![CDATA[Nacos笔记]]></summary></entry><entry><title type="html">SpringSecurity笔记</title><link href="http://localhost:4000/springsecurity,security/SpringSecurity/" rel="alternate" type="text/html" title="SpringSecurity笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springsecurity,security/SpringSecurity</id><content type="html" xml:base="http://localhost:4000/springsecurity,security/SpringSecurity/"><![CDATA[<p><img src="../.images/18e93596ecb.png" alt="" /></p>
+
+<p><img src="../.images/18f23aff24f.png" alt="" /></p>
+
+<p><img src="../.images/18f23b21864.png" alt="" /></p>
+
+<p><img src="../.images/18f23bbab15.png" alt="" /></p>
+
+<p><img src="../.images/18f23b897ca.png" alt="" /></p>
+
+<p>@EnableGlobalMethodSecurity和@EnableSecurity在Spring Security框架中各自扮演不同的角色，具有不同的功能和用途。</p>
+
+<p>@EnableGlobalMethodSecurity是Spring Security框架中的一个注解，用于启用全局方法级别的安全配置。这个注解允许开发者在方法上使用特定的注解（如@PreAuthorize、@PostAuthorize等）来定义安全规则。这些注解会在方法调用前后执行权限检查，确保只有满足特定条件的用户才能调用这些方法。该注解适用于需要在方法级别进行细粒度安全控制的场景，例如在业务逻辑中，某些敏感操作（如修改用户信息、删除订单等）可能只允许具有特定角色或权限的用户执行。此外，它还会配置一个全局的AuthenticationManager，用于管理用户的认证过程。</p>
+
+<p>然而，关于@EnableSecurity这个注解，目前在Spring Security的官方文档和常见资料中并没有明确的描述。可能是因为它并非Spring Security框架中的一个标准注解，或者是一个特定项目、库或框架中自定义的注解。在缺乏具体上下文的情况下，无法准确解释@EnableSecurity的功能和用途。</p>
+
+<p>总的来说，@EnableGlobalMethodSecurity是Spring Security框架中用于启用全局方法级别安全配置的注解，而@EnableSecurity可能是一个特定上下文中的自定义注解，其功能和用途需要根据具体项目或框架来确定。因此，在使用这两个注解时，建议查阅相关文档或参考项目代码以了解其确切含义和用法。</p>
+
+<p><img src="../.images/18f2a9a3db3.png" alt="" /></p>
+
+<h2 id="表">表</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">database</span> <span class="k">user</span><span class="p">;</span>
+<span class="n">use</span> <span class="k">user</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`users`</span> <span class="p">(</span>
+                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                         <span class="nv">`username`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`password`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span> <span class="c1">-- 存储密码的哈希值</span>
+                         <span class="nv">`email`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`phone`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_username`</span> <span class="p">(</span><span class="nv">`username`</span><span class="p">),</span>
+                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_email`</span> <span class="p">(</span><span class="nv">`email`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`roles`</span> <span class="p">(</span>
+                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                         <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user_roles`</span> <span class="p">(</span>
+                              <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                              <span class="nv">`user_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                              <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                              <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                              <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                              <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_user_role`</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">,</span> <span class="nv">`role_id`</span><span class="p">),</span>
+                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`users`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
+                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`permissions`</span> <span class="p">(</span>
+                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`role_permissions`</span> <span class="p">(</span>
+                                    <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                                    <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                                    <span class="nv">`permission_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                                    <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                                    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                                    <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_role_permission`</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">,</span> <span class="nv">`permission_id`</span><span class="p">),</span>
+                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
+                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`permission_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`permissions`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`departments`</span> <span class="p">(</span>
+                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`department_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">AFTER</span> <span class="nv">`phone`</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_id`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_type`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_token`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_expires_at`</span> <span class="nb">DATETIME</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<h2 id="table">table</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>基于之前讨论的数据模型设计，以下是一些可能的MySQL建表语句示例。请注意，这些语句是简化的，并且可能需要根据你的具体需求进行调整。
+
+1. 表格 (tables)
+
+sql
+CREATE TABLE `tables` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `name` VARCHAR(255) NOT NULL,  
+  `description` TEXT,  
+  PRIMARY KEY (`id`)  
+);
+2. 表格列 (table_columns)
+
+sql
+CREATE TABLE `table_columns` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `table_id` INT NOT NULL,  
+  `name` VARCHAR(255) NOT NULL,  
+  `type` VARCHAR(50) NOT NULL, -- 例如：text, number, date, checkbox, radio, select  
+  `is_special` BOOLEAN DEFAULT FALSE,  
+  `special_type` VARCHAR(50), -- 例如：single_select, multi_select, input  
+  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+3. 表格行 (table_rows)
+
+sql
+CREATE TABLE `table_rows` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `table_id` INT NOT NULL,  
+  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+4. 单元格数据 (cell_data)
+
+sql
+CREATE TABLE `cell_data` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `row_id` INT NOT NULL,  
+  `column_id` INT NOT NULL,  
+  `value` VARCHAR(255), -- 对于非文本类型，可以存储ID或其他标识符  
+  `text_value` TEXT, -- 对于文本输入框等，存储实际文本  
+  FOREIGN KEY (`row_id`) REFERENCES `table_rows`(`id`) ON DELETE CASCADE,  
+  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+5. 特殊类型选项 (special_type_options)
+
+sql
+CREATE TABLE `special_type_options` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `column_id` INT NOT NULL,  
+  `label` VARCHAR(255) NOT NULL,  
+  `value` VARCHAR(255) NOT NULL, -- 对于单选、多选等，存储选项的值  
+  `is_selected` BOOLEAN DEFAULT FALSE, -- 对于当前行是否选中该选项  
+  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+在这些建表语句中，我们使用了外键约束来确保数据的引用完整性。例如，table_columns表的table_id字段引用tables表的id字段，表示该列属于哪个表格。同样，cell_data表的row_id和column_id字段分别引用table_rows和table_columns表的相应字段。
+
+请注意，这里的type字段用于存储列的基本数据类型（如文本、数字、日期等），而special_type字段用于标识特殊类型的列（如单选、多选等）。value字段在cell_data表中用于存储非文本类型的数据的值（如选项的ID），而text_value字段用于存储文本输入框的实际文本内容。
+
+最后，special_type_options表用于存储特殊类型列的选项，如单选框或复选框的选项。is_selected字段用于跟踪哪些选项在特定行中被选中。
+
+这些表结构提供了一个灵活的框架，可以根据需要扩展和定制。在实际应用中，你可能还需要考虑其他因素，如性能优化、索引创建、数据验证和安全性等。
+</code></pre></div></div>
+
+<p><a href="https:/www.youtube.com/watch?v=-3W5CQzc81s">https://www.youtube.com/watch?v=-3W5CQzc81s</a></p>
+
+<p><a href="http:/www.youtube.com/get_video?video_id=*******&amp;t=*******">http://www.youtube.com/get_video?video_id=</a>-3W5CQzc81s[&amp;t=<strong>**</strong><em>](http:/www.youtube.com/get_video?video_id=</em><strong>**</strong>&amp;t=<strong>**</strong>*)</p>]]></content><author><name></name></author><category term="SpringSecurity,Security" /><summary type="html"><![CDATA[SpringSecurity笔记]]></summary></entry><entry><title type="html">算法笔记</title><link href="http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/" rel="alternate" type="text/html" title="算法笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/"><![CDATA[<h1 id="图">图</h1>
+
+<p>无向图</p>
+
+<p>有向图</p>
+
+<p>加权图</p>
+
+<p>加权有向图</p>
+
+<p>顶点：vertex 边：edge</p>
+
+<p>特殊的图：自环和平行边</p>
+
+<p>深度优先DFS</p>
+
+<p>广度优先BFS</p>
+
+<h2 id="树">树</h2>
+
+<p>二叉树</p>
+
+<p>二叉搜索树</p>
+
+<p><img src="../.images/18f15f961a8.png" alt="" /></p>
+
+<p>平衡树</p>
+
+<p><img src="../.images/18f15f9e41a.png" alt="" /></p>
+
+<p>红黑树</p>
+
+<p><img src="../.images/18f15f8fb01.png" alt="" /></p>
+
+<p>B树</p>
+
+<p><img src="../.images/18f15f91f1e.png" alt="" /></p>
+
+<p>B+树</p>
+
+<p><img src="../.images/18f15f93a2e.png" alt="" /></p>
+
+<p><img src="../.images/18e9724a600.png" alt="" /><img src="../.images/18e971d694a.png" alt="" /></p>
+
+<p>状态</p>
+
+<p>状态转移方程</p>
+
+<p>15829247313</p>
+
+<h2 id="贪心">贪心</h2>
+
+<h3 id="原理">原理</h3>
+
+<p>‧ 贪心选择性质：只有当局部最优选择始终可以导致全局最优解时，贪心算法才能保证得到最优解。<br />
+‧ 最优子结构：原问题的最优解包含子问题的最优解。</p>
+
+<h3 id="步骤">步骤</h3>
+
+<ol>
+  <li>问题分析：梳理与理解问题特性，包括状态定义、优化目标和约束条件等。这一步在回溯和动态规划中<br />
+都有涉及。</li>
+  <li>确定贪心策略：确定如何在每一步中做出贪心选择。这个策略能够在每一步减小问题的规模，并最终解<br />
+决整个问题。</li>
+  <li>正确性证明：通常需要证明问题具有贪心选择性质和最优子结构。这个步骤可能需要用到数学证明，例<br />
+如归纳法或反证法等。</li>
+</ol>
+
+<h3 id="相关问题">相关问题</h3>
+
+<p>‧ 硬币找零问题：在某些硬币组合下，贪心算法总是可以得到最优解。<br />
+‧ 区间调度问题：假设你有一些任务，每个任务在一段时间内进行，你的目标是完成尽可能多的任务。如<br />
+果每次都选择结束时间最早的任务，那么贪心算法就可以得到最优解。<br />
+‧ 分数背包问题：给定一组物品和一个载重量，你的目标是选择一组物品，使得总重量不超过载重量，且<br />
+总价值最大。如果每次都选择性价比最高（价值 / 重量）的物品，那么贪心算法在一些情况下可以得到<br />
+最优解。<br />
+‧ 股票买卖问题：给定一组股票的历史价格，你可以进行多次买卖，但如果你已经持有股票，那么在卖出<br />
+之前不能再买，目标是获取最大利润。<br />
+‧ 霍夫曼编码：霍夫曼编码是一种用于无损数据压缩的贪心算法。通过构建霍夫曼树，每次选择出现频率<br />
+最低的两个节点合并，最后得到的霍夫曼树的带权路径长度（编码长度）最小。<br />
+‧ Dijkstra 算法：它是一种解决给定源顶点到其余各顶点的最短路径问题的贪心算法。</p>]]></content><author><name></name></author><category term="算法" /><summary type="html"><![CDATA[记录算法重点]]></summary></entry><entry><title type="html">Spring笔记</title><link href="http://localhost:4000/spring/Spring/" rel="alternate" type="text/html" title="Spring笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/spring/Spring</id><content type="html" xml:base="http://localhost:4000/spring/Spring/"><![CDATA[<h2 id="spring-笔记">Spring 笔记</h2>
+
+<blockquote>
+  <p><strong><em>spring 官方文档</em></strong>       <a href="https://springdoc.cn/docs/">https://springdoc.cn/docs/</a></p>
+</blockquote>
+
+<h2 id="ioc">IOC</h2>
+
+<p>对象的创建由Spring来处理</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ClassPathBeanDefinitionScanner
+会读取配置了扫描注解的类
+</code></pre></div></div>
+
+<h3 id="11-bean的创建">1.1 Bean的创建</h3>
+
+<p>依赖注入+控制反转</p>
+
+<p>IOC</p>
+
+<p>@Bean @Component @Import  @RestController @Service @Repo</p>
+
+<p>ApplicationContext通过配置 读取要代理的Bean</p>
+
+<p>BeanFactory生成Bean到容器</p>
+
+<p>默认调用无参的构造函数</p>
+
+<p>默认按照单例生成</p>
+
+<p>@Autowried</p>
+
+<p><img src="../.images/18e690e84c0.png" alt="" /></p>
+
+<h3 id="12-bean的生命周期">1.2 Bean的生命周期</h3>
+
+<p><img src="../.images/18ecdffd1e2.png" alt="" /></p>
+
+<p><img src="../.images/18ece0027b2.png" alt="" /></p>
+
+<h2 id="aop">AOP</h2>
+
+<ul>
+  <li>JDK：实现非Bean生命周期相关的接口而且实现方法不为0</li>
+  <li>CGlig：继承目标类</li>
+</ul>
+
+<p>引入依赖</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-aop<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+
+<p>开启注解@EnableAspectJAutoProxy</p>
+
+<p>定义切面类@Aspect</p>
+
+<p>定义切点+切面表达式来确定切点@Pointcut</p>
+
+<p>定义通知类型@Before@After(finally)@Around@AfterReturning(后置)@AfterThrowing</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parameterType="com.hello.module.Stack" 
+</code></pre></div></div>
+
+<p><img src="../.images/18ed007d8ae.png" alt="" /></p>
+
+<p><a href="https:/yasinshaw.com/articles/107">https://yasinshaw.com/articles/107</a></p>
+
+<h2 id="事务">事务</h2>
+
+<p>事务的使用</p>
+
+<p>@Transactional注解</p>
+
+<p>事务的传播机制</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>REQUIRED(0),
+SUPPORTS(1),
+MANDATORY(2),
+REQUIRES_NEW(3),
+NOT_SUPPORTED(4),
+NEVER(5),
+NESTED(6);
+</code></pre></div></div>
+
+<p><img src="../.images/18ed015950e.png" alt="" /></p>
+
+<p>事务失效</p>
+
+<ol>
+  <li>方法没有被public修饰</li>
+  <li>类没有被Spring托管</li>
+  <li>不正确的异常捕获—事务方法抛出异常被 catch 处理了</li>
+  <li>同一类中方法调用</li>
+  <li>propagation事务传播行为配置错误</li>
+  <li>rollbackFor参数设置错误。</li>
+  <li>没有配置事务管理器</li>
+  <li>数据库本身不支持事务</li>
+</ol>
+
+<p>分布式事务失效的原因</p>
+
+<p><img src="../.images/18e9d36ae3a.png" alt="" /></p>
+
+<p><a href="https:/mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd">https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd</a></p>
+
+<h2 id="监听">监听</h2>
+
+<h2 id="过滤器和拦截器">过滤器和拦截器</h2>
+
+<p><img src="../.images/18e69291b74.png" alt="" /></p>
+
+<p><img src="../.images/18ed04719c1.png" alt="" /></p>]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring笔记]]></summary></entry><entry><title type="html">Tomcat笔记</title><link href="http://localhost:4000/tomcat/Tomcat/" rel="alternate" type="text/html" title="Tomcat笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/tomcat/Tomcat</id><content type="html" xml:base="http://localhost:4000/tomcat/Tomcat/"><![CDATA[]]></content><author><name></name></author><category term="Tomcat" /><summary type="html"><![CDATA[Tomcat笔记]]></summary></entry></feed>
