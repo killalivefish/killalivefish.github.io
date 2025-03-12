@@ -1,56 +1,90 @@
 <style>
-    .article-container {
-        height: 100%;
-        margin: 1em auto;
-    }
-
     #breadbcrumb {
+        position: fixed;
+        top: 8%;
+        left: 0px;
+        width: 100%;
         padding: 0.5em;
         background-color: #e2e2e2;
         border-bottom: 1px solid rgb(180, 175, 175);
         color: #2c2c2c;
     }
 
-    .article-container{
+    .article-container {
         display: flex;
-        flex-direction: row;
-        padding-left: 2em;
-        padding-right: 2em;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 6em;
+        max-width: 1600px;
     }
 
-    .article{
-        width: 80%;
+    .article {
+        flex: 1;
+        max-width: 60%;
+        margin-right: 40px;
     }
 
-    .article-title{
+    .article-title {
+        text-align: center;
         color: #1b1b1b;
     }
 
-    .article-contentsss{
-        color: #1b1b1b;
-    }
-
-    .article-directorie{
-        width: 20%;
+    .article-aside {
+        width: 10%;
+        height: 100%;
+        margin-top: 10%;
+        padding: 10px;
+        border-left: 1px solid #ccc;
     }
 </style>
 
 {% include head.html %}
 {% include header.html %}
-<div id="breadbcrumb">{{ page.categories }} <span class="bread-arrow">></span> {{ page.title }}</div>
-<div class="article-container">
+<div>
+    <div id="breadbcrumb">{{ page.categories }} <span class="bread-arrow">></span> {{ page.title }}</div>
+    <div class="article-container">
         <article class="article">
             <h1 class="article-title">{{ page.title }}</h1>
-            <div class="article-contentsss">
+            <div class="article-content">
                 {{ page.content }}
             </div>
         </article>
-        <aside class="article-directorie">
-            {% include toc.html html=content max_depth=6 %}
+        <aside class="article-aside">
+            <p>目录</p>
         </aside>
+
+    </div>
+    {% include footer.html %}
 </div>
-{% include footer.html %}
 
 <script>
     console.log("this is article!");
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const content = document.querySelector('.article-content');
+        const aside = document.getElementsByTagName('aside');
+        console.log(aside);
+        const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        const toc = document.createElement('div');
+        toc.className = 'table-of-contents';
+        const tocList = document.createElement('ul');
+
+        headings.forEach(heading => {
+            console.log(heading.textContent);
+            const link = document.createElement('a');
+            link.href = `#${heading.id}`;
+            link.textContent = heading.textContent;
+
+            const listItem = document.createElement('li');
+            listItem.style.marginLeft = `${(parseInt(heading.tagName[1]) - 1) * 20}px`; // 根据标题级别缩进
+            listItem.appendChild(link);
+            tocList.appendChild(listItem);
+        });
+
+        console.log(headings.textContent);
+        toc.appendChild(tocList);
+        console.log(toc);   
+        aside.appendChild(tocList);
+    });
 </script>

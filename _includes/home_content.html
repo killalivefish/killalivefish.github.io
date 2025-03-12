@@ -1,71 +1,37 @@
-<style type="text/css" media="screen">
-    #home-content{
-        /* position: relative;
-        margin-top: 3em; */
-    }
-
-    #profile {
-        width: 50%;
-        height: 30%;
-        margin: 1em auto;
-        
-        background-color: rgba(224, 223, 220, 0.452);
-        border-radius: 0.5em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-        -moz-border-radius: 60px;
-        -webkit-border-radius: 60px;
-        border-radius: 60px;
-        padding-bottom: 10px;
-    }
-
-    #post-list {
-        width: 50%;
-        height: 60%;
-        margin: 1em auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        overflow-y: scroll;
-    }
-
-    #post-list li:nth-child(odd) {
-        background-color: #f2f2f5;
-    }
-
-    .post-item {
-        display: flex;
-        flex-direction: row;
-        justify-items: flex-start;
-        justify-content: space-between;
-    }
-</style>
-
 <div id="home-content">
     <div id="profile">
         <div id="profile-pic">
             <img class="profile-pic" src="/assets/mingren.jpg">
         </div>
         <h3>Full stack Developer</h3>
-        <p>Hey, I am Io_oTI, a front-end developer. Just a person who is balding, but now my hair is still very lush.
+        <p>Record my study notes and some development scripts and tools.
         </p>
     </div>
-    <ul id="post-list">
-        {% for post in site.posts %}
-        <li class="">
-            <a class="post-item" href="{{ post.url }}">
-                <span class="post-title">{{ post.title }}</span>
-                <span class="post-time"">{{ post.date | date: "%Y-%m-%d" }}</span>
-            </a>
-        </li>
+
+    <div class="category-tabs-container">
+        <button class="arrow left-arrow" onclick="scrollCategories(-100)">&#10094;</button>
+        <div class="category-tabs">
+          {% assign categories = site.categories | sort %}
+          {% for category in categories %}
+            <div class="category-tab" data-category="{{ category[0] }}">{{ category[0] }}</div>
+          {% endfor %}
+        </div>
+        <button class="arrow right-arrow" onclick="scrollCategories(100)">&#10095;</button>
+      </div>
+      
+      <div class="post-lists-container">
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+          <div class="post-list" id="post-list-{{ category[0] }}" style="display: none;">
+            <ul>
+              {% for post in category[1] %}
+                <li><a class="post-item" href="{{ post.url }}">
+                    <span class="post-title">{{ post.title }}</span>
+                    <span class="post-time"">{{ post.date | date: " %Y-%m-%d" }}</span>
+                </a></li>
+              {% endfor %}
+            </ul>
+          </div>
         {% endfor %}
-    </ul>
+      </div>
 </div>
