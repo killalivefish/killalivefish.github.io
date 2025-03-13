@@ -102,46 +102,6 @@
             </aside>
         </div>
         <div class="article-foot">
-<!-- 
-            {% raw %}
-<!-- 同一标签的上一篇/下一篇 -->
-<div class="post-navigation">
-  {% if page.tags %}
-    {% assign tag = page.tags[0] %}  <!-- 取第一个标签 -->
-    {% assign related_posts = site.tags[tag] | where_exp:"post", "post.hidden != true" | sort: 'date' %}
-
-    <!-- 定位当前文章索引 -->
-    {% for post in related_posts %}
-      {% if post.id == page.id %}
-        {% assign current_index = forloop.index0 %}
-      {% endif %}
-    {% endfor %}
-
-    <!-- 计算相邻文章 -->
-    {% assign prev_index = current_index | minus: 1 %}
-    {% assign next_index = current_index | plus: 1 %}
-
-    <!-- 上一篇 -->
-    {% if prev_index >= 0 %}
-      {% assign prev_post = related_posts[prev_index] %}
-      <div class="prev-post">
-        <span>上一篇：</span>
-        <a href="{{ prev_post.url | relative_url }}">{{ prev_post.title }}</a>
-      </div>
-    {% endif %}
-
-    <!-- 下一篇 -->
-    {% if next_index < related_posts.size %}
-      {% assign next_post = related_posts[next_index] %}
-      <div class="next-post">
-        <span>下一篇：</span>
-        <a href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a>
-      </div>
-    {% endif %}
-  {% endif %}
-</div>
-{% endraw %} -->
-
         </div>
         {% include footer.html %}
     </div>
