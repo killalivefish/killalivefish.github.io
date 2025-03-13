@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-12T15:33:54+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My blog</title><subtitle>My blog.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/jekyll/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-13T16:23:49+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My blog</title><subtitle>My blog.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/jekyll/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -16,7 +16,9 @@
 
 <p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
-<p>bundle exec jekyll serve</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[test excerptexcerptexcerpt]]></summary></entry><entry><title type="html">SpringCloud</title><link href="http://localhost:4000/springcloud/SpringCloud/" rel="alternate" type="text/html" title="SpringCloud" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springcloud/SpringCloud</id><content type="html" xml:base="http://localhost:4000/springcloud/SpringCloud/"><![CDATA[<h1 id="mulesoft-anypoint">mulesoft-anypoint</h1>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install
+</span>bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[test excerptexcerptexcerpt]]></summary></entry><entry><title type="html">SpringCloud</title><link href="http://localhost:4000/springcloud/SpringCloud/" rel="alternate" type="text/html" title="SpringCloud" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springcloud/SpringCloud</id><content type="html" xml:base="http://localhost:4000/springcloud/SpringCloud/"><![CDATA[<h1 id="mulesoft-anypoint">mulesoft-anypoint</h1>
 
 <p><a href="https:/docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4">https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4</a></p>
 
@@ -124,7 +126,7 @@
 
 <p>SentinelResource的value要和接口请求的路径一样吗—-不用直接通过value中的值进行设置就行</p>
 
-<p><img src="../.images/18dfab29676.png" alt="" /></p>
+<p><img src="/assets/article/18dfab29676.png" alt="" /></p>
 
 <h3 id="持久化">持久化</h3>
 
@@ -136,7 +138,7 @@
   <li>
     <p>创建流控规则时报错，而且显示的IP不正确</p>
 
-    <p><img src="../.images/18df7f39b4d.png" alt="" /></p>
+    <p><img src="/assets/article/18df7f39b4d.png" alt="" /></p>
 
     <pre><code class="language-log">2024-02-29 21:46:11.917 ERROR 2421 --- [pool-2-thread-1] c.a.c.s.dashboard.metric.MetricFetcher   : Failed to fetch metric from &lt;http://169.254.54.211:9001/metric?startTime=1709261036000&amp;endTime=1709261042000&amp;refetch=false&gt; (ConnectionException: Connection timed out)
 2024-02-29 21:46:18.958 ERROR 2421 --- [pool-2-thread-1] c.a.c.s.dashboard.metric.MetricFetcher   : Failed to fetch metric from &lt;http://169.254.54.211:9001/metric?startTime=1709261043000&amp;endTime=1709261049000&amp;refetch=false&gt; (ConnectionException: Connection timed out)
@@ -147,7 +149,7 @@
 
     <p>解决：在yaml配置文件中加上client-ip和client-ip</p>
 
-    <p><img src="../.images/18df7fa2898.png" alt="" /></p>
+    <p><img src="/assets/article/18df7fa2898.png" alt="" /></p>
 
     <p>参考链接：<a href="https:/blog.csdn.net/hjg719/article/details/128095358">https://blog.csdn.net/hjg719/article/details/128095358</a></p>
   </li>
@@ -267,9 +269,9 @@
 
 <p><a href="https:/cloud.tencent.com/developer/article/2332860">https://cloud.tencent.com/developer/article/2332860</a></p>]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring事件监听器]]></summary></entry><entry><title type="html">Spring过滤器和拦截器</title><link href="http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="alternate" type="text/html" title="Spring过滤器和拦截器" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8</id><content type="html" xml:base="http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/"><![CDATA[]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring过滤器和拦截器]]></summary></entry><entry><title type="html">Nacos笔记</title><link href="http://localhost:4000/nacos/Nacos/" rel="alternate" type="text/html" title="Nacos笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/nacos/Nacos</id><content type="html" xml:base="http://localhost:4000/nacos/Nacos/"><![CDATA[<h2 id="表结构">表结构</h2>
 
-<p><img src="../.images/18ec8c71009.png" alt="" /></p>
+<p><img src="/assets/article/18ec8c71009.png" alt="" /></p>
 
-<p><img src="../.images/18ec8c74112.png" alt="" /></p>
+<p><img src="/assets/article/18ec8c74112.png" alt="" /></p>
 
 <h2 id="请求入参处理">请求入参处理</h2>
 
@@ -287,15 +289,15 @@
 
 <h2 id="log的打印">log的打印</h2>
 
-<h2 id="异常的处理">异常的处理</h2>]]></content><author><name></name></author><category term="Nacos" /><summary type="html"><![CDATA[Nacos笔记]]></summary></entry><entry><title type="html">SpringSecurity笔记</title><link href="http://localhost:4000/springsecurity/SpringSecurity/" rel="alternate" type="text/html" title="SpringSecurity笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springsecurity/SpringSecurity</id><content type="html" xml:base="http://localhost:4000/springsecurity/SpringSecurity/"><![CDATA[<p><img src="../.images/18e93596ecb.png" alt="" /></p>
+<h2 id="异常的处理">异常的处理</h2>]]></content><author><name></name></author><category term="Nacos" /><summary type="html"><![CDATA[Nacos笔记]]></summary></entry><entry><title type="html">SpringSecurity笔记</title><link href="http://localhost:4000/springsecurity/SpringSecurity/" rel="alternate" type="text/html" title="SpringSecurity笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springsecurity/SpringSecurity</id><content type="html" xml:base="http://localhost:4000/springsecurity/SpringSecurity/"><![CDATA[<p><img src="/assets/article/18e93596ecb.png" alt="" /></p>
 
-<p><img src="../.images/18f23aff24f.png" alt="" /></p>
+<p><img src="/assets/article/18f23aff24f.png" alt="" /></p>
 
-<p><img src="../.images/18f23b21864.png" alt="" /></p>
+<p><img src="/assets/article/18f23b21864.png" alt="" /></p>
 
-<p><img src="../.images/18f23bbab15.png" alt="" /></p>
+<p><img src="/assets/article/18f23bbab15.png" alt="" /></p>
 
-<p><img src="../.images/18f23b897ca.png" alt="" /></p>
+<p><img src="/assets/article/18f23b897ca.png" alt="" /></p>
 
 <p>@EnableGlobalMethodSecurity和@EnableSecurity在Spring Security框架中各自扮演不同的角色，具有不同的功能和用途。</p>
 
@@ -305,7 +307,7 @@
 
 <p>总的来说，@EnableGlobalMethodSecurity是Spring Security框架中用于启用全局方法级别安全配置的注解，而@EnableSecurity可能是一个特定上下文中的自定义注解，其功能和用途需要根据具体项目或框架来确定。因此，在使用这两个注解时，建议查阅相关文档或参考项目代码以了解其确切含义和用法。</p>
 
-<p><img src="../.images/18f2a9a3db3.png" alt="" /></p>
+<p><img src="/assets/article/18f2a9a3db3.png" alt="" /></p>
 
 <h2 id="表">表</h2>
 
@@ -482,25 +484,25 @@ CREATE TABLE `special_type_options` (
 
 <p>二叉搜索树</p>
 
-<p><img src="../.images/18f15f961a8.png" alt="" /></p>
+<p><img src="/assets/article/18f15f961a8.png" alt="" /></p>
 
 <p>平衡树</p>
 
-<p><img src="../.images/18f15f9e41a.png" alt="" /></p>
+<p><img src="/assets/article/18f15f9e41a.png" alt="" /></p>
 
 <p>红黑树</p>
 
-<p><img src="../.images/18f15f8fb01.png" alt="" /></p>
+<p><img src="/assets/article/18f15f8fb01.png" alt="" /></p>
 
 <p>B树</p>
 
-<p><img src="../.images/18f15f91f1e.png" alt="" /></p>
+<p><img src="/assets/article/18f15f91f1e.png" alt="" /></p>
 
 <p>B+树</p>
 
-<p><img src="../.images/18f15f93a2e.png" alt="" /></p>
+<p><img src="/assets/article/18f15f93a2e.png" alt="" /></p>
 
-<p><img src="../.images/18e9724a600.png" alt="" /><img src="../.images/18e971d694a.png" alt="" /></p>
+<p><img src="/assets/article/18e9724a600.png" alt="" /><img src="/assets/article/18e971d694a.png" alt="" /></p>
 
 <p>状态</p>
 
@@ -570,13 +572,13 @@ CREATE TABLE `special_type_options` (
 
 <p>@Autowried</p>
 
-<p><img src="../.images/18e690e84c0.png" alt="" /></p>
+<p><img src="/assets/article/18e690e84c0.png" alt="" /></p>
 
 <h3 id="12-bean的生命周期">1.2 Bean的生命周期</h3>
 
-<p><img src="../.images/18ecdffd1e2.png" alt="" /></p>
+<p><img src="/assets/article/18ecdffd1e2.png" alt="" /></p>
 
-<p><img src="../.images/18ece0027b2.png" alt="" /></p>
+<p><img src="/assets/article/18ece0027b2.png" alt="" /></p>
 
 <h2 id="aop">AOP</h2>
 
@@ -604,7 +606,7 @@ CREATE TABLE `special_type_options` (
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parameterType="com.hello.module.Stack" 
 </code></pre></div></div>
 
-<p><img src="../.images/18ed007d8ae.png" alt="" /></p>
+<p><img src="/assets/article/18ed007d8ae.png" alt="" /></p>
 
 <p><a href="https:/yasinshaw.com/articles/107">https://yasinshaw.com/articles/107</a></p>
 
@@ -625,7 +627,7 @@ NEVER(5),
 NESTED(6);
 </code></pre></div></div>
 
-<p><img src="../.images/18ed015950e.png" alt="" /></p>
+<p><img src="/assets/article/18ed015950e.png" alt="" /></p>
 
 <p>事务失效</p>
 
@@ -642,7 +644,7 @@ NESTED(6);
 
 <p>分布式事务失效的原因</p>
 
-<p><img src="../.images/18e9d36ae3a.png" alt="" /></p>
+<p><img src="/assets/article/18e9d36ae3a.png" alt="" /></p>
 
 <p><a href="https:/mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd">https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd</a></p>
 
@@ -650,6 +652,6 @@ NESTED(6);
 
 <h2 id="过滤器和拦截器">过滤器和拦截器</h2>
 
-<p><img src="../.images/18e69291b74.png" alt="" /></p>
+<p><img src="/assets/article/18e69291b74.png" alt="" /></p>
 
-<p><img src="../.images/18ed04719c1.png" alt="" /></p>]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring笔记]]></summary></entry><entry><title type="html">Tomcat笔记</title><link href="http://localhost:4000/tomcat/Tomcat/" rel="alternate" type="text/html" title="Tomcat笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/tomcat/Tomcat</id><content type="html" xml:base="http://localhost:4000/tomcat/Tomcat/"><![CDATA[]]></content><author><name></name></author><category term="Tomcat" /><summary type="html"><![CDATA[Tomcat笔记]]></summary></entry></feed>
+<p><img src="/assets/article/18ed04719c1.png" alt="" /></p>]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring笔记]]></summary></entry><entry><title type="html">Tomcat笔记</title><link href="http://localhost:4000/tomcat/Tomcat/" rel="alternate" type="text/html" title="Tomcat笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/tomcat/Tomcat</id><content type="html" xml:base="http://localhost:4000/tomcat/Tomcat/"><![CDATA[]]></content><author><name></name></author><category term="Tomcat" /><summary type="html"><![CDATA[Tomcat笔记]]></summary></entry></feed>

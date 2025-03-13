@@ -39,10 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const firstCat = categoryTabs[2];
-    firstCat.classList.add('active');
-    const firstCatPostListId = `post-list-${firstCat.getAttribute('data-category')}`;
-    const firstPostList = document.getElementById(firstCatPostListId);
-    if (firstPostList) {
-        firstPostList.style.display = 'block';
+    if (firstCat) {
+        firstCat.classList.add('active');
+        const firstCatPostListId = `post-list-${firstCat.getAttribute('data-category')}`;
+        const firstPostList = document.getElementById(firstCatPostListId);
+        if (firstPostList) {
+            firstPostList.style.display = 'block';
+        }
     }
+
 });

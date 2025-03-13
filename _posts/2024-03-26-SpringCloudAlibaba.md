@@ -105,7 +105,7 @@ Caused by: java.net.UnknownHostException: jmenv.tbsite.net
 
 SentinelResource的value要和接口请求的路径一样吗----不用直接通过value中的值进行设置就行
 
-![](../.images/18dfab29676.png)
+![](/assets/article/18dfab29676.png)
 
 ### 持久化
 
@@ -115,7 +115,7 @@ TODO
 
 - 创建流控规则时报错，而且显示的IP不正确
 
-  ![](../.images/18df7f39b4d.png)
+  ![](/assets/article/18df7f39b4d.png)
 
   ```log
   2024-02-29 21:46:11.917 ERROR 2421 --- [pool-2-thread-1] c.a.c.s.dashboard.metric.MetricFetcher   : Failed to fetch metric from <http://169.254.54.211:9001/metric?startTime=1709261036000&endTime=1709261042000&refetch=false> (ConnectionException: Connection timed out)
@@ -127,7 +127,7 @@ TODO
 
   解决：在yaml配置文件中加上client-ip和client-ip
 
-  ![](../.images/18df7fa2898.png)
+  ![](/assets/article/18df7fa2898.png)
 
   参考链接：[https://blog.csdn.net/hjg719/article/details/128095358](https:/blog.csdn.net/hjg719/article/details/128095358)
 

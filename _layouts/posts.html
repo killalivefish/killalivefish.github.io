@@ -1,28 +1,39 @@
 <style>
     #breadbcrumb {
         position: fixed;
-        top: 8%;
+        top: 80px;
         left: 0px;
         width: 100%;
         padding: 0.5em;
         background-color: #e2e2e2;
         border-bottom: 1px solid rgb(180, 175, 175);
         color: #2c2c2c;
+        z-index: 10000;
+    }
+
+    #article-wapper {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
     }
 
     .article-container {
-        display: flex;
-        justify-content: center;
         width: 100%;
-        margin: 0 auto;
-        margin-top: 6em;
         max-width: 1600px;
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        margin: 1em auto 1em auto;
     }
 
     .article {
-        flex: 1;
-        max-width: 60%;
-        margin-right: 40px;
+        width: 60%;
+        margin-left: 15%;
+        border-left: 2px solid #ccc;
+        padding-left: 20px;
     }
 
     .article-title {
@@ -31,47 +42,127 @@
     }
 
     .article-aside {
-        width: 10%;
-        height: 100%;
-        margin-top: 10%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 20%;
+        overflow-y: auto;
+        margin-top: 8%;
         padding: 10px;
         border-left: 1px solid #ccc;
+        font-size: 0.5em;
+    }
+
+    /* 文章样式 */
+    .article-content img {
+        max-width: 800px;
+        max-height: 600px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 480px) {
+        #breadbcrumb {
+            top: 72px;
+            font-size: 0.5em;
+        }
+
+        .article-content img {
+            margin: 10px 0;
+            max-width: 400px;
+            max-height: 300px;
+        }
+
+        .article {
+            width: 100%;
+            margin-left: 1%;
+            font-size: 0.5em;
+        }
+
+        .article-aside {
+            display: none;
+        }
     }
 </style>
 
 {% include head.html %}
 {% include header.html %}
-<div>
+<div class="container">
     <div id="breadbcrumb">{{ page.categories }} <span class="bread-arrow">></span> {{ page.title }}</div>
-    <div class="article-container">
-        <article class="article">
-            <h1 class="article-title">{{ page.title }}</h1>
-            <div class="article-content">
-                {{ page.content }}
-            </div>
-        </article>
-        <aside class="article-aside">
-            <p>目录</p>
-        </aside>
+    <div id="article-wapper">
+        <div class="article-container">
+            <article class="article">
+                <h1 class="article-title">{{ page.title }}</h1>
+                <div class="article-content">
+                    {{ page.content }}
+                </div>
+            </article>
+            <aside class="article-aside">
+                <p>本文目录</p>
+            </aside>
+        </div>
+        <div class="article-foot">
+<!-- 
+            {% raw %}
+<!-- 同一标签的上一篇/下一篇 -->
+<div class="post-navigation">
+  {% if page.tags %}
+    {% assign tag = page.tags[0] %}  <!-- 取第一个标签 -->
+    {% assign related_posts = site.tags[tag] | where_exp:"post", "post.hidden != true" | sort: 'date' %}
 
+    <!-- 定位当前文章索引 -->
+    {% for post in related_posts %}
+      {% if post.id == page.id %}
+        {% assign current_index = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+
+    <!-- 计算相邻文章 -->
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+
+    <!-- 上一篇 -->
+    {% if prev_index >= 0 %}
+      {% assign prev_post = related_posts[prev_index] %}
+      <div class="prev-post">
+        <span>上一篇：</span>
+        <a href="{{ prev_post.url | relative_url }}">{{ prev_post.title }}</a>
+      </div>
+    {% endif %}
+
+    <!-- 下一篇 -->
+    {% if next_index < related_posts.size %}
+      {% assign next_post = related_posts[next_index] %}
+      <div class="next-post">
+        <span>下一篇：</span>
+        <a href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a>
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+{% endraw %} -->
+
+        </div>
+        {% include footer.html %}
     </div>
-    {% include footer.html %}
 </div>
 
 <script>
     console.log("this is article!");
 
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const content = document.querySelector('.article-content');
         const aside = document.getElementsByTagName('aside');
-        console.log(aside);
+        if (!aside || aside.length != 1) {
+            console.error("article not found!");
+            return;
+        }
         const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
         const toc = document.createElement('div');
         toc.className = 'table-of-contents';
         const tocList = document.createElement('ul');
 
         headings.forEach(heading => {
-            console.log(heading.textContent);
             const link = document.createElement('a');
             link.href = `#${heading.id}`;
             link.textContent = heading.textContent;
@@ -82,9 +173,34 @@
             tocList.appendChild(listItem);
         });
 
-        console.log(headings.textContent);
         toc.appendChild(tocList);
-        console.log(toc);   
-        aside.appendChild(tocList);
+        aside[0].appendChild(tocList);
     });
+
+    // const windowHeight = window.innerHeight;
+
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const article = document.querySelector('.article');
+    //     const articleContent = document.querySelector('.article-content');
+    //     const articleHeight = articleContent.scrollHeight;
+
+    //     function updateBorderHeight() {
+    //         const scrollTop = window.scrollY;
+    //         const articleTop = article.getBoundingClientRect().top;
+    //         const articleBottom = article.getBoundingClientRect().bottom;
+
+    //         if (articleTop <= windowHeight && articleBottom >= 0) {
+    //             const visibleHeight = Math.min(windowHeight - articleTop, articleBottom);
+    //             const borderHeight = (visibleHeight / windowHeight) * articleHeight;
+    //             article.style.setProperty('--border-height', `${borderHeight}px`);
+    //         } else {
+    //             article.style.setProperty('--border-height', '0px');
+    //         }
+    //     }
+
+    //     window.addEventListener('scroll', updateBorderHeight);
+    //     window.addEventListener('resize', updateBorderHeight);
+    //     updateBorderHeight(); // 初始化边框高度
+    // });
+
 </script>

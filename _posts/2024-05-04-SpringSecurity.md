@@ -5,17 +5,17 @@ date:   2025-03-10 15:00:36
 categories: SpringSecurity
 excerpt: SpringSecurity笔记
 ---
-![](../.images/18e93596ecb.png)
+![](/assets/article/18e93596ecb.png)
 
 
 
-![](../.images/18f23aff24f.png)
+![](/assets/article/18f23aff24f.png)
 
-![](../.images/18f23b21864.png)
+![](/assets/article/18f23b21864.png)
 
-![](../.images/18f23bbab15.png)
+![](/assets/article/18f23bbab15.png)
 
-![](../.images/18f23b897ca.png)
+![](/assets/article/18f23b897ca.png)
 
 @EnableGlobalMethodSecurity和@EnableSecurity在Spring Security框架中各自扮演不同的角色，具有不同的功能和用途。
 
@@ -27,7 +27,7 @@ excerpt: SpringSecurity笔记
 
 
 
-![](../.images/18f2a9a3db3.png)
+![](/assets/article/18f2a9a3db3.png)
 
 ## 表
 

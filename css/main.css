@@ -1,4 +1,8 @@
 /* 全局样式定义 */
+html {
+    scroll-behavior: smooth;
+}
+
 *,
 :after,
 :before {
@@ -10,17 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-}
-
-#header,
-#footer {
-    flex-grow: 0;
-    flex-shrink: 0;
-}
-
-#home-content {
-    flex-grow: 1;
-    margin-top: 8%;
+    height: 100vh;
 }
 
 ol,
@@ -41,13 +35,34 @@ a {
     padding: .5rem;
 }
 
+/* prism */
+.toolbar-item{
+    display: inline-block !important;
+    margin-right: 1em !important;
+    color: red !important;
+}
+
+pre[class*="language-"] {
+    color: red !important;
+    padding: 1.5em !important;
+}
+
+.container{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* header样式定义 */
 #header {
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 8%;
+    height: 80px;
     padding: 0 10px;
     display: flex;
     flex-flow: row wrap;
@@ -96,62 +111,31 @@ a {
     border-radius: 1em;
 }
 
-/* 内容样式定义 */
+/* 主页内容样式定义 */
 #home-content {
-    position: relative;
     width: 80%;
-    height: 87%;
+    height: 80vh;
     display: flex;
-    flex-flow: column wrap;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 4%;
+    flex-direction: column;
+    margin-top: 100px;
 }
 
 #profile {
-    position: relative;
-    /* 添加相对定位 */
     width: 50%;
-    height: 25%;
-    margin: 1em auto;
-    background-color: rgba(224, 223, 220, 0.452);
+    height: 30%;
+    margin-top: 0.5em;
+    margin: 0.5em  auto 0 auto;
     border-radius: 0.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: black;
-    text-align: center;
+    align-items: center;
     background: linear-gradient(180deg, #4cd964, #5ac8fa);
-    /* background-size: 400% 400%; */
-    /* animation: gradientAnimation 200s ease infinite; */
-}
-
-/* 定义动画的关键帧 */
-@keyframes gradientAnimation {
-    0% {
-        background: linear-gradient(0deg, #ff7e5f, #feb47b);
-    }
-
-    /* 25% {
-        background: linear-gradient(90deg, #6a11cb, #2575fc);
-    } */
-
-    50% {
-        background: linear-gradient(180deg, #4cd964, #5ac8fa);
-    }
-
-    75% {
-        background: linear-gradient(270deg, #ff3cac, #784ba0);
-    }
-
-    100% {
-        background: linear-gradient(360deg, #ff7e5f, #feb47b);
-    }
 }
 
 .profile-pic {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 60px;
     padding-bottom: 10px;
     margin: 0 auto;
@@ -171,10 +155,14 @@ a {
     position: relative;
     width: 100%;
     overflow: hidden;
-    display: flex; /* 使用 Flexbox 布局 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    margin-top: 20px; /* 增加顶部外边距 */
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    margin-top: 20px;
+    /* 增加顶部外边距 */
 }
 
 .category-tab {
@@ -182,7 +170,8 @@ a {
     /* margin: 0 auto; */
     padding: 10px 20px;
     cursor: pointer;
-    flex-shrink: 0; /* 防止收缩 */
+    flex-shrink: 0;
+    /* 防止收缩 */
     margin-right: 10px;
     background-color: white;
     border-radius: 15px;
@@ -250,13 +239,13 @@ a {
 /* 文章列表 */
 .post-list {
     width: 50%;
-    height: 50%;
+    /* height: 50%; */
     margin: 1em auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .post-list li:nth-child(odd) {
@@ -268,88 +257,44 @@ a {
     flex-direction: row;
     justify-items: flex-start;
     justify-content: space-between;
+    align-items: center;
 }
 
 /* footer样式定义 */
 footer {
-    position: relative;
     width: 100%;
     height: 3%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-weight: bold;
     border-top: 1px solid rgb(180, 175, 175);
 }
 
 /* 响应式 */
-/* 响应式设计 */
-@media (max-width: 768px) {
-    #header {
-        height: 10%;
-    }
-
-    #header-title {
-        width: 30%;
-    }
-
-    #header-nav {
-        width: 50%;
-    }
-
-    #header-btns {
-        width: 20%;
-    }
-
-    #home-content {
-        width: 90%;
-        margin-top: 10%;
-    }
-
-    #profile {
-        width: 90%;
-    }
-
-    .profile-pic {
-        width: 60px;
-        height: 60px;
-    }
-
-    .category-tabs {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .category-tab {
-        margin-right: 5px;
-    }
-
-    .post-list {
-        width: 90%;
-    }
-}
-
 @media (max-width: 480px) {
     #header {
-        height: 12%;
+        height: 8%;
+        flex-wrap: wrap;
     }
 
     #header-title {
-        width: 40%;
+        display: none;
     }
 
     #header-nav {
-        width: 40%;
+        width: 100%;
     }
 
     #header-btns {
-        width: 20%;
+        display: none;
+        width: 10%;
     }
 
     #home-content {
         width: 95%;
-        margin-top: 12%;
+        margin-top: 15%;
     }
 
     #profile {
@@ -361,6 +306,9 @@ footer {
         height: 50px;
     }
 
+    .category-tabs-container {
+        font-size: 0.5em;
+    }
     .category-tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -372,6 +320,7 @@ footer {
     }
 
     .post-list {
+        font-size: 0.5em;
         width: 95%;
     }
 
@@ -382,5 +331,9 @@ footer {
 
     .post-time {
         margin-top: 5px;
+    }
+
+    footer{
+        font-size: 0.5em;
     }
 }
