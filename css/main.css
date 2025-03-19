@@ -36,7 +36,7 @@ a {
 }
 
 /* prism */
-.toolbar-item{
+.toolbar-item {
     display: inline-block !important;
     margin-right: 1em !important;
     color: red !important;
@@ -47,7 +47,7 @@ pre[class*="language-"] {
     padding: 1.5em !important;
 }
 
-.container{
+.container {
     width: 100%;
     flex: 1;
     display: flex;
@@ -106,25 +106,38 @@ pre[class*="language-"] {
     font-size: 1.25em;
 }
 
-#theme-btn:hover {
-    background-color: rgb(218, 154, 18);
-    border-radius: 1em;
-}
-
 /* 主页内容样式定义 */
 #home-content {
     width: 80%;
     height: 80vh;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.grid {
+    /* position: relative;
+    background-size: 21px 21px;
+    background-position: center center;
+    background-image: radial-gradient(circle, #909399 2px, #fff 2px);
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent, #fff 52px calc(100% - 52px), transparent),
+        linear-gradient(to right, transparent, #fff 52px calc(100% - 52px), transparent);
+    mask-image:
+        linear-gradient(to bottom, transparent, #fff 52px calc(100% - 52px), transparent),
+        linear-gradient(to right, transparent, #fff 52px calc(100% - 52px), transparent);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in, xor; */
 }
 
 #profile {
+    flex-grow: 1;
+    flex-shrink:0;
     width: 50%;
-    height: 30%;
+    height: 20%;
     margin-top: 0.5em;
-    margin: 0.5em  auto 0 auto;
+    margin: 0.5em auto 0 auto;
     border-radius: 0.5em;
     display: flex;
     flex-direction: column;
@@ -146,11 +159,20 @@ pre[class*="language-"] {
     margin: 10px 0;
 }
 
-#profile * {
-    box-sizing: border-box;
+/* category选项 */
+.category-tabs-container {
+    flex-grow: 1;
+    flex-shrink: 0;
+    position: relative;
+    width: 60%;
+    height: 20%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-/* category选项 */
 .category-tabs {
     position: relative;
     width: 100%;
@@ -166,8 +188,6 @@ pre[class*="language-"] {
 }
 
 .category-tab {
-    /* height: 2em; */
-    /* margin: 0 auto; */
     padding: 10px 20px;
     cursor: pointer;
     flex-shrink: 0;
@@ -177,11 +197,11 @@ pre[class*="language-"] {
     border-radius: 15px;
     /* 设置圆角半径 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
-        /* 添加阴影 */
-        0 6px 6px rgba(0, 0, 0, 0.19);
 }
 
 .category-tab.active {
+    color: #007bff;
+    font-weight: bold;
     background-color: white;
     border-top: 2px solid #007bff;
 }
@@ -197,11 +217,7 @@ pre[class*="language-"] {
     display: block;
 }
 
-.category-tabs-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
+
 
 .category-tabs {
     display: flex;
@@ -237,9 +253,14 @@ pre[class*="language-"] {
 }
 
 /* 文章列表 */
+.post-lists-container{
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
 .post-list {
     width: 50%;
-    /* height: 50%; */
+    height: 50%;
     margin: 1em auto;
     display: flex;
     flex-direction: column;
@@ -271,6 +292,14 @@ footer {
     font-weight: bold;
     border-top: 1px solid rgb(180, 175, 175);
 }
+
+/* archive */
+.archive-container{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
 
 /* 响应式 */
 @media (max-width: 480px) {
@@ -309,6 +338,7 @@ footer {
     .category-tabs-container {
         font-size: 0.5em;
     }
+
     .category-tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -333,7 +363,7 @@ footer {
         margin-top: 5px;
     }
 
-    footer{
+    footer {
         font-size: 0.5em;
     }
 }

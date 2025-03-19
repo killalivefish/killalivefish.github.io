@@ -2,7 +2,7 @@
 layout: posts
 title:  "SpringCloud alibaba"
 date:   2025-03-10 15:00:36
-categories: SpringCloud
+categories: 后端
 excerpt: SpringCloud alibaba笔记
 ---
 spring cloud alibaba官方文档：

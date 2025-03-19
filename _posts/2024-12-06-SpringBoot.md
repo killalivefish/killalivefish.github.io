@@ -2,7 +2,7 @@
 layout: posts
 title:  "SpringBoot"
 date:   2025-03-10 15:00:36
-categories: SpringBoot
+categories: 后端
 excerpt: SpringBoot笔记
 ---
 约定大于配置：

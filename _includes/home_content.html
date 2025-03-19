@@ -1,37 +1,37 @@
 <div id="home-content">
-    <div id="profile">
-        <div id="profile-pic">
-            <img class="profile-pic" src="/assets/mingren.jpg">
-        </div>
-        <h3>Full stack Developer</h3>
-        <p>Record my study notes and some development scripts and tools.
-        </p>
+  <div id="profile" class="grid">
+    <div id="profile-pic">
+      <img class="profile-pic" src="/assets/mingren.jpg">
     </div>
+    <h3>Full stack Developer</h3>
+    <p>Record my study notes and some development scripts and tools.
+    </p>
+  </div>
 
-    <div class="category-tabs-container">
-        <button class="arrow left-arrow" onclick="scrollCategories(-100)">&#10094;</button>
-        <div class="category-tabs">
-          {% assign categories = site.categories | sort %}
-          {% for category in categories %}
-            <div class="category-tab" data-category="{{ category[0] }}">{{ category[0] }}</div>
-          {% endfor %}
-        </div>
-        <button class="arrow right-arrow" onclick="scrollCategories(100)">&#10095;</button>
-      </div>
-      
-      <div class="post-lists-container">
-        {% assign categories = site.categories | sort %}
-        {% for category in categories %}
-          <div class="post-list" id="post-list-{{ category[0] }}" style="display: none;">
-            <ul>
-              {% for post in category[1] %}
-                <li><a class="post-item" href="{{ post.url }}">
-                    <span class="post-title">{{ post.title }}</span>
-                    <span class="post-time"">{{ post.date | date: " %Y-%m-%d" }}</span>
-                </a></li>
-              {% endfor %}
-            </ul>
-          </div>
+  <div class="category-tabs-container">
+    <!-- <button class="arrow left-arrow" onclick="scrollCategories(-100)">&#10094;</button> -->
+    <div class="category-tabs">
+      {% assign categories = site.categories | sort %}
+      {% for category in categories %}
+      <div class="category-tab" data-category="{{ category[0] }}">{{ category[0] }}</div>
+      {% endfor %}
+    </div>
+    <!-- <button class="arrow right-arrow" onclick="scrollCategories(100)">&#10095;</button> -->
+  </div>
+
+  <div class="post-lists-container">
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+    <div class="post-list" id="post-list-{{ category[0] }}" style="display: none;">
+      <ul>
+        {% for post in category[1] %}
+        <li><a class="post-item" href="{{ post.url }}">
+            <span class="post-title">{{ post.title }}</span>
+            <span class="post-time"">{{ post.date | date: " %Y-%m-%d" }}</span>
+          </a></li>
         {% endfor %}
-      </div>
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
 </div>

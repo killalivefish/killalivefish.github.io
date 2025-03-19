@@ -12,190 +12,411 @@
     <h3 id="header-title">My place</h3>
     <ul id="header-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="/archives">Tags</a></li>
-        <li><a href="/about">TimeLine</a></li>
+        <li><a href="/archive">Archive</a></li>
+        <li><a href="/timeline">TimeLine</a></li>
         <li><a href="/assets/tools.html">Tools</a></li>
         <li><a href="/assets/games.html">Games</a></li>
+        <li><a href="/about">About</a></li>
     </ul>
     <ul id="header-btns">
-        <li id="theme-btn"><a href="/"><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10468"><path d="M512 170.682c-11.782 0-21.312-9.562-21.312-21.342V21.344C490.688 9.562 500.22 0.016 512 0.016c11.812 0 21.344 9.546 21.344 21.328V149.34c0 11.78-9.532 21.342-21.344 21.342zM512 1023.984s0.032 0 0 0c-11.75 0-21.312-9.562-21.312-21.312v-127.994c0-11.812 9.562-21.376 21.344-21.376 11.782 0 21.312 9.562 21.312 21.376v127.994c0 11.75-9.532 21.312-21.344 21.312z" fill="#F6BB42" p-id="10469"></path><path d="M270.664 270.648c-8.344 8.328-21.844 8.328-30.156 0L149.98 180.136c-8.312-8.328-8.312-21.828 0-30.156a21.332 21.332 0 0 1 30.188 0l90.496 90.496c8.344 8.328 8.344 21.844 0 30.172zM874.052 874.022a21.332 21.332 0 0 1-30.188 0l-90.498-90.5c-8.344-8.344-8.344-21.842 0-30.154a21.332 21.332 0 0 1 30.188 0l90.498 90.498c8.312 8.312 8.312 21.812 0 30.156z" fill="#FFCE54" p-id="10470"></path><path d="M170.7 512c0 11.782-9.562 21.328-21.344 21.328H21.36C9.578 533.328 0.048 523.782 0.016 512c0-11.782 9.562-21.328 21.344-21.328h127.996c11.78 0 21.344 9.546 21.344 21.328zM1023.984 512c0 11.782-9.532 21.328-21.312 21.328h-127.994c-11.782 0-21.344-9.546-21.344-21.328s9.562-21.328 21.344-21.328h127.994c11.782 0 21.312 9.546 21.312 21.328z" fill="#F6BB42" p-id="10471"></path><path d="M270.664 753.368c8.344 8.312 8.344 21.81 0 30.154l-90.496 90.5a21.332 21.332 0 0 1-30.188 0c-8.312-8.344-8.312-21.844 0-30.156l90.528-90.498c8.312-8.344 21.812-8.344 30.156 0zM874.052 149.964c0 0.016 0 0 0 0 8.31 8.342 8.31 21.842 0 30.17l-90.53 90.512c-8.312 8.328-21.812 8.328-30.156 0-8.344-8.328-8.344-21.844 0-30.172l90.498-90.512c8.344-8.326 21.844-8.326 30.188 0.002z" fill="#FFCE54" p-id="10472"></path><path d="M512 789.302c-152.9 0-277.302-124.372-277.302-277.302 0-152.916 124.402-277.32 277.302-277.32 152.934 0 277.336 124.404 277.336 277.32 0 152.932-124.402 277.302-277.336 277.302z" fill="#FFCE54" p-id="10473"></path><path d="M512 213.338c-164.932 0-298.646 133.714-298.646 298.662 0 164.932 133.714 298.678 298.646 298.678 164.964 0 298.68-133.746 298.68-298.678 0-164.948-133.716-298.662-298.68-298.662z m181.026 479.656c-48.342 48.374-112.622 74.996-181.026 74.996-68.374 0-132.652-26.624-180.994-74.996-48.342-48.31-74.998-112.622-74.998-180.994s26.656-132.668 74.998-181.01c48.342-48.356 112.622-74.982 180.994-74.982 68.404 0 132.684 26.626 181.026 74.982 48.342 48.342 74.966 112.638 74.966 181.01 0 68.374-26.624 132.684-74.966 180.994z" fill="#F6BB42" p-id="10474"></path></svg>Theme</a></li>
+        <li id="theme-btn"><a href="/"><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10468"><path d="M512 170.682c-11.782 0-21.312-9.562-21.312-21.342V21.344C490.688 9.562 500.22 0.016 512 0.016c11.812 0 21.344 9.546 21.344 21.328V149.34c0 11.78-9.532 21.342-21.344 21.342zM512 1023.984s0.032 0 0 0c-11.75 0-21.312-9.562-21.312-21.312v-127.994c0-11.812 9.562-21.376 21.344-21.376 11.782 0 21.312 9.562 21.312 21.376v127.994c0 11.75-9.532 21.312-21.344 21.312z" fill="#F6BB42" p-id="10469"></path><path d="M270.664 270.648c-8.344 8.328-21.844 8.328-30.156 0L149.98 180.136c-8.312-8.328-8.312-21.828 0-30.156a21.332 21.332 0 0 1 30.188 0l90.496 90.496c8.344 8.328 8.344 21.844 0 30.172zM874.052 874.022a21.332 21.332 0 0 1-30.188 0l-90.498-90.5c-8.344-8.344-8.344-21.842 0-30.154a21.332 21.332 0 0 1 30.188 0l90.498 90.498c8.312 8.312 8.312 21.812 0 30.156z" fill="#FFCE54" p-id="10470"></path><path d="M170.7 512c0 11.782-9.562 21.328-21.344 21.328H21.36C9.578 533.328 0.048 523.782 0.016 512c0-11.782 9.562-21.328 21.344-21.328h127.996c11.78 0 21.344 9.546 21.344 21.328zM1023.984 512c0 11.782-9.532 21.328-21.312 21.328h-127.994c-11.782 0-21.344-9.546-21.344-21.328s9.562-21.328 21.344-21.328h127.994c11.782 0 21.312 9.546 21.312 21.328z" fill="#F6BB42" p-id="10471"></path><path d="M270.664 753.368c8.344 8.312 8.344 21.81 0 30.154l-90.496 90.5a21.332 21.332 0 0 1-30.188 0c-8.312-8.344-8.312-21.844 0-30.156l90.528-90.498c8.312-8.344 21.812-8.344 30.156 0zM874.052 149.964c0 0.016 0 0 0 0 8.31 8.342 8.31 21.842 0 30.17l-90.53 90.512c-8.312 8.328-21.812 8.328-30.156 0-8.344-8.328-8.344-21.844 0-30.172l90.498-90.512c8.344-8.326 21.844-8.326 30.188 0.002z" fill="#FFCE54" p-id="10472"></path><path d="M512 789.302c-152.9 0-277.302-124.372-277.302-277.302 0-152.916 124.402-277.32 277.302-277.32 152.934 0 277.336 124.404 277.336 277.32 0 152.932-124.402 277.302-277.336 277.302z" fill="#FFCE54" p-id="10473"></path><path d="M512 213.338c-164.932 0-298.646 133.714-298.646 298.662 0 164.932 133.714 298.678 298.646 298.678 164.964 0 298.68-133.746 298.68-298.678 0-164.948-133.716-298.662-298.68-298.662z m181.026 479.656c-48.342 48.374-112.622 74.996-181.026 74.996-68.374 0-132.652-26.624-180.994-74.996-48.342-48.31-74.998-112.622-74.998-180.994s26.656-132.668 74.998-181.01c48.342-48.356 112.622-74.982 180.994-74.982 68.404 0 132.684 26.626 181.026 74.982 48.342 48.342 74.966 112.638 74.966 181.01 0 68.374-26.624 132.684-74.966 180.994z" fill="#F6BB42" p-id="10474"></path></svg></a></li>
         <li class="github-btn"><a href="https://github.com/killalivefish"><svg class="icon" style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7376"><path d="M512 12.63616c-282.74688 0-512 229.21216-512 512 0 226.22208 146.69824 418.14016 350.12608 485.82656 25.57952 4.73088 35.00032-11.10016 35.00032-24.63744 0-12.20608-0.47104-52.55168-0.69632-95.31392-142.4384 30.96576-172.50304-60.416-172.50304-60.416-23.28576-59.16672-56.85248-74.91584-56.85248-74.91584-46.44864-31.78496 3.50208-31.1296 3.50208-31.1296 51.4048 3.60448 78.47936 52.75648 78.47936 52.75648 45.6704 78.27456 119.76704 55.64416 149.01248 42.55744 4.58752-33.09568 17.85856-55.68512 32.50176-68.46464-113.72544-12.94336-233.2672-56.85248-233.2672-253.0304 0-55.88992 20.00896-101.5808 52.75648-137.4208-5.3248-12.9024-22.85568-64.96256 4.95616-135.49568 0 0 43.008-13.74208 140.84096 52.49024 40.83712-11.34592 84.64384-17.03936 128.16384-17.24416 43.49952 0.2048 87.32672 5.87776 128.24576 17.24416 97.73056-66.2528 140.65664-52.49024 140.65664-52.49024 27.87328 70.53312 10.3424 122.59328 5.03808 135.49568 32.82944 35.86048 52.69504 81.53088 52.69504 137.4208 0 196.64896-119.78752 239.94368-233.79968 252.6208 18.37056 15.89248 34.73408 47.04256 34.73408 94.80192 0 68.5056-0.59392 123.63776-0.59392 140.51328 0 13.6192 9.216 29.5936 35.16416 24.576 203.32544-67.76832 349.83936-259.62496 349.83936-485.76512 0-282.78784-229.23264-512-512-512z" fill="#444444" p-id="7377"></path></svg></a></li>
     </ul>
 </header>
 <div class="container">
     <div id="home-content">
-    <div id="profile">
-        <div id="profile-pic">
-            <img class="profile-pic" src="/assets/mingren.jpg">
-        </div>
-        <h3>Full stack Developer</h3>
-        <p>Record my study notes and some development scripts and tools.
-        </p>
+  <div id="profile" class="grid">
+    <div id="profile-pic">
+      <img class="profile-pic" src="/assets/mingren.jpg">
     </div>
+    <h3>Full stack Developer</h3>
+    <p>Record my study notes and some development scripts and tools.
+    </p>
+  </div>
 
-    <div class="category-tabs-container">
-        <button class="arrow left-arrow" onclick="scrollCategories(-100)">&#10094;</button>
-        <div class="category-tabs">
-          
-          
-            <div class="category-tab" data-category="Maven">Maven</div>
-          
-            <div class="category-tab" data-category="Nacos">Nacos</div>
-          
-            <div class="category-tab" data-category="Spring">Spring</div>
-          
-            <div class="category-tab" data-category="SpringBoot">SpringBoot</div>
-          
-            <div class="category-tab" data-category="SpringCloud">SpringCloud</div>
-          
-            <div class="category-tab" data-category="SpringSecurity">SpringSecurity</div>
-          
-            <div class="category-tab" data-category="Tomcat">Tomcat</div>
-          
-            <div class="category-tab" data-category="jekyll">jekyll</div>
-          
-            <div class="category-tab" data-category="算法">算法</div>
-          
-            <div class="category-tab" data-category="线程">线程</div>
-          
-        </div>
-        <button class="arrow right-arrow" onclick="scrollCategories(100)">&#10095;</button>
-      </div>
+  <div class="category-tabs-container">
+    <!-- <button class="arrow left-arrow" onclick="scrollCategories(-100)">&#10094;</button> -->
+    <div class="category-tabs">
       
-      <div class="post-lists-container">
+      
+      <div class="category-tab" data-category="AI">AI</div>
+      
+      <div class="category-tab" data-category="Devops">Devops</div>
+      
+      <div class="category-tab" data-category="etc">etc</div>
+      
+      <div class="category-tab" data-category="jekyll">jekyll</div>
+      
+      <div class="category-tab" data-category="中间件">中间件</div>
+      
+      <div class="category-tab" data-category="前端">前端</div>
+      
+      <div class="category-tab" data-category="后端">后端</div>
+      
+      <div class="category-tab" data-category="数据库">数据库</div>
+      
+      <div class="category-tab" data-category="算法">算法</div>
+      
+      <div class="category-tab" data-category="经济">经济</div>
+      
+    </div>
+    <!-- <button class="arrow right-arrow" onclick="scrollCategories(100)">&#10095;</button> -->
+  </div>
+
+  <div class="post-lists-container">
+    
+    
+    <div class="post-list" id="post-list-AI" style="display: none;">
+      <ul>
         
+        <li><a class="post-item" href="/ai/AI/">
+            <span class="post-title">AI</span>
+            <span class="post-time""> 2024-02-29</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-Maven" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/maven/JVM/">
-                    <span class="post-title">Maven手册</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-Devops" style="display: none;">
+      <ul>
         
-          <div class="post-list" id="post-list-Nacos" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/nacos/Nacos/">
-                    <span class="post-title">Nacos笔记</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/Maven/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-12-03</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-Spring" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/spring/Spring%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E6%89%A7%E8%A1%8C/">
-                    <span class="post-title">几种在Spring启动的时执行代码的方法</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-                <li><a class="post-item" href="/spring/Spring/">
-                    <span class="post-title">Spring笔记</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-                <li><a class="post-item" href="/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/">
-                    <span class="post-title">Spring过滤器和拦截器</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-                <li><a class="post-item" href="/spring/Spring%E7%9B%91%E5%90%AC/">
-                    <span class="post-title">Spring事件监听器</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/gitlab/">
+            <span class="post-title">gitlab</span>
+            <span class="post-time""> 2024-04-16</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-SpringBoot" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/springboot/SpringBoot/">
-                    <span class="post-title">SpringBoot</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/Maven/">
+            <span class="post-title">Maven</span>
+            <span class="post-time""> 2024-03-26</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-SpringCloud" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/springcloud/SpringCloudAlibaba/">
-                    <span class="post-title">SpringCloud alibaba</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-                <li><a class="post-item" href="/springcloud/SpringCloud/">
-                    <span class="post-title">SpringCloud</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90kubernetes/">
+            <span class="post-title">Ld</span>
+            <span class="post-time""> 2024-03-17</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-SpringSecurity" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/springsecurity/SpringSecurity/">
-                    <span class="post-title">SpringSecurity笔记</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/Arthas/">
+            <span class="post-title">Arthsas</span>
+            <span class="post-time""> 2024-03-11</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-Tomcat" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/tomcat/Tomcat/">
-                    <span class="post-title">Tomcat笔记</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/Jenkins/">
+            <span class="post-title">Jenkins</span>
+            <span class="post-time""> 2024-03-08</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-jekyll" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/jekyll/welcome-to-jekyll/">
-                    <span class="post-title">Welcome to Jekyll!</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/Linux/">
+            <span class="post-title">Linux记录</span>
+            <span class="post-time""> 2024-02-20</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-算法" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/">
-                    <span class="post-title">算法笔记</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/nginx/">
+            <span class="post-title">Nginx</span>
+            <span class="post-time""> 2023-11-20</span>
+          </a></li>
         
-          <div class="post-list" id="post-list-线程" style="display: none;">
-            <ul>
-              
-                <li><a class="post-item" href="/%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B/">
-                    <span class="post-title">Java线程</span>
-                    <span class="post-time""> 2025-03-10</span>
-                </a></li>
-              
-            </ul>
-          </div>
+        <li><a class="post-item" href="/devops/K8S/">
+            <span class="post-title">K8s</span>
+            <span class="post-time""> 2023-11-14</span>
+          </a></li>
         
-      </div>
+        <li><a class="post-item" href="/devops/Docker/">
+            <span class="post-title">Docker</span>
+            <span class="post-time""> 2023-11-03</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/devops/shell/">
+            <span class="post-title">Shll脚本相关</span>
+            <span class="post-time""> 2023-10-15</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/devops/git/">
+            <span class="post-title">git</span>
+            <span class="post-time""> 2023-10-14</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-etc" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/etc/Etc/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-12-03</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/etc/ps/">
+            <span class="post-title">PS记录</span>
+            <span class="post-time""> 2024-01-06</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/etc/edu/">
+            <span class="post-title">教育相关</span>
+            <span class="post-time""> 2024-01-03</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-jekyll" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/jekyll/welcome-to-jekyll/">
+            <span class="post-title">Welcome to Jekyll!</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-中间件" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/Zookeeper/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-21</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/RocketMQ/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-08</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/Kafka/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-08</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-前端" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/%E5%89%8D%E7%AB%AF/component/">
+            <span class="post-title">前端通用组件的实现</span>
+            <span class="post-time""> 2023-10-31</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%89%8D%E7%AB%AF/typescript/">
+            <span class="post-title">TypeScript笔记</span>
+            <span class="post-time""> 2023-10-30</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%89%8D%E7%AB%AF/es6/">
+            <span class="post-title">ES6重点知识</span>
+            <span class="post-time""> 2023-10-30</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%89%8D%E7%AB%AF/vue/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2023-10-04</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-后端" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/JVM/">
+            <span class="post-title">Maven手册</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/%E7%BA%BF%E7%A8%8B/">
+            <span class="post-title">Java线程</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Spring%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E6%89%A7%E8%A1%8C/">
+            <span class="post-title">几种在Spring启动的时执行代码的方法</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringBoot/">
+            <span class="post-title">SpringBoot</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Spring/">
+            <span class="post-title">Spring笔记</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringSecurity/">
+            <span class="post-title">SpringSecurity笔记</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Nacos/">
+            <span class="post-title">Nacos笔记</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba/">
+            <span class="post-title">SpringCloud alibaba</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringCloud/">
+            <span class="post-title">SpringCloud</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Tomcat/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-12-03</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Spring%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E6%89%A7%E8%A1%8C/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-04-12</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/%E7%BA%BF%E7%A8%8B/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-04-08</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-04-05</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Spring%E7%9B%91%E5%90%AC/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-04-05</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringSecurity/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-30</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Nacos/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-30</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Mybtis/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-29</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringBoot/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-22</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringCloud/">
+            <span class="post-title">springcloud</span>
+            <span class="post-time""> 2024-03-06</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/JVM/">
+            <span class="post-title">JVM</span>
+            <span class="post-time""> 2024-02-26</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba/">
+            <span class="post-title">springcloud-alibaba</span>
+            <span class="post-time""> 2024-02-20</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/pyqt5/">
+            <span class="post-title">pyqt</span>
+            <span class="post-time""> 2024-01-20</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E5%90%8E%E7%AB%AF/Spring/">
+            <span class="post-title">spring笔记</span>
+            <span class="post-time""> 2023-10-22</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-数据库" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ShardingSphere/">
+            <span class="post-title">ShardingSphere</span>
+            <span class="post-time""> 2024-03-14</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MyCat/">
+            <span class="post-title">MyCat</span>
+            <span class="post-time""> 2024-03-14</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/">
+            <span class="post-title">redis</span>
+            <span class="post-time""> 2024-03-06</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/">
+            <span class="post-title">Mysql笔记</span>
+            <span class="post-time""> 2023-10-13</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-算法" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/">
+            <span class="post-title">算法笔记</span>
+            <span class="post-time""> 2025-03-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/">
+            <span class="post-title"></span>
+            <span class="post-time""> 2024-03-12</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+    <div class="post-list" id="post-list-经济" style="display: none;">
+      <ul>
+        
+        <li><a class="post-item" href="/%E7%BB%8F%E6%B5%8E/%E6%8A%95%E8%B5%84%E5%AD%A6/">
+            <span class="post-title">投资学</span>
+            <span class="post-time""> 2024-01-31</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E7%BB%8F%E6%B5%8E/%E9%B2%8D%E5%B0%94%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6/">
+            <span class="post-title">货币金融学</span>
+            <span class="post-time""> 2024-01-15</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E7%BB%8F%E6%B5%8E/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86/">
+            <span class="post-title">宏观经济学</span>
+            <span class="post-time""> 2024-01-10</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E7%BB%8F%E6%B5%8E/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86/">
+            <span class="post-title">微观经济学</span>
+            <span class="post-time""> 2024-01-09</span>
+          </a></li>
+        
+        <li><a class="post-item" href="/%E7%BB%8F%E6%B5%8E/money/">
+            <span class="post-title">经济相关</span>
+            <span class="post-time""> 2023-12-07</span>
+          </a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
 </div>
     <footer>
     Copyright © 2020-present. All Rights Reserved.

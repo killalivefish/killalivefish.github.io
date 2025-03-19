@@ -2,7 +2,7 @@
 layout: posts
 title:  "SpringSecurity笔记"
 date:   2025-03-10 15:00:36
-categories: SpringSecurity
+categories: 后端
 excerpt: SpringSecurity笔记
 ---
 ![](/assets/article/18e93596ecb.png)

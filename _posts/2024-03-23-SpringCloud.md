@@ -2,7 +2,7 @@
 layout: posts
 title:  "SpringCloud"
 date:   2025-03-10 15:00:36
-categories: SpringCloud
+categories: 后端
 excerpt: SpringCloud笔记
 ---
 # mulesoft-anypoint

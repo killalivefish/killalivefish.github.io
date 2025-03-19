@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-13T16:23:49+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My blog</title><subtitle>My blog.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/jekyll/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-19T11:28:47+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My blog</title><subtitle>My blog.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/jekyll/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -18,13 +18,895 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install
 </span>bundle <span class="nb">exec </span>jekyll serve
-</code></pre></div></div>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[test excerptexcerptexcerpt]]></summary></entry><entry><title type="html">SpringCloud</title><link href="http://localhost:4000/springcloud/SpringCloud/" rel="alternate" type="text/html" title="SpringCloud" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springcloud/SpringCloud</id><content type="html" xml:base="http://localhost:4000/springcloud/SpringCloud/"><![CDATA[<h1 id="mulesoft-anypoint">mulesoft-anypoint</h1>
+</code></pre></div></div>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[test excerptexcerptexcerpt]]></summary></entry><entry><title type="html">Maven手册</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/JVM/" rel="alternate" type="text/html" title="Maven手册" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/JVM</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/JVM/"><![CDATA[<p>jps -l java线程号</p>
 
-<p><a href="https:/docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4">https://docs.mulesoft.com/mule-gateway/mule-gateway-capabilities-mule4</a></p>
+<p>jstack 123 打印给定Java进程的内部线程及其堆栈。</p>
 
-<p>网关和API的管理控制</p>
+<p>javac Test.java 将文件编译成class文件</p>
 
-<h1 id="kong">Kong</h1>]]></content><author><name></name></author><category term="SpringCloud" /><summary type="html"><![CDATA[SpringCloud笔记]]></summary></entry><entry><title type="html">SpringCloud alibaba</title><link href="http://localhost:4000/springcloud/SpringCloudAlibaba/" rel="alternate" type="text/html" title="SpringCloud alibaba" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springcloud/SpringCloudAlibaba</id><content type="html" xml:base="http://localhost:4000/springcloud/SpringCloudAlibaba/"><![CDATA[<p>spring cloud alibaba官方文档：</p>
+<p>javap -c -s -v -l ‘Test.class’ 查看编译后的class文件</p>
+
+<p>jstack <code class="language-plaintext highlighter-rouge">jps | grep Main | awk '{print $1}'</code></p>
+
+<p>jmap</p>
+
+<p>jconsole</p>
+
+<h2 id="jvm参数">JVM参数</h2>
+
+<p><a href="https:/cloud.tencent.com/developer/article/2235751?areaSource=102001.10&amp;traceId=rW4tiDs6tKw80LeqYB2wH">https://cloud.tencent.com/developer/article/2235751?areaSource=102001.10&amp;traceId=rW4tiDs6tKw80LeqYB2wH</a></p>
+
+<p>-Xms256m JVM初始内存</p>
+
+<p>-Xmx256m 最大堆大小</p>
+
+<p>-Xmn128m 年轻代大小</p>
+
+<h2 id="idea中配置jvm参数">idea中配置JVM参数</h2>
+
+<p><img src="https:/www.cnblogs.com/shoshana-kong/p/14930258.html" alt="" /></p>
+
+<p>JConsole远程连接</p>
+
+<p><a href="https:/blog.csdn.net/qq407995680/article/details/133922086">https://blog.csdn.net/qq407995680/article/details/133922086</a></p>
+
+<h2 id="jstack输出">Jstack输出</h2>
+
+<p>“DestroyJavaVM” #24 prio=5 os_prio=0 tid=0x0000025bb88dc000 nid=0x374 waiting on condition [0x0000000000000000]</p>
+
+<p>java.lang.Thread.State: RUNNABLE</p>
+
+<p>“Thread-9” #23 prio=5 os_prio=0 tid=0x0000025bb88de000 nid=0x2284 waiting on condition [0x000000ef914ff000]</p>
+
+<p>java.lang.Thread.State: TIMED_WAITING (sleeping)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    at java.lang.Thread.sleep(java.base@9.0.4/Native Method)
+
+    at java.lang.Thread.sleep(java.base@9.0.4/Thread.java:340)
+
+    at java.util.concurrent.TimeUnit.sleep(java.base@9.0.4/TimeUnit.java:401)
+
+    at thread.SimpleDeamon.run(SimpleDeamon.java:16)
+
+    at java.lang.Thread.run(java.base@9.0.4/Thread.java:844)
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><strong>线程名称和编号</strong></p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">"Thread-0"</code>：这是线程的名称。</li>
+      <li><code class="language-plaintext highlighter-rouge">#10</code>：这是线程在 JVM 中的唯一编号。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>优先级</strong></p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">prio=5</code>：这是线程在 JVM 中的优先级。优先级范围通常是 1 到 10，5 是默认值。</li>
+      <li><code class="language-plaintext highlighter-rouge">os_prio=0</code>：这是操作系统层面的线程优先级。不同的操作系统可能有不同的优先级范围和默认值。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>线程 ID 和 Native ID</strong></p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">tid=0x0000025bb867d800</code>：这是线程的 JVM 内部 ID（线程标识符）。</li>
+      <li><code class="language-plaintext highlighter-rouge">nid=0x1098</code>：这是线程的本地操作系统 ID（Native ID）。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>线程状态</strong></p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">waiting on condition</code>：这是线程的状态。表示该线程正在等待某个条件的发生，通常是在调用 <code class="language-plaintext highlighter-rouge">wait()</code> 方法或进入 <code class="language-plaintext highlighter-rouge">Thread.sleep()</code> 状态时。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>线程栈地址</strong></p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">[0x000000ef913fe000]</code>：这是线程的栈地址，用于标识该线程的栈内存区域。</li>
+    </ul>
+  </li>
+</ol>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[Maven手册]]></summary></entry><entry><title type="html">Java线程</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/%E7%BA%BF%E7%A8%8B/" rel="alternate" type="text/html" title="Java线程" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/%E7%BA%BF%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/%E7%BA%BF%E7%A8%8B/"><![CDATA[<h2 id="书籍推荐">书籍推荐</h2>
+
+<p>《Javav并发编程之美》：偏向基础，讲解各种线程相关概念和使用，源码和实现</p>
+
+<p>《Java并发编程实战》：偏向应用后的注意，部分场景比较难理解</p>
+
+<p>《实战Java高并发程序设计》</p>
+
+<h2 id="1什么是线程">1.什么是线程</h2>
+
+<p>执行程序的最小单位，相当于一个任务</p>
+
+<h2 id="2线程的状态">2.线程的状态</h2>
+
+<p>NEW<br />
+RUNNABLE<br />
+BLOCKED<br />
+WAITING<br />
+TIMED_WAITING<br />
+TERMINATED</p>
+
+<p><img src="/assets/article/1957e8424a9.png" alt="" /></p>
+
+<h2 id="3实现线程的方法">3.实现线程的方法</h2>
+
+<p>继承Thread类，实现Runable接口，实现Callable接口</p>
+
+<h2 id="4线程同步和线程安全">4.线程同步和线程安全</h2>
+
+<p>线程同步是保证线程安全的手段。</p>
+
+<p>线程安全是指在多线程情况下读取或写入共享变量不会发生超出预期的情况。由于具有静态条件的共享变量在多线程访问时容易出现意料之外的情况，需要线程同步措施保证线程安全。</p>
+
+<h2 id="5线程同步的方式有哪些">5.线程同步的方式有哪些</h2>
+
+<ul>
+  <li>使用volatile修饰变量，但只能保证可见性</li>
+  <li>使用锁，保证可见性和原子性</li>
+  <li>使用原子类atomic,使用底层的CAS保证可见性和原子性</li>
+  <li>使用线程池或executor</li>
+  <li>使用ThreadLocal</li>
+  <li>使用线程安全的容器</li>
+  <li>使用栈安全的手段(对数据进行深拷贝，存储影响大)</li>
+</ul>
+
+<h2 id="6原子性可见性有序性">6.原子性，可见性，有序性</h2>
+
+<p>原子性：要么同时发生要么同时失败；</p>
+
+<p>可见性：共享变量的修改对其他线程可见，一个线程修改共享变量时没有将指刷入主内存时，其他线程阻塞</p>
+
+<p>有序性：jvm会对无相互依赖的代码指令进行重排序，时序性指按照确定的顺序执行</p>
+
+<p>Happen-Before:</p>
+
+<p>程序顺序原则：一个线程内保证语义的串行性<br />
+volatile规则：volatile变量的写，先发生于读，这保证了volatile变量的可见性<br />
+锁规则：解锁（unlock）必然发生在随后的加锁（lock）前<br />
+传递性：A先于B，B先于C，那么A必然先于C<br />
+线程的start()方法先于它的每一个动作<br />
+线程的所有操作先于线程的终结（Thread.join()）<br />
+线程的中断（interrupt()）先于被中断线程的代码<br />
+对象的构造函数执行、结束先于finalize()方法</p>
+
+<h2 id="7锁的概念">7.锁的概念</h2>
+
+<p>乐观锁和悲观锁</p>
+
+<p>公平锁和非公平锁</p>
+
+<p>独占锁和共享锁</p>
+
+<p>可重入锁</p>
+
+<p>自旋锁</p>
+
+<h2 id="8object的线程相关方法">8.Object的线程相关方法</h2>
+
+<p>wait() 释放锁等待,需要注意需要先获取到锁才能使用</p>
+
+<p>notify() 随机唤醒等待队列中的一个对象</p>
+
+<p>ntifyAll()唤醒等待队列中全部的对象</p>
+
+<h2 id="9thread相关方法">9.Thread相关方法</h2>
+
+<p>interrupt() 设置中断标志位，但是不会中断线程</p>
+
+<p>suspend() 废弃</p>
+
+<p>resume() 废弃</p>
+
+<p>sleep() 不释放锁</p>
+
+<p>join() 等待线程结束  join()的本质是让调用线程wait()在当前线程对象实例上</p>
+
+<p>yiled() 让出线程</p>
+
+<h2 id="10reentrantlock和synchronized">10.ReentrantLock和synchronized</h2>
+
+<p>synchronized是以非公平的ReentrantLock实现的</p>
+
+<p>ReentrantLock默认是非公平的</p>
+
+<p>通过AbstractQueuedSynchronizer实现</p>
+
+<p>其中主要通过等待链表、volatile修饰的变量、LockSupport的park()和unpark()</p>
+
+<p>synchronized的几种用法：</p>
+
+<ol>
+  <li>指定加锁对象</li>
+  <li>修饰方法 以当前实例作为锁</li>
+  <li>修饰静态方法  以class作为锁</li>
+</ol>
+
+<p>10.1synchronized中锁的状态变化</p>
+
+<h2 id="11书">11.书</h2>
+
+<h3 id="编程之美">编程之美</h3>
+
+<p>在表中添加 version 字段来实现乐观锁</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">int</span> <span class="k">count</span> <span class="o">=</span> <span class="k">update</span><span class="p">(</span><span class="nv">"update table1 set name=#{name},age=#{age},version=${versi
+ on}+1 where id =#{id} and version=#{version}"</span><span class="p">,</span><span class="n">entry</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>自旋锁jvm参数设置</p>
+
+<p>自旋锁则是，当前线程在获取锁时，如果发现锁已经被其他线程占有，<br />
+它不马上阻塞自己，在不放弃 CPU 使用权的情况下，多次尝试获取（默认次数是 10，可<br />
+以使用 -XX:PreBlockSpinsh 参数设置该值）</p>
+
+<h3 id="实战java">实战Java</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="o">{</span>
+    <span class="n">task</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">RuntimeException</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">thrown</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> <span class="k">throw</span> <span class="n">x</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Error</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">thrown</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> <span class="k">throw</span> <span class="n">x</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Throwable</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">thrown</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+    <span class="n">afterExecute</span><span class="o">(</span><span class="n">task</span><span class="o">,</span> <span class="n">thrown</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="12框架中使用多线程的情况">12.框架中使用多线程的情况</h2>
+
+<h3 id="121-springbatch">12.1 SpringBatch</h3>
+
+<h3 id="122-mybatis">12.2 MyBatis</h3>
+
+<h3 id="123-spring">12.3 Spring</h3>
+
+<h2 id="13etc">13.ETC</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jstack <span class="sb">`</span>jps | <span class="nb">grep </span>IntLock | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h2 id="14condtion">14.Condtion</h2>
+
+<p>await()方法会使当前线程等待，同时释放当前锁</p>
+
+<p>awaitUninterruptibly()方法与await()方法基本相同，但是它并不会在等待过程中响应中断</p>
+
+<p>singal() 方 法 用 于 唤 醒 一 个 在 等 待 中 的 线 程</p>
+
+<p>singalAll() 方 法 会 唤 醒 所 有 在 等 待 中 的 线 程</p>
+
+<h2 id="15-信号量semaphore">15. 信号量（Semaphore）</h2>
+
+<h2 id="16读写锁readwritelock">16.读写锁(ReadWriteLock)</h2>
+
+<p><img src="/assets/article/18ebd96f5f9.png" alt="" /></p>
+
+<h2 id="17倒计时器countdownlatch">17.倒计时器(CountDownLatch)</h2>
+
+<h2 id="18循环栅栏cyclicbarrier">18.循环栅栏(CyclicBarrier)</h2>
+
+<h2 id="19locksupport">19.LockSupport</h2>
+
+<h2 id="20线程安全的容器">20.线程安全的容器</h2>
+
+<p>ConcurrentHashMap：这是一个高效的并发HashMap。你可以理解为一个线程安全的HashMap。<br />
+CopyOnWriteArrayList ： 这 是 一 个 List ， 从 名 字 看 就 是 和ArrayList是一族的。在读多写少的场合，这个List的性能非常好，远远好于Vector。<br />
+ConcurrentLinkedQueue：高效的并发队列，使用链表实现。可以看做一个线程安全的LinkedList。<br />
+BlockingQueue：这是一个接口，JDK内部通过链表、数组等方式实现了这个接口。表示阻塞队列，非常适合用于作为数据共享的通道。<br />
+ConcurrentSkipListMap：跳表的实现。这是一个Map，使用跳表的数据结构进行快速查找。</p>
+
+<p>CopyOnWriteArrayList类对它来说，读取是完全不用加锁的，并且更好的消息是：写入也不会阻塞读取操作，只有写入和写入之间需要进行同步等待</p>
+
+<h2 id="21线程池">21.线程池</h2>
+
+<p>减少创建和销毁线程的开销</p>
+
+<p>Executors的实现只是对ThreaPoolExecutor的封装</p>
+
+<h3 id="211核心参数">21.1核心参数</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">ThreadPoolExecutor</span><span class="o">(</span><span class="kt">int</span> <span class="n">corePoolSize</span><span class="o">,</span>
+ <span class="kt">int</span> <span class="n">maximumPoolSize</span><span class="o">,</span>
+ <span class="kt">long</span> <span class="n">keepAliveTime</span><span class="o">,</span>
+ <span class="nc">TimeUnit</span> <span class="n">unit</span><span class="o">,</span>
+ <span class="nc">BlockingQueue</span><span class="err">＜</span><span class="nc">Runnable</span><span class="err">＞</span> <span class="n">workQueue</span><span class="o">,</span>
+ <span class="nc">ThreadFactory</span> <span class="n">threadFactory</span><span class="o">,</span>
+ <span class="nc">RejectedExecutionHandler</span> <span class="n">handler</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>corePoolSize：指定了线程池中的线程数量。<br />
+maximumPoolSize：指定了线程池中的最大线程数量。<br />
+keepAliveTime：当线程池线程数量超过corePoolSize时，多余的空闲线程的存活时间。即，超过corePoolSize   的空闲线程，在多长时间内，会被销毁。<br />
+unit：keepAliveTime的单位。<br />
+workQueue：任务队列，被提交但尚未被执行的任务。<br />
+threadFactory：线程工厂，用于创建线程，一般用默认的即可。<br />
+handler：拒绝策略。当任务太多来不及处理，如何拒绝任务。</p>
+
+<h3 id="212拒绝策略">21.2拒绝策略</h3>
+
+<p>AbortPolicy策略：该策略会直接抛出异常，阻止系统正常工作。<br />
+CallerRunsPolicy策略：只要线程池未关闭，该策略直接在调用者线程中，运行当前被丢弃的任务。显然这样做不会真的丢弃任务，但是，任务提交线程的性能极有可能会急剧下降。<br />
+DiscardOledestPolicy策略：该策略将丢弃最老的一个请求，也就是即将被执行的一个任务，并尝试再次提交当前任务。<br />
+DiscardPolicy策略：该策略默默地丢弃无法处理的任务，不予任何处理。</p>
+
+<p><strong>实现自己的拒绝策略</strong></p>
+
+<p><strong>扩展RejectedExecutionHandler接口</strong></p>
+
+<p>21.3</p>
+
+<h2 id="22forkjoin框架">22.Fork/Join框架</h2>
+
+<p><img src="/assets/article/18ebe6563da.png" alt="" /></p>
+
+<h2 id="23提高锁的性能">23.提高锁的性能</h2>
+
+<ol>
+  <li>减少锁的持有时间，运行时间长的方法能否避免</li>
+  <li>减小锁的粒度，缩小锁定的范围，map分小map,同步代码块减小</li>
+  <li>读写分离锁替换独占锁</li>
+  <li>锁分离</li>
+  <li>锁粗化，减少对锁的获取</li>
+</ol>
+
+<h2 id="锁优化">锁优化</h2>
+
+<h2 id="24threadlocal">24.ThreadLocal</h2>
+
+<h2 id="25cas">25.CAS</h2>
+
+<p>它包含三个参数CAS(V,E,N)。V表示要更新的变量，E表示预期值，N表示新值。</p>
+
+<p>AtomicInteger</p>
+
+<p>AtomicReference</p>
+
+<p>AtomicStampedReference</p>
+
+<p>AtomicIntegerArray</p>
+
+<p>SynchronousQueue</p>
+
+<h2 id="26unsafe类">26.UnSafe类</h2>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[Java线程从入门到精通]]></summary></entry><entry><title type="html">几种在Spring启动的时执行代码的方法</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E6%89%A7%E8%A1%8C/" rel="alternate" type="text/html" title="几种在Spring启动的时执行代码的方法" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E6%89%A7%E8%A1%8C</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E6%89%A7%E8%A1%8C/"><![CDATA[<h1 id="几种在spring启动的时执行代码的方法">几种在Spring启动的时执行代码的方法</h1>
+
+<ol>
+  <li>spring boot application本质就是main方法可以在main方法中执行一些初始化的方法。此时Bean都没有创建和注入涉及到Bean的方法无法使用</li>
+  <li>使用<code class="language-plaintext highlighter-rouge">@PostConstruct</code>注解在Bean注入之后执行对应的一些init方法</li>
+  <li>实现<code class="language-plaintext highlighter-rouge">CommandLineRunner</code>接口</li>
+  <li>实现 SmartInitializingSingleton</li>
+  <li>实现ApplicationListener<ContextRefreshedEvent></ContextRefreshedEvent></li>
+  <li>实现LifecycleProcessor</li>
+</ol>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[几种在Spring启动的时执行代码的方法]]></summary></entry><entry><title type="html">SpringBoot</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBoot/" rel="alternate" type="text/html" title="SpringBoot" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBoot</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBoot/"><![CDATA[<p>约定大于配置：</p>
+
+<p>之前的spring项目会存在大量的xml配置，springboot通过内置的默认配置减少了各类jar包的配置情况，只需要更改需要配置的参数即可。</p>
+
+<p>spring-boot-autoconfigure中有大量的配置类</p>
+
+<p>spring boot的内置tomcat在spring-boot-starter-tomcat中</p>
+
+<p>java报错：类文件具有错误的版本 61.0，应为 52.0 请删除该文件或确保该文件位于正确的类路径子目录中。</p>
+
+<p>原因：SpringBoot使用了3.0或者3.0以上，因为Spring官方发布从Spring6以及SprinBoot3.0开始最低支持JDK17</p>
+
+<p>解决: 将版本降低到2.几就行</p>
+
+<h2 id="spring-boot配置">Spring Boot配置</h2>
+
+<p>Spring Boot在auto-configuration中会包含各个组件的默认配置类比如kafa等。</p>
+
+<p><code class="language-plaintext highlighter-rouge">spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/kafka/KafkaAutoConfiguration.java</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/kafka/KafkaProperties.java</code></p>
+
+<h2 id="spring-boot创建自己的stater">Spring Boot创建自己的stater</h2>
+
+<h2 id="spring-boot启动流程">Spring Boot启动流程</h2>
+
+<h2 id="spring-请求流程">Spring 请求流程</h2>
+
+<p>DispatcherServlet–&gt;RequestMappingHandlerMapping-&gt;DispatcherServlet</p>
+
+<p>java.lang.NullPointerException: null</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>at com.easyassetmanagement.asset.service.SubscriptionService.submitOrder(SubscriptionService.java:32) ~[classes/:na]
+
+at com.easyassetmanagement.asset.controller.SubscriptionController.submitForm(SubscriptionController.java:21) ~[classes/:na]
+
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+
+at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+
+at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:696) ~[tomcat-embed-core-9.0.69.jar:4.0.FR]
+
+at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.24.jar:5.3.24]
+
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.69.jar:4.0.FR]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.24.jar:5.3.24]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.69.jar:9.0.69]
+
+at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+</code></pre></div></div>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringBoot笔记]]></summary></entry><entry><title type="html">Spring笔记</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring/" rel="alternate" type="text/html" title="Spring笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring/"><![CDATA[<h2 id="spring-笔记">Spring 笔记</h2>
+
+<blockquote>
+  <p><strong><em>spring 官方文档</em></strong>       <a href="https://springdoc.cn/docs/">https://springdoc.cn/docs/</a></p>
+</blockquote>
+
+<h2 id="ioc">IOC</h2>
+
+<p>对象的创建由Spring来处理</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ClassPathBeanDefinitionScanner
+会读取配置了扫描注解的类
+</code></pre></div></div>
+
+<h3 id="11-bean的创建">1.1 Bean的创建</h3>
+
+<p>依赖注入+控制反转</p>
+
+<p>IOC</p>
+
+<p>@Bean @Component @Import  @RestController @Service @Repo</p>
+
+<p>ApplicationContext通过配置 读取要代理的Bean</p>
+
+<p>BeanFactory生成Bean到容器</p>
+
+<p>默认调用无参的构造函数</p>
+
+<p>默认按照单例生成</p>
+
+<p>@Autowried</p>
+
+<p><img src="/assets/article/18e690e84c0.png" alt="" /></p>
+
+<h3 id="12-bean的生命周期">1.2 Bean的生命周期</h3>
+
+<p><img src="/assets/article/18ecdffd1e2.png" alt="" /></p>
+
+<p><img src="/assets/article/18ece0027b2.png" alt="" /></p>
+
+<h2 id="aop">AOP</h2>
+
+<ul>
+  <li>JDK：实现非Bean生命周期相关的接口而且实现方法不为0</li>
+  <li>CGlig：继承目标类</li>
+</ul>
+
+<p>引入依赖</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-aop<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+
+<p>开启注解@EnableAspectJAutoProxy</p>
+
+<p>定义切面类@Aspect</p>
+
+<p>定义切点+切面表达式来确定切点@Pointcut</p>
+
+<p>定义通知类型@Before@After(finally)@Around@AfterReturning(后置)@AfterThrowing</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parameterType="com.hello.module.Stack" 
+</code></pre></div></div>
+
+<p><img src="/assets/article/18ed007d8ae.png" alt="" /></p>
+
+<p><a href="https:/yasinshaw.com/articles/107">https://yasinshaw.com/articles/107</a></p>
+
+<h2 id="事务">事务</h2>
+
+<p>事务的使用</p>
+
+<p>@Transactional注解</p>
+
+<p>事务的传播机制</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>REQUIRED(0),
+SUPPORTS(1),
+MANDATORY(2),
+REQUIRES_NEW(3),
+NOT_SUPPORTED(4),
+NEVER(5),
+NESTED(6);
+</code></pre></div></div>
+
+<p><img src="/assets/article/18ed015950e.png" alt="" /></p>
+
+<p>事务失效</p>
+
+<ol>
+  <li>方法没有被public修饰</li>
+  <li>类没有被Spring托管</li>
+  <li>不正确的异常捕获—事务方法抛出异常被 catch 处理了</li>
+  <li>同一类中方法调用</li>
+  <li>propagation事务传播行为配置错误</li>
+  <li>rollbackFor参数设置错误。</li>
+  <li>没有配置事务管理器</li>
+  <li>数据库本身不支持事务</li>
+</ol>
+
+<p>分布式事务失效的原因</p>
+
+<p><img src="/assets/article/18e9d36ae3a.png" alt="" /></p>
+
+<p><a href="https:/mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd">https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd</a></p>
+
+<h2 id="监听">监听</h2>
+
+<h2 id="过滤器和拦截器">过滤器和拦截器</h2>
+
+<p><img src="/assets/article/18e69291b74.png" alt="" /></p>
+
+<p><img src="/assets/article/18ed04719c1.png" alt="" /></p>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[Spring笔记]]></summary></entry><entry><title type="html">算法笔记</title><link href="http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/" rel="alternate" type="text/html" title="算法笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/"><![CDATA[<h1 id="图">图</h1>
+
+<p>无向图</p>
+
+<p>有向图</p>
+
+<p>加权图</p>
+
+<p>加权有向图</p>
+
+<p>顶点：vertex 边：edge</p>
+
+<p>特殊的图：自环和平行边</p>
+
+<p>深度优先DFS</p>
+
+<p>广度优先BFS</p>
+
+<h2 id="树">树</h2>
+
+<p>二叉树</p>
+
+<p>二叉搜索树</p>
+
+<p><img src="/assets/article/18f15f961a8.png" alt="" /></p>
+
+<p>平衡树</p>
+
+<p><img src="/assets/article/18f15f9e41a.png" alt="" /></p>
+
+<p>红黑树</p>
+
+<p><img src="/assets/article/18f15f8fb01.png" alt="" /></p>
+
+<p>B树</p>
+
+<p><img src="/assets/article/18f15f91f1e.png" alt="" /></p>
+
+<p>B+树</p>
+
+<p><img src="/assets/article/18f15f93a2e.png" alt="" /></p>
+
+<p><img src="/assets/article/18e9724a600.png" alt="" /><img src="/assets/article/18e971d694a.png" alt="" /></p>
+
+<p>状态</p>
+
+<p>状态转移方程</p>
+
+<p>15829247313</p>
+
+<h2 id="贪心">贪心</h2>
+
+<h3 id="原理">原理</h3>
+
+<p>‧ 贪心选择性质：只有当局部最优选择始终可以导致全局最优解时，贪心算法才能保证得到最优解。<br />
+‧ 最优子结构：原问题的最优解包含子问题的最优解。</p>
+
+<h3 id="步骤">步骤</h3>
+
+<ol>
+  <li>问题分析：梳理与理解问题特性，包括状态定义、优化目标和约束条件等。这一步在回溯和动态规划中<br />
+都有涉及。</li>
+  <li>确定贪心策略：确定如何在每一步中做出贪心选择。这个策略能够在每一步减小问题的规模，并最终解<br />
+决整个问题。</li>
+  <li>正确性证明：通常需要证明问题具有贪心选择性质和最优子结构。这个步骤可能需要用到数学证明，例<br />
+如归纳法或反证法等。</li>
+</ol>
+
+<h3 id="相关问题">相关问题</h3>
+
+<p>‧ 硬币找零问题：在某些硬币组合下，贪心算法总是可以得到最优解。<br />
+‧ 区间调度问题：假设你有一些任务，每个任务在一段时间内进行，你的目标是完成尽可能多的任务。如<br />
+果每次都选择结束时间最早的任务，那么贪心算法就可以得到最优解。<br />
+‧ 分数背包问题：给定一组物品和一个载重量，你的目标是选择一组物品，使得总重量不超过载重量，且<br />
+总价值最大。如果每次都选择性价比最高（价值 / 重量）的物品，那么贪心算法在一些情况下可以得到<br />
+最优解。<br />
+‧ 股票买卖问题：给定一组股票的历史价格，你可以进行多次买卖，但如果你已经持有股票，那么在卖出<br />
+之前不能再买，目标是获取最大利润。<br />
+‧ 霍夫曼编码：霍夫曼编码是一种用于无损数据压缩的贪心算法。通过构建霍夫曼树，每次选择出现频率<br />
+最低的两个节点合并，最后得到的霍夫曼树的带权路径长度（编码长度）最小。<br />
+‧ Dijkstra 算法：它是一种解决给定源顶点到其余各顶点的最短路径问题的贪心算法。</p>]]></content><author><name></name></author><category term="算法" /><summary type="html"><![CDATA[记录算法重点]]></summary></entry><entry><title type="html">SpringSecurity笔记</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringSecurity/" rel="alternate" type="text/html" title="SpringSecurity笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringSecurity</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringSecurity/"><![CDATA[<p><img src="/assets/article/18e93596ecb.png" alt="" /></p>
+
+<p><img src="/assets/article/18f23aff24f.png" alt="" /></p>
+
+<p><img src="/assets/article/18f23b21864.png" alt="" /></p>
+
+<p><img src="/assets/article/18f23bbab15.png" alt="" /></p>
+
+<p><img src="/assets/article/18f23b897ca.png" alt="" /></p>
+
+<p>@EnableGlobalMethodSecurity和@EnableSecurity在Spring Security框架中各自扮演不同的角色，具有不同的功能和用途。</p>
+
+<p>@EnableGlobalMethodSecurity是Spring Security框架中的一个注解，用于启用全局方法级别的安全配置。这个注解允许开发者在方法上使用特定的注解（如@PreAuthorize、@PostAuthorize等）来定义安全规则。这些注解会在方法调用前后执行权限检查，确保只有满足特定条件的用户才能调用这些方法。该注解适用于需要在方法级别进行细粒度安全控制的场景，例如在业务逻辑中，某些敏感操作（如修改用户信息、删除订单等）可能只允许具有特定角色或权限的用户执行。此外，它还会配置一个全局的AuthenticationManager，用于管理用户的认证过程。</p>
+
+<p>然而，关于@EnableSecurity这个注解，目前在Spring Security的官方文档和常见资料中并没有明确的描述。可能是因为它并非Spring Security框架中的一个标准注解，或者是一个特定项目、库或框架中自定义的注解。在缺乏具体上下文的情况下，无法准确解释@EnableSecurity的功能和用途。</p>
+
+<p>总的来说，@EnableGlobalMethodSecurity是Spring Security框架中用于启用全局方法级别安全配置的注解，而@EnableSecurity可能是一个特定上下文中的自定义注解，其功能和用途需要根据具体项目或框架来确定。因此，在使用这两个注解时，建议查阅相关文档或参考项目代码以了解其确切含义和用法。</p>
+
+<p><img src="/assets/article/18f2a9a3db3.png" alt="" /></p>
+
+<h2 id="表">表</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">database</span> <span class="k">user</span><span class="p">;</span>
+<span class="n">use</span> <span class="k">user</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`users`</span> <span class="p">(</span>
+                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                         <span class="nv">`username`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`password`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span> <span class="c1">-- 存储密码的哈希值</span>
+                         <span class="nv">`email`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`phone`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_username`</span> <span class="p">(</span><span class="nv">`username`</span><span class="p">),</span>
+                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_email`</span> <span class="p">(</span><span class="nv">`email`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`roles`</span> <span class="p">(</span>
+                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                         <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user_roles`</span> <span class="p">(</span>
+                              <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                              <span class="nv">`user_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                              <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                              <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                              <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                              <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_user_role`</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">,</span> <span class="nv">`role_id`</span><span class="p">),</span>
+                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`users`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
+                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`permissions`</span> <span class="p">(</span>
+                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`role_permissions`</span> <span class="p">(</span>
+                                    <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                                    <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                                    <span class="nv">`permission_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                                    <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                                    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                                    <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_role_permission`</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">,</span> <span class="nv">`permission_id`</span><span class="p">),</span>
+                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
+                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`permission_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`permissions`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`departments`</span> <span class="p">(</span>
+                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`department_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">AFTER</span> <span class="nv">`phone`</span><span class="p">;</span>
+
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_id`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_type`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_token`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_expires_at`</span> <span class="nb">DATETIME</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<h2 id="table">table</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>基于之前讨论的数据模型设计，以下是一些可能的MySQL建表语句示例。请注意，这些语句是简化的，并且可能需要根据你的具体需求进行调整。
+
+1. 表格 (tables)
+
+sql
+CREATE TABLE `tables` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `name` VARCHAR(255) NOT NULL,  
+  `description` TEXT,  
+  PRIMARY KEY (`id`)  
+);
+2. 表格列 (table_columns)
+
+sql
+CREATE TABLE `table_columns` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `table_id` INT NOT NULL,  
+  `name` VARCHAR(255) NOT NULL,  
+  `type` VARCHAR(50) NOT NULL, -- 例如：text, number, date, checkbox, radio, select  
+  `is_special` BOOLEAN DEFAULT FALSE,  
+  `special_type` VARCHAR(50), -- 例如：single_select, multi_select, input  
+  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+3. 表格行 (table_rows)
+
+sql
+CREATE TABLE `table_rows` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `table_id` INT NOT NULL,  
+  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+4. 单元格数据 (cell_data)
+
+sql
+CREATE TABLE `cell_data` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `row_id` INT NOT NULL,  
+  `column_id` INT NOT NULL,  
+  `value` VARCHAR(255), -- 对于非文本类型，可以存储ID或其他标识符  
+  `text_value` TEXT, -- 对于文本输入框等，存储实际文本  
+  FOREIGN KEY (`row_id`) REFERENCES `table_rows`(`id`) ON DELETE CASCADE,  
+  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+5. 特殊类型选项 (special_type_options)
+
+sql
+CREATE TABLE `special_type_options` (  
+  `id` INT NOT NULL AUTO_INCREMENT,  
+  `column_id` INT NOT NULL,  
+  `label` VARCHAR(255) NOT NULL,  
+  `value` VARCHAR(255) NOT NULL, -- 对于单选、多选等，存储选项的值  
+  `is_selected` BOOLEAN DEFAULT FALSE, -- 对于当前行是否选中该选项  
+  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
+  PRIMARY KEY (`id`)  
+);
+在这些建表语句中，我们使用了外键约束来确保数据的引用完整性。例如，table_columns表的table_id字段引用tables表的id字段，表示该列属于哪个表格。同样，cell_data表的row_id和column_id字段分别引用table_rows和table_columns表的相应字段。
+
+请注意，这里的type字段用于存储列的基本数据类型（如文本、数字、日期等），而special_type字段用于标识特殊类型的列（如单选、多选等）。value字段在cell_data表中用于存储非文本类型的数据的值（如选项的ID），而text_value字段用于存储文本输入框的实际文本内容。
+
+最后，special_type_options表用于存储特殊类型列的选项，如单选框或复选框的选项。is_selected字段用于跟踪哪些选项在特定行中被选中。
+
+这些表结构提供了一个灵活的框架，可以根据需要扩展和定制。在实际应用中，你可能还需要考虑其他因素，如性能优化、索引创建、数据验证和安全性等。
+</code></pre></div></div>
+
+<p><a href="https:/www.youtube.com/watch?v=-3W5CQzc81s">https://www.youtube.com/watch?v=-3W5CQzc81s</a></p>
+
+<p><a href="http:/www.youtube.com/get_video?video_id=*******&amp;t=*******">http://www.youtube.com/get_video?video_id=</a>-3W5CQzc81s[&amp;t=<strong>**</strong><em>](http:/www.youtube.com/get_video?video_id=</em><strong>**</strong>&amp;t=<strong>**</strong>*)</p>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringSecurity笔记]]></summary></entry><entry><title type="html">Nacos笔记</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/Nacos/" rel="alternate" type="text/html" title="Nacos笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/Nacos</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/Nacos/"><![CDATA[<h2 id="表结构">表结构</h2>
+
+<p><img src="/assets/article/18ec8c71009.png" alt="" /></p>
+
+<p><img src="/assets/article/18ec8c74112.png" alt="" /></p>
+
+<h2 id="请求入参处理">请求入参处理</h2>
+
+<h2 id="权限注解校验">权限注解校验</h2>
+
+<h2 id="心跳">心跳</h2>
+
+<h2 id="全局异常处理">全局异常处理</h2>
+
+<h2 id="aop">AOP</h2>
+
+<h2 id="自定义注解">自定义注解</h2>
+
+<h2 id="接口返回数据结构">接口返回数据结构</h2>
+
+<h2 id="log的打印">log的打印</h2>
+
+<h2 id="异常的处理">异常的处理</h2>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[Nacos笔记]]></summary></entry><entry><title type="html">SpringCloud alibaba</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba/" rel="alternate" type="text/html" title="SpringCloud alibaba" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba/"><![CDATA[<p>spring cloud alibaba官方文档：</p>
 
 <p><a href="https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/">https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/</a></p>
 
@@ -255,403 +1137,4 @@
 
 <h2 id="jenkins">Jenkins</h2>
 
-<h2 id="splunk">Splunk</h2>]]></content><author><name></name></author><category term="SpringCloud" /><summary type="html"><![CDATA[SpringCloud alibaba笔记]]></summary></entry><entry><title type="html">Spring事件监听器</title><link href="http://localhost:4000/spring/Spring%E7%9B%91%E5%90%AC/" rel="alternate" type="text/html" title="Spring事件监听器" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/spring/Spring%E7%9B%91%E5%90%AC</id><content type="html" xml:base="http://localhost:4000/spring/Spring%E7%9B%91%E5%90%AC/"><![CDATA[<p>Spring 事件监听器可以应用于很多业务场景中，以下是一些常见的应用场景：</p>
-
-<ol>
-  <li>数据更新时的通知：在数据库表中对数据进行插入、更新和删除操作时，可以使用 Spring 事件机制来通知应用程序中其他的组件及时更新数据缓存或执行相关操作。</li>
-  <li>异步处理：在一些需要异步处理的业务场景中，可以使用 Spring 事件来触发后台任务的执行，并通过事件监听器来记录任务执行状态、处理异常等。</li>
-  <li>管理事件和通知状态：在应用程序的生命周期中，可以使用 Spring 事件来记录相关的状态，以便后续实现应用程序的监控和管理。</li>
-  <li>插件化扩展：在支持插件化扩展的系统中，可以使用 Spring 事件来扩展系统的功能，例如通过发布插件加载事件实现动态加载插件。同时，插件可以通过订阅其他事件来响应系统的其他业务行为。</li>
-  <li>系统日志记录：在系统运行过程中，可以使用 Spring 事件来记录关键事件和异常信息，并通过事件监听器将这些信息记录到系统日志中。</li>
-</ol>
-
-<p>以上这些场景只是 Spring 事件监听器应用的一部分，实际上可以根据业务需要灵活应用。在使用 Spring 事件监听器时，需要注意事件的发布和处理是同步的，可能会影响系统的性能，因此应该根据实际业务需求来选择合适的事件机制。</p>
-
-<p><a href="https:/cloud.tencent.com/developer/article/2332860">https://cloud.tencent.com/developer/article/2332860</a></p>]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring事件监听器]]></summary></entry><entry><title type="html">Spring过滤器和拦截器</title><link href="http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="alternate" type="text/html" title="Spring过滤器和拦截器" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8</id><content type="html" xml:base="http://localhost:4000/spring/Spring%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/"><![CDATA[]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring过滤器和拦截器]]></summary></entry><entry><title type="html">Nacos笔记</title><link href="http://localhost:4000/nacos/Nacos/" rel="alternate" type="text/html" title="Nacos笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/nacos/Nacos</id><content type="html" xml:base="http://localhost:4000/nacos/Nacos/"><![CDATA[<h2 id="表结构">表结构</h2>
-
-<p><img src="/assets/article/18ec8c71009.png" alt="" /></p>
-
-<p><img src="/assets/article/18ec8c74112.png" alt="" /></p>
-
-<h2 id="请求入参处理">请求入参处理</h2>
-
-<h2 id="权限注解校验">权限注解校验</h2>
-
-<h2 id="心跳">心跳</h2>
-
-<h2 id="全局异常处理">全局异常处理</h2>
-
-<h2 id="aop">AOP</h2>
-
-<h2 id="自定义注解">自定义注解</h2>
-
-<h2 id="接口返回数据结构">接口返回数据结构</h2>
-
-<h2 id="log的打印">log的打印</h2>
-
-<h2 id="异常的处理">异常的处理</h2>]]></content><author><name></name></author><category term="Nacos" /><summary type="html"><![CDATA[Nacos笔记]]></summary></entry><entry><title type="html">SpringSecurity笔记</title><link href="http://localhost:4000/springsecurity/SpringSecurity/" rel="alternate" type="text/html" title="SpringSecurity笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/springsecurity/SpringSecurity</id><content type="html" xml:base="http://localhost:4000/springsecurity/SpringSecurity/"><![CDATA[<p><img src="/assets/article/18e93596ecb.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23aff24f.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23b21864.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23bbab15.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23b897ca.png" alt="" /></p>
-
-<p>@EnableGlobalMethodSecurity和@EnableSecurity在Spring Security框架中各自扮演不同的角色，具有不同的功能和用途。</p>
-
-<p>@EnableGlobalMethodSecurity是Spring Security框架中的一个注解，用于启用全局方法级别的安全配置。这个注解允许开发者在方法上使用特定的注解（如@PreAuthorize、@PostAuthorize等）来定义安全规则。这些注解会在方法调用前后执行权限检查，确保只有满足特定条件的用户才能调用这些方法。该注解适用于需要在方法级别进行细粒度安全控制的场景，例如在业务逻辑中，某些敏感操作（如修改用户信息、删除订单等）可能只允许具有特定角色或权限的用户执行。此外，它还会配置一个全局的AuthenticationManager，用于管理用户的认证过程。</p>
-
-<p>然而，关于@EnableSecurity这个注解，目前在Spring Security的官方文档和常见资料中并没有明确的描述。可能是因为它并非Spring Security框架中的一个标准注解，或者是一个特定项目、库或框架中自定义的注解。在缺乏具体上下文的情况下，无法准确解释@EnableSecurity的功能和用途。</p>
-
-<p>总的来说，@EnableGlobalMethodSecurity是Spring Security框架中用于启用全局方法级别安全配置的注解，而@EnableSecurity可能是一个特定上下文中的自定义注解，其功能和用途需要根据具体项目或框架来确定。因此，在使用这两个注解时，建议查阅相关文档或参考项目代码以了解其确切含义和用法。</p>
-
-<p><img src="/assets/article/18f2a9a3db3.png" alt="" /></p>
-
-<h2 id="表">表</h2>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">database</span> <span class="k">user</span><span class="p">;</span>
-<span class="n">use</span> <span class="k">user</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`users`</span> <span class="p">(</span>
-                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                         <span class="nv">`username`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`password`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span> <span class="c1">-- 存储密码的哈希值</span>
-                         <span class="nv">`email`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`phone`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_username`</span> <span class="p">(</span><span class="nv">`username`</span><span class="p">),</span>
-                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_email`</span> <span class="p">(</span><span class="nv">`email`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`roles`</span> <span class="p">(</span>
-                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                         <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user_roles`</span> <span class="p">(</span>
-                              <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                              <span class="nv">`user_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                              <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                              <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                              <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                              <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_user_role`</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">,</span> <span class="nv">`role_id`</span><span class="p">),</span>
-                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`users`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
-                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`permissions`</span> <span class="p">(</span>
-                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`role_permissions`</span> <span class="p">(</span>
-                                    <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                                    <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                                    <span class="nv">`permission_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                                    <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                                    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                                    <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_role_permission`</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">,</span> <span class="nv">`permission_id`</span><span class="p">),</span>
-                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
-                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`permission_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`permissions`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`departments`</span> <span class="p">(</span>
-                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`department_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">AFTER</span> <span class="nv">`phone`</span><span class="p">;</span>
-
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_id`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_type`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_token`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_expires_at`</span> <span class="nb">DATETIME</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">;</span>
-
-</code></pre></div></div>
-
-<h2 id="table">table</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>基于之前讨论的数据模型设计，以下是一些可能的MySQL建表语句示例。请注意，这些语句是简化的，并且可能需要根据你的具体需求进行调整。
-
-1. 表格 (tables)
-
-sql
-CREATE TABLE `tables` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `name` VARCHAR(255) NOT NULL,  
-  `description` TEXT,  
-  PRIMARY KEY (`id`)  
-);
-2. 表格列 (table_columns)
-
-sql
-CREATE TABLE `table_columns` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `table_id` INT NOT NULL,  
-  `name` VARCHAR(255) NOT NULL,  
-  `type` VARCHAR(50) NOT NULL, -- 例如：text, number, date, checkbox, radio, select  
-  `is_special` BOOLEAN DEFAULT FALSE,  
-  `special_type` VARCHAR(50), -- 例如：single_select, multi_select, input  
-  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-3. 表格行 (table_rows)
-
-sql
-CREATE TABLE `table_rows` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `table_id` INT NOT NULL,  
-  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-4. 单元格数据 (cell_data)
-
-sql
-CREATE TABLE `cell_data` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `row_id` INT NOT NULL,  
-  `column_id` INT NOT NULL,  
-  `value` VARCHAR(255), -- 对于非文本类型，可以存储ID或其他标识符  
-  `text_value` TEXT, -- 对于文本输入框等，存储实际文本  
-  FOREIGN KEY (`row_id`) REFERENCES `table_rows`(`id`) ON DELETE CASCADE,  
-  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-5. 特殊类型选项 (special_type_options)
-
-sql
-CREATE TABLE `special_type_options` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `column_id` INT NOT NULL,  
-  `label` VARCHAR(255) NOT NULL,  
-  `value` VARCHAR(255) NOT NULL, -- 对于单选、多选等，存储选项的值  
-  `is_selected` BOOLEAN DEFAULT FALSE, -- 对于当前行是否选中该选项  
-  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-在这些建表语句中，我们使用了外键约束来确保数据的引用完整性。例如，table_columns表的table_id字段引用tables表的id字段，表示该列属于哪个表格。同样，cell_data表的row_id和column_id字段分别引用table_rows和table_columns表的相应字段。
-
-请注意，这里的type字段用于存储列的基本数据类型（如文本、数字、日期等），而special_type字段用于标识特殊类型的列（如单选、多选等）。value字段在cell_data表中用于存储非文本类型的数据的值（如选项的ID），而text_value字段用于存储文本输入框的实际文本内容。
-
-最后，special_type_options表用于存储特殊类型列的选项，如单选框或复选框的选项。is_selected字段用于跟踪哪些选项在特定行中被选中。
-
-这些表结构提供了一个灵活的框架，可以根据需要扩展和定制。在实际应用中，你可能还需要考虑其他因素，如性能优化、索引创建、数据验证和安全性等。
-</code></pre></div></div>
-
-<p><a href="https:/www.youtube.com/watch?v=-3W5CQzc81s">https://www.youtube.com/watch?v=-3W5CQzc81s</a></p>
-
-<p><a href="http:/www.youtube.com/get_video?video_id=*******&amp;t=*******">http://www.youtube.com/get_video?video_id=</a>-3W5CQzc81s[&amp;t=<strong>**</strong><em>](http:/www.youtube.com/get_video?video_id=</em><strong>**</strong>&amp;t=<strong>**</strong>*)</p>]]></content><author><name></name></author><category term="SpringSecurity" /><summary type="html"><![CDATA[SpringSecurity笔记]]></summary></entry><entry><title type="html">算法笔记</title><link href="http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/" rel="alternate" type="text/html" title="算法笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95/"><![CDATA[<h1 id="图">图</h1>
-
-<p>无向图</p>
-
-<p>有向图</p>
-
-<p>加权图</p>
-
-<p>加权有向图</p>
-
-<p>顶点：vertex 边：edge</p>
-
-<p>特殊的图：自环和平行边</p>
-
-<p>深度优先DFS</p>
-
-<p>广度优先BFS</p>
-
-<h2 id="树">树</h2>
-
-<p>二叉树</p>
-
-<p>二叉搜索树</p>
-
-<p><img src="/assets/article/18f15f961a8.png" alt="" /></p>
-
-<p>平衡树</p>
-
-<p><img src="/assets/article/18f15f9e41a.png" alt="" /></p>
-
-<p>红黑树</p>
-
-<p><img src="/assets/article/18f15f8fb01.png" alt="" /></p>
-
-<p>B树</p>
-
-<p><img src="/assets/article/18f15f91f1e.png" alt="" /></p>
-
-<p>B+树</p>
-
-<p><img src="/assets/article/18f15f93a2e.png" alt="" /></p>
-
-<p><img src="/assets/article/18e9724a600.png" alt="" /><img src="/assets/article/18e971d694a.png" alt="" /></p>
-
-<p>状态</p>
-
-<p>状态转移方程</p>
-
-<p>15829247313</p>
-
-<h2 id="贪心">贪心</h2>
-
-<h3 id="原理">原理</h3>
-
-<p>‧ 贪心选择性质：只有当局部最优选择始终可以导致全局最优解时，贪心算法才能保证得到最优解。<br />
-‧ 最优子结构：原问题的最优解包含子问题的最优解。</p>
-
-<h3 id="步骤">步骤</h3>
-
-<ol>
-  <li>问题分析：梳理与理解问题特性，包括状态定义、优化目标和约束条件等。这一步在回溯和动态规划中<br />
-都有涉及。</li>
-  <li>确定贪心策略：确定如何在每一步中做出贪心选择。这个策略能够在每一步减小问题的规模，并最终解<br />
-决整个问题。</li>
-  <li>正确性证明：通常需要证明问题具有贪心选择性质和最优子结构。这个步骤可能需要用到数学证明，例<br />
-如归纳法或反证法等。</li>
-</ol>
-
-<h3 id="相关问题">相关问题</h3>
-
-<p>‧ 硬币找零问题：在某些硬币组合下，贪心算法总是可以得到最优解。<br />
-‧ 区间调度问题：假设你有一些任务，每个任务在一段时间内进行，你的目标是完成尽可能多的任务。如<br />
-果每次都选择结束时间最早的任务，那么贪心算法就可以得到最优解。<br />
-‧ 分数背包问题：给定一组物品和一个载重量，你的目标是选择一组物品，使得总重量不超过载重量，且<br />
-总价值最大。如果每次都选择性价比最高（价值 / 重量）的物品，那么贪心算法在一些情况下可以得到<br />
-最优解。<br />
-‧ 股票买卖问题：给定一组股票的历史价格，你可以进行多次买卖，但如果你已经持有股票，那么在卖出<br />
-之前不能再买，目标是获取最大利润。<br />
-‧ 霍夫曼编码：霍夫曼编码是一种用于无损数据压缩的贪心算法。通过构建霍夫曼树，每次选择出现频率<br />
-最低的两个节点合并，最后得到的霍夫曼树的带权路径长度（编码长度）最小。<br />
-‧ Dijkstra 算法：它是一种解决给定源顶点到其余各顶点的最短路径问题的贪心算法。</p>]]></content><author><name></name></author><category term="算法" /><summary type="html"><![CDATA[记录算法重点]]></summary></entry><entry><title type="html">Spring笔记</title><link href="http://localhost:4000/spring/Spring/" rel="alternate" type="text/html" title="Spring笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/spring/Spring</id><content type="html" xml:base="http://localhost:4000/spring/Spring/"><![CDATA[<h2 id="spring-笔记">Spring 笔记</h2>
-
-<blockquote>
-  <p><strong><em>spring 官方文档</em></strong>       <a href="https://springdoc.cn/docs/">https://springdoc.cn/docs/</a></p>
-</blockquote>
-
-<h2 id="ioc">IOC</h2>
-
-<p>对象的创建由Spring来处理</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ClassPathBeanDefinitionScanner
-会读取配置了扫描注解的类
-</code></pre></div></div>
-
-<h3 id="11-bean的创建">1.1 Bean的创建</h3>
-
-<p>依赖注入+控制反转</p>
-
-<p>IOC</p>
-
-<p>@Bean @Component @Import  @RestController @Service @Repo</p>
-
-<p>ApplicationContext通过配置 读取要代理的Bean</p>
-
-<p>BeanFactory生成Bean到容器</p>
-
-<p>默认调用无参的构造函数</p>
-
-<p>默认按照单例生成</p>
-
-<p>@Autowried</p>
-
-<p><img src="/assets/article/18e690e84c0.png" alt="" /></p>
-
-<h3 id="12-bean的生命周期">1.2 Bean的生命周期</h3>
-
-<p><img src="/assets/article/18ecdffd1e2.png" alt="" /></p>
-
-<p><img src="/assets/article/18ece0027b2.png" alt="" /></p>
-
-<h2 id="aop">AOP</h2>
-
-<ul>
-  <li>JDK：实现非Bean生命周期相关的接口而且实现方法不为0</li>
-  <li>CGlig：继承目标类</li>
-</ul>
-
-<p>引入依赖</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-aop<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div></div>
-
-<p>开启注解@EnableAspectJAutoProxy</p>
-
-<p>定义切面类@Aspect</p>
-
-<p>定义切点+切面表达式来确定切点@Pointcut</p>
-
-<p>定义通知类型@Before@After(finally)@Around@AfterReturning(后置)@AfterThrowing</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parameterType="com.hello.module.Stack" 
-</code></pre></div></div>
-
-<p><img src="/assets/article/18ed007d8ae.png" alt="" /></p>
-
-<p><a href="https:/yasinshaw.com/articles/107">https://yasinshaw.com/articles/107</a></p>
-
-<h2 id="事务">事务</h2>
-
-<p>事务的使用</p>
-
-<p>@Transactional注解</p>
-
-<p>事务的传播机制</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>REQUIRED(0),
-SUPPORTS(1),
-MANDATORY(2),
-REQUIRES_NEW(3),
-NOT_SUPPORTED(4),
-NEVER(5),
-NESTED(6);
-</code></pre></div></div>
-
-<p><img src="/assets/article/18ed015950e.png" alt="" /></p>
-
-<p>事务失效</p>
-
-<ol>
-  <li>方法没有被public修饰</li>
-  <li>类没有被Spring托管</li>
-  <li>不正确的异常捕获—事务方法抛出异常被 catch 处理了</li>
-  <li>同一类中方法调用</li>
-  <li>propagation事务传播行为配置错误</li>
-  <li>rollbackFor参数设置错误。</li>
-  <li>没有配置事务管理器</li>
-  <li>数据库本身不支持事务</li>
-</ol>
-
-<p>分布式事务失效的原因</p>
-
-<p><img src="/assets/article/18e9d36ae3a.png" alt="" /></p>
-
-<p><a href="https:/mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd">https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd</a></p>
-
-<h2 id="监听">监听</h2>
-
-<h2 id="过滤器和拦截器">过滤器和拦截器</h2>
-
-<p><img src="/assets/article/18e69291b74.png" alt="" /></p>
-
-<p><img src="/assets/article/18ed04719c1.png" alt="" /></p>]]></content><author><name></name></author><category term="Spring" /><summary type="html"><![CDATA[Spring笔记]]></summary></entry><entry><title type="html">Tomcat笔记</title><link href="http://localhost:4000/tomcat/Tomcat/" rel="alternate" type="text/html" title="Tomcat笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/tomcat/Tomcat</id><content type="html" xml:base="http://localhost:4000/tomcat/Tomcat/"><![CDATA[]]></content><author><name></name></author><category term="Tomcat" /><summary type="html"><![CDATA[Tomcat笔记]]></summary></entry></feed>
+<h2 id="splunk">Splunk</h2>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringCloud alibaba笔记]]></summary></entry></feed>
