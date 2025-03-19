@@ -1,41 +1,19 @@
 {% include head.html %}
 {% include header.html %}
 <div>
-    {{ content}}
+  <!-- {% assign posts_by_time = site.posts | group_by_exp: "post", "post.date" %} -->
 
-    <article class="archive-page">
-        <h1>年度归档</h1>
-        
-        <!-- 按年份分组 -->
-        {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-        
-        {% for year in posts_by_year %}
-          <section class="year-section">
-            <h2 id="{{ year.name }}">{{ year.name }} 年</h2>
-            
-            <!-- 按分类二次分组 -->
-            {% assign posts_by_category = year.items | group_by: "categories" %}
-            
-            {% for category_group in posts_by_category %}
-              <div class="category-group">
-                <!-- 分类标题 -->
-                <h3>{{ category_group.name | join: ", " }}</h3>
-                
-                <!-- 文章列表 -->
-                <ul class="post-list">
-                  {% for post in category_group.items %}
-                    <li>
-                      <a href="{{ post.url }}" class="post-link">
-                        {{ post.title }}
-                        <time>({{ post.date | date: "%m-%d" }})</time>
-                      </a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endfor %}
-          </section>
-        {% endfor %}
-      </article>
+  <!-- 文章列表 -->
+  <ul class="time-line-list">
+    {% for post_item in site.posts %}
+    <li class="time-line-item" >
+      <a href="{{ post_item.url }}" class="time-line-link">
+        {{ post_item.title }}
+       
+      </a>
+      <time class="time-line-time">({{ post_item.date | date: "%Y-%m-%d" }})</time>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 {% include footer.html %}

@@ -2,36 +2,36 @@
 {% include header.html %}
 <div class="archive-container">
   <article class="archive-page">
-    <h1>年度归档</h1>
-
     <!-- 按年份分组 -->
-    <div>{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}</div>
+    {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
     {% for year in posts_by_year %}
     <section class="year-section">
-      <h2 id="{{ year.name }}">{{ year.name }} 年</h2>
+      <h1 id="{{ year.name }}">{{ year.name }} 年</h1>
 
       <!-- 按分类二次分组 -->
-      {% assign posts_by_category = year.items | group_by: "categories" %}
+      <div class="cat-group-wrapper">
+        {% assign posts_by_category = year.items | group_by: "categories" %}
 
-      {% for category_group in posts_by_category %}
-      <div class="category-group">
-        <!-- 分类标题 -->
-        <h3>{{ category_group.name | join: ", " }}</h3>
+        {% for category_group in posts_by_category %}
+        <div class="category-group">
+          <!-- 分类标题 -->
+          <h3>{{ category_group.name | join: " " }}</h3>
 
-        <!-- 文章列表 -->
-        <ul class="post-list">
-          {% for post in category_group.items %}
-          <li>
-            <a href="{{ post.url }}" class="post-link">
-              {{ post.title }}
-              <time>({{ post.date | date: "%m-%d" }})</time>
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
+          <!-- 文章列表 -->
+          <ul class="arc-post-list">
+            {% for post in category_group.items %}
+            <li class="arc-post-item">
+              <a href="{{ post.url }}" class="post-link">
+                {{ post.title }}
+              </a>
+              <time class="post-time">{{ post.date | date: "%m-%d" }}</time>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </section>
     {% endfor %}
   </article>

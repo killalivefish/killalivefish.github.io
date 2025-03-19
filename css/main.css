@@ -133,7 +133,7 @@ pre[class*="language-"] {
 
 #profile {
     flex-grow: 1;
-    flex-shrink:0;
+    flex-shrink: 0;
     width: 50%;
     height: 20%;
     margin-top: 0.5em;
@@ -253,7 +253,7 @@ pre[class*="language-"] {
 }
 
 /* 文章列表 */
-.post-lists-container{
+.post-lists-container {
     flex-grow: 1;
     flex-shrink: 0;
 }
@@ -294,12 +294,95 @@ footer {
 }
 
 /* archive */
-.archive-container{
+.archive-container {
     width: 80%;
-    margin: 0 auto;
-    margin-top: 5%;
+    margin: 8% auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
+.archive-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start; */
+}
+
+.year-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.year-section>h1 {
+    width: 10%;
+    margin: 0;
+    margin-right: 0.5em;
+    font-size: 1.5em;
+    border-right: 3px solid #5ac8fa;
+    text-align: center;
+}
+
+.cat-group-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+}
+
+.category-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-group h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.arc-post-list {
+    width: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.arc-post-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.post-link {
+    text-align: left;
+    color: red;
+}
+
+.post-time {
+    width: 80px;
+    text-align: right;
+    color: #007bff;
+}
+
+.time-line-list{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 5% auto;
+}
+
+.time-line-item{
+    width: 100%;
+    height: 4em;
+    background-color: antiquewhite;
+    margin-bottom: 1em;
+}
 
 /* 响应式 */
 @media (max-width: 480px) {
