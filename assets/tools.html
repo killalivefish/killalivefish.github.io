@@ -1,1 +1,127 @@
-<h1>ToDo Tools</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .skill-tree {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            background: #2c2c2c;
+        }
+
+        .node {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .node.active {
+            background: #ffd700;
+            box-shadow: 0 0 15px #ffd700;
+        }
+
+        .node-name {
+            position: absolute;
+            bottom: -25px;
+            color: white;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .connector {
+            position: absolute;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="skill-tree" id="skillTree">
+        <svg id="connections" width="100%" height="100%"></svg>
+    </div>
+
+    <script>
+        const skills = [
+            { id: 1, name: '基础', x: 400, y: 50, connectsTo: [2] },
+            { id: 2, name: '攻击', x: 250, y: 150, connectsTo: [3,4] },
+            { id: 3, name: '火球', x: 150, y: 250, connectsTo: [] },
+            { id: 4, name: '闪电', x: 350, y: 250, connectsTo: [5] },
+            { id: 5, name: '连锁闪电', x: 350, y: 350, connectsTo: [] }
+        ];
+
+        const activated = new Set();
+        const svg = document.getElementById('connections');
+        
+        function createNode(skill) {
+            const node = document.createElement('div');
+            node.className = 'node';
+            node.style.left = `${skill.x - 25}px`;
+            node.style.top = `${skill.y - 25}px`;
+            
+            const name = document.createElement('div');
+            name.className = 'node-name';
+            name.textContent = skill.name;
+            
+            node.appendChild(name);
+            node.addEventListener('click', () => toggleSkill(skill, node));
+            
+            document.getElementById('skillTree').appendChild(node);
+            return node;
+        }
+
+        function drawConnection(start, end) {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const path = `M ${start.x} ${start.y} L ${end.x} ${end.y}`;
+            line.setAttribute('d', path);
+            line.setAttribute('class', 'connector');
+            line.setAttribute('stroke', '#666');
+            line.setAttribute('stroke-width', '2');
+            line.dataset.from = start.id;
+            line.dataset.to = end.id;
+            svg.appendChild(line);
+            return line;
+        }
+
+        function toggleSkill(skill, element) {
+            if (!activated.has(skill.id)) {
+                // 检查前置技能（这里可以添加更复杂的逻辑）
+                if (skill.id !== 1 && !activated.has(1)) return;
+                activated.add(skill.id);
+                element.classList.add('active');
+            } else {
+                activated.delete(skill.id);
+                element.classList.remove('active');
+            }
+            updateConnections();
+        }
+
+        function updateConnections() {
+            document.querySelectorAll('.connector').forEach(line => {
+                const from = parseInt(line.dataset.from);
+                const to = parseInt(line.dataset.to);
+                line.setAttribute('stroke', activated.has(from) && activated.has(to) ? '#ffd700' : '#666');
+            });
+        }
+
+        // 初始化技能树
+        skills.forEach(skill => {
+            const node = createNode(skill);
+            
+            skill.connectsTo.forEach(targetId => {
+                const target = skills.find(s => s.id === targetId);
+                drawConnection(
+                    { x: skill.x, y: skill.y + 25, id: skill.id },
+                    { x: target.x, y: target.y - 25, id: target.id }
+                );
+            });
+        });
+    </script>
+</body>
+</html>

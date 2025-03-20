@@ -22,10 +22,10 @@
           <ul class="arc-post-list">
             {% for post in category_group.items %}
             <li class="arc-post-item">
-              <a href="{{ post.url }}" class="post-link">
+              <a href="{{ post.url }}" class="arc-post-link">
                 {{ post.title }}
               </a>
-              <time class="post-time">{{ post.date | date: "%m-%d" }}</time>
+              <time class="arc-post-time">{{ post.date | date: "%m-%d" }}</time>
             </li>
             {% endfor %}
           </ul>

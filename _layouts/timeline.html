@@ -1,17 +1,18 @@
 {% include head.html %}
 {% include header.html %}
-<div>
-  <!-- {% assign posts_by_time = site.posts | group_by_exp: "post", "post.date" %} -->
-
+<div class="time-line-container">
   <!-- 文章列表 -->
   <ul class="time-line-list">
     {% for post_item in site.posts %}
-    <li class="time-line-item" >
+    <li class="time-line-item">
       <a href="{{ post_item.url }}" class="time-line-link">
         {{ post_item.title }}
-       
       </a>
-      <time class="time-line-time">({{ post_item.date | date: "%Y-%m-%d" }})</time>
+      <time class="time-line-time">
+        <img class="time-line-date-icon" src="/assets/date.svg"></img>
+        <p class="time-line-date">{{ post_item.date | date: "%Y-%m-%d" }}</p>
+      </time>
+      <p class="time-line-excerpt">{{ post_item.excerpt }}</p>
     </li>
     {% endfor %}
   </ul>

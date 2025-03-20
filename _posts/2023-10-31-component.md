@@ -4,7 +4,7 @@ title:  "前端通用组件的实现"
 date: 2023-10-31
 categories: 前端
 tags: [vue]
-excerpt: 
+excerpt: 记录前端通用组件的实现
 ---
 
 ## 导航菜单

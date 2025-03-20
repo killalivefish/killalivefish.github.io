@@ -1,1 +1,138 @@
-<h1>ToDo</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            margin: 20px;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(20, 20px);
+            gap: 2px;
+            margin-top: 20px;
+        }
+
+        .pixel {
+            width: 20px;
+            height: 20px;
+            perspective: 1000px;
+            transition: transform 0.6s;
+        }
+
+        .pixel-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .pixel.flip .pixel-inner {
+            transform: rotateY(180deg);
+        }
+
+        .pixel-front,
+        .pixel-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .pixel-front {
+            background: #f0f0f0;
+        }
+
+        .pixel-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="textInput" placeholder="输入文字..." 
+               style="width: 404px; padding: 8px; font-size: 16px">
+        <div id="grid"></div>
+    </div>
+
+    <canvas id="textCanvas" style="display: none;"></canvas>
+
+    <script>
+        const grid = document.getElementById('grid');
+        const textInput = document.getElementById('textInput');
+        const canvas = document.getElementById('textCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 初始化20x20网格
+        function initGrid() {
+            grid.innerHTML = '';
+            canvas.width = 1200;
+            canvas.height = 1200;
+            
+            for(let i = 0; i < 400; i++) {
+                const pixel = document.createElement('div');
+                pixel.className = 'pixel';
+                pixel.innerHTML = `
+                    <div class="pixel-inner">
+                        <div class="pixel-front"></div>
+                        <div class="pixel-back"></div>
+                    </div>
+                `;
+                grid.appendChild(pixel);
+            }
+        }
+
+        // 颜色生成器
+        function generateColor(char) {
+            const seed = char.charCodeAt(0);
+            return `hsl(${(seed * 360) % 360}, 70%, 60%)`;
+        }
+
+        // 更新像素显示
+        function updatePixels() {
+            const text = textInput.value;
+            if(!text) return;
+
+            // Canvas绘制设置
+            ctx.clearRect(0, 0, 20, 20);
+            ctx.font = '16px monospace';
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, 10, 10);
+
+            // 获取像素数据
+            const imageData = ctx.getImageData(0, 0, 20, 20);
+            const pixels = grid.children;
+
+            for(let i = 0; i < pixels.length; i++) {
+                const x = i % 20;
+                const y = Math.floor(i / 20);
+                const alpha = imageData.data[(y * 20 + x) * 4 + 3];
+                const charIndex = Math.floor(x / (20 / text.length)) % text.length;
+                const char = text[charIndex];
+                
+                const back = pixels[i].querySelector('.pixel-back');
+                back.style.backgroundColor = alpha > 128 ? generateColor(char) : '#f0f0f0';
+                
+                // 触发翻转动画
+                pixels[i].classList.remove('flip');
+                void pixels[i].offsetWidth;
+                pixels[i].classList.add('flip');
+            }
+        }
+
+        // 输入防抖
+        let timeout;
+        textInput.addEventListener('input', () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(updatePixels, 300);
+        });
+
+        // 初始化
+        initGrid();
+    </script>
+</body>
+</html>

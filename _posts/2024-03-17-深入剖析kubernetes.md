@@ -1,9 +1,9 @@
 ---
 layout: posts
-title:  "Ld"
+title:  "Kubernetes学习"
 date: 2024-03-17
 categories: Devops
-excerpt: 
+excerpt: Kubernetes
 ---
 
 ### 3.2 Kubernetes核心能力和目标定位
