@@ -20,7 +20,7 @@
             height: 40px;
             border: 1px solid red;
             margin-bottom: 10px;
-            
+
         }
 
         .num {
@@ -40,7 +40,7 @@
         </div>
         <div>
             <div id="sec" class="fk"></div>
-            <div id="first-num" class="num">0/3</div>
+            <div id="sec-num" class="num">0/3</div>
         </div>
 
     </div>
@@ -49,82 +49,38 @@
 
     <script>
         const firstEle = document.getElementById('first');
+        const firstEleNum = document.getElementById('first-num');
         const secEle = document.getElementById('sec');
+        const secEleNum = document.getElementById('sec-num');
+        let firNumIndex = 0;
+        
+        firstEle.addEventListener('click', () => {
+            console.log('clicked');
+            firNumIndex = firstEleNum.textContent.split('/')[0];
+            console.log('firNumIndex=' + firNumIndex);
+            if (firNumIndex == 5) {
+                firNumIndex = 0;
 
-        // 获取DOM元素
-        const grid = document.getElementById('grid');
-        const textInput = document.getElementById('textInput');
-        const canvas = document.getElementById('textCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // 初始化20x20网格
-        function initGrid() {
-            grid.innerHTML = '';
-            canvas.width = 1200;
-            canvas.height = 1200;
-
-            for (let i = 0; i < 400; i++) {
-                const pixel = document.createElement('div');
-                pixel.className = 'pixel';
-                pixel.innerHTML = `
-                    <div class="pixel-inner">
-                        <div class="pixel-front"></div>
-                        <div class="pixel-back"></div>
-                    </div>
-                `;
-                grid.appendChild(pixel);
             }
-        }
+            firNumIndex = firNumIndex + 1;
+            firstEleNum.textContent = firNumIndex + "/5";
 
-        // 颜色生成器
-        function generateColor(char) {
-            const seed = char.charCodeAt(0);
-            return `hsl(${(seed * 360) % 360}, 70%, 60%)`;
-        }
+            firstEle.style.backgroundColor = 'red';
+            secEle.style.backgroundColor = 'white';
+        })
 
-        // 更新像素显示
-        function updatePixels() {
-            const text = textInput.value;
-            if (!text) return;
+        secEle.addEventListener('click', () => {
+            console.log('clicked');
+            secNumIndex = secEleNum.textContent.split('/')[0];
+            console.log('secNumIndex=' + secNumIndex);
+            if (secNumIndex == 3) {
+                secNumIndex = 0;
 
-            // Canvas绘制设置
-            ctx.clearRect(0, 0, 20, 20);
-            ctx.font = '16px monospace';
-            ctx.fillStyle = 'black';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(text, 10, 10);
-
-            // 获取像素数据
-            const imageData = ctx.getImageData(0, 0, 20, 20);
-            const pixels = grid.children;
-
-            for (let i = 0; i < pixels.length; i++) {
-                const x = i % 20;
-                const y = Math.floor(i / 20);
-                const alpha = imageData.data[(y * 20 + x) * 4 + 3];
-                const charIndex = Math.floor(x / (20 / text.length)) % text.length;
-                const char = text[charIndex];
-
-                const back = pixels[i].querySelector('.pixel-back');
-                back.style.backgroundColor = alpha > 128 ? generateColor(char) : '#f0f0f0';
-
-                // 触发翻转动画
-                pixels[i].classList.remove('flip');
-                void pixels[i].offsetWidth;
-                pixels[i].classList.add('flip');
             }
-        }
+            secNumIndex = secNumIndex + 1;
+            secEleNum.textContent = secNumIndex + "/3";
+        })
 
-        // 输入防抖
-        let timeout;
-        textInput.addEventListener('input', () => {
-            clearTimeout(timeout);
-            timeout = setTimeout(updatePixels, 300);
-        });
-
-        // 初始化
-        initGrid();
     </script>
 </body>
 
