@@ -85,9 +85,9 @@ pre[class*="language-"] {
 }
 
 #header-nav a:hover {
-    background-color: rgb(235, 131, 171);
-    border-radius: 0.2rem;
-    color: rgb(214, 53, 53);
+    background: linear-gradient(180deg, #4cd964, #5ac8fa);
+    border-radius: 0.5em;
+    color: rgb(19, 122, 218);
 }
 
 #header-btns {
@@ -156,15 +156,14 @@ pre[class*="language-"] {
 #profile h3,
 #profile p {
     margin: 10px 0;
+    text-align: center;
 }
 
 /* category选项 */
 .category-tabs-container {
     flex-grow: 1;
     flex-shrink: 0;
-    position: relative;
     width: 60%;
-    height: 20%;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -173,8 +172,8 @@ pre[class*="language-"] {
 }
 
 .category-tabs {
-    position: relative;
     width: 100%;
+    height: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -183,6 +182,7 @@ pre[class*="language-"] {
 }
 
 .category-tab {
+    margin-bottom: 0.5em;
     padding: 10px 20px;
     cursor: pointer;
     flex-shrink: 0;
@@ -214,11 +214,11 @@ pre[class*="language-"] {
 
 
 
-.category-tabs {
+/* .category-tabs {
     display: flex;
     padding: 10px;
     transition: transform 0.3s ease;
-}
+} */
 
 .category-tab {
     padding: 10px 20px;
@@ -317,8 +317,10 @@ footer {
     width: 10%;
     margin: 0;
     margin-right: 0.5em;
+    padding-top: 1em;
     font-size: 1.5em;
     border-right: 3px solid #5ac8fa;
+    color: #007bff;
     text-align: center;
 }
 
@@ -336,7 +338,10 @@ footer {
 
 .category-group h3 {
     margin: 0;
+    margin-top: 0.5em;
     padding: 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ccc;
 }
 
 .arc-post-list {
@@ -355,20 +360,24 @@ footer {
 }
 
 .arc-post-link {
+    height: 2em;
+    padding-left: 0px;
     text-align: left;
-    color: red;
 }
 
 .arc-post-time {
     width: 80px;
     text-align: right;
-    color: #007bff;
+    color: #ccc;
 }
 
+/* timeling */
 .time-line-container {
-    width: 60%;
-    margin: 3% auto 0 auto;
-    background-color: #ece8e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3% auto;
 }
 
 .time-line-list {
@@ -381,11 +390,12 @@ footer {
 .time-line-item {
     width: 100%;
     height: 10em;
-    background-color: rgb(255, 255, 255);
-    margin-bottom: 2em;
-    padding: 0.5em;
+    margin: 1em auto;
+    padding: 1em;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 8px 6px rgba(7, 17, 27, 0.06);
+    border-radius: 0.5em;
 }
 
 .time-line-time {
@@ -422,7 +432,7 @@ footer {
 /* 响应式 */
 @media (max-width: 480px) {
     #header {
-        height: 8%;
+        height: 12%;
         flex-wrap: wrap;
     }
 
@@ -458,7 +468,7 @@ footer {
     }
 
     .category-tabs {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         overflow-x: auto;
     }
 
@@ -473,7 +483,6 @@ footer {
     }
 
     .post-item {
-        flex-direction: column;
         align-items: flex-start;
     }
 
@@ -483,5 +492,38 @@ footer {
 
     footer {
         font-size: 0.5em;
+    }
+
+    /* archive */
+    .archive-container {
+        width: 90%;
+        margin-top: 15%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .year-section>h1 {
+        width: 5em;
+        font-size: 10px;
+    }
+
+    .category-group>h3 {
+        font-size: small;
+        color: #598f62;
+    }
+
+    .arc-post-list {
+        width: 90%;
+    }
+
+    .arc-post-link {
+        padding-left: 0px;
+        text-align: left;
+        font-size: 0.5em;
+    }
+
+    /* timeling */
+    .time-line-container {
+        margin-top: 15%;
     }
 }

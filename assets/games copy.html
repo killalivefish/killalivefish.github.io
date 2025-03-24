@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: flex-start;
+        }
+
+        .fk {
+            width: 40px;
+            height: 40px;
+            border: 1px solid red;
+            margin-bottom: 10px;
+            
+        }
+
+        .num {
+            font-size: small;
+            position: relative;
+            top: -50px;
+            right: -18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div id="first" class="fk"></div>
+            <div id="first-num" class="num">0/5</div>
+        </div>
+        <div>
+            <div id="sec" class="fk"></div>
+            <div id="first-num" class="num">0/3</div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        const firstEle = document.getElementById('first');
+        const secEle = document.getElementById('sec');
+
+        // 获取DOM元素
+        const grid = document.getElementById('grid');
+        const textInput = document.getElementById('textInput');
+        const canvas = document.getElementById('textCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 初始化20x20网格
+        function initGrid() {
+            grid.innerHTML = '';
+            canvas.width = 1200;
+            canvas.height = 1200;
+
+            for (let i = 0; i < 400; i++) {
+                const pixel = document.createElement('div');
+                pixel.className = 'pixel';
+                pixel.innerHTML = `
+                    <div class="pixel-inner">
+                        <div class="pixel-front"></div>
+                        <div class="pixel-back"></div>
+                    </div>
+                `;
+                grid.appendChild(pixel);
+            }
+        }
+
+        // 颜色生成器
+        function generateColor(char) {
+            const seed = char.charCodeAt(0);
+            return `hsl(${(seed * 360) % 360}, 70%, 60%)`;
+        }
+
+        // 更新像素显示
+        function updatePixels() {
+            const text = textInput.value;
+            if (!text) return;
+
+            // Canvas绘制设置
+            ctx.clearRect(0, 0, 20, 20);
+            ctx.font = '16px monospace';
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, 10, 10);
+
+            // 获取像素数据
+            const imageData = ctx.getImageData(0, 0, 20, 20);
+            const pixels = grid.children;
+
+            for (let i = 0; i < pixels.length; i++) {
+                const x = i % 20;
+                const y = Math.floor(i / 20);
+                const alpha = imageData.data[(y * 20 + x) * 4 + 3];
+                const charIndex = Math.floor(x / (20 / text.length)) % text.length;
+                const char = text[charIndex];
+
+                const back = pixels[i].querySelector('.pixel-back');
+                back.style.backgroundColor = alpha > 128 ? generateColor(char) : '#f0f0f0';
+
+                // 触发翻转动画
+                pixels[i].classList.remove('flip');
+                void pixels[i].offsetWidth;
+                pixels[i].classList.add('flip');
+            }
+        }
+
+        // 输入防抖
+        let timeout;
+        textInput.addEventListener('input', () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(updatePixels, 300);
+        });
+
+        // 初始化
+        initGrid();
+    </script>
+</body>
+
+</html>
