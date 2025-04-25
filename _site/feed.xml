@@ -1,4 +1,237 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-24T23:10:43+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My blog</title><subtitle>My blog.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/jekyll/update/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-27T10:06:18+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My blog</title><subtitle>My blog.</subtitle><entry><title type="html">多层面的负载均衡</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/%E5%A4%9A%E7%A7%8D%E5%B1%82%E9%9D%A2%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="alternate" type="text/html" title="多层面的负载均衡" /><published>2025-03-27T07:00:36+08:00</published><updated>2025-03-27T07:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/%E5%A4%9A%E7%A7%8D%E5%B1%82%E9%9D%A2%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/%E5%A4%9A%E7%A7%8D%E5%B1%82%E9%9D%A2%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"><![CDATA[<ol>
+  <li><strong>入口层（Nginx）</strong>：
+    <ul>
+      <li>配置反向代理到Spring Cloud Gateway集群，实现高可用。</li>
+      <li>设置负载均衡策略（如轮询、IP哈希）。</li>
+      <li>配置SSL、静态文件服务、全局白名单/IP限制、压缩等。</li>
+    </ul>
+  </li>
+  <li><strong>API网关（Spring Cloud Gateway）</strong>：
+    <ul>
+      <li>集成服务发现（Eureka/Nacos），动态路由到后端服务。</li>
+      <li>配置全局过滤器（认证、日志、请求头修改）。</li>
+      <li>结合Sentinel实现网关层限流。</li>
+    </ul>
+  </li>
+  <li><strong>服务发现（Eureka/Nacos）</strong>：
+    <ul>
+      <li>服务注册与健康检查。</li>
+      <li>客户端负载均衡的基础，服务消费者通过服务名调用。</li>
+    </ul>
+  </li>
+  <li><strong>客户端负载均衡（OpenFeign + Ribbon/LoadBalancer）</strong>：
+    <ul>
+      <li>OpenFeign声明服务接口，自动处理服务发现和负载均衡。</li>
+      <li>配置重试机制、超时时间、负载均衡策略（轮询、随机等）。</li>
+    </ul>
+  </li>
+  <li><strong>细粒度流量控制（Sentinel）</strong>：
+    <ul>
+      <li>在服务层面配置流控规则（QPS、线程数、熔断降级）。</li>
+      <li>结合OpenFeign实现熔断降级（如Fallback类）。</li>
+      <li>网关层集成Sentinel进行全局流控。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>需要注意的协同点：</p>
+<ul>
+  <li>Nginx和Spring Cloud Gateway的分工：Nginx处理外部流量，SSL终止，静态资源；Gateway处理动态路由和微服务相关的过滤。</li>
+  <li>服务发现组件需要与客户端负载均衡（如OpenFeign）配合，确保实例列表的动态更新。</li>
+  <li>Sentinel的规则需要根据实际业务需求配置，避免过度限制。</li>
+</ul>
+
+<p>一、组件分工与协作架构
+|组件	|层级	|核心职责|
+| —- | —- | —- |
+|Nginx|	入口层|	反向代理、SSL终止、静态资源服务、全局IP白名单、粗粒度负载均衡（如轮询）|
+|Spring Cloud Gateway|	网关层	|动态路由、鉴权、限流、熔断、服务发现集成（如Nacos/Eureka）|
+|Eureka/Nacos| 服务发现层|	服务注册与发现、健康检查、提供实例列表给客户端负载均衡组件|
+|OpenFeign|	服务间调用|	声明式HTTP客户端，集成客户端负载均衡（Ribbon/LoadBalancer）和重试|机制|
+|Sentinel|	流量治理层|	细粒度流控（QPS/线程数）、熔断降级、热点参数限流、系统自适应保护|</p>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[Nginx、Gateway、Sentinel、LoadBalance...有这么多带有负载均衡的模块，项目中应该如何使用]]></summary></entry><entry><title type="html">OpenFeign的使用</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/OpenFeign/" rel="alternate" type="text/html" title="OpenFeign的使用" /><published>2025-03-27T06:27:36+08:00</published><updated>2025-03-27T06:27:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/OpenFeign</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/OpenFeign/"><![CDATA[<h1 id="feign的主要功能">Feign的主要功能：</h1>
+<p>声明式的跨服务的接口调用,支持Eureka、Nacos等注册中心。
+新版中默认使用spring-cloud的loadBalanced注解，自动实现负载均衡。
+老版本使用Ribbon。</p>
+
+<h1 id="如何使用">如何使用：</h1>
+<p>现在有两个微服务一个order-service,一个goods-service。order-service调用goods-service的接口，那么在order-service中引入goods-service的依赖，然后通过@FeignClient注解声明一个接口，接口中的方法就是调用goods-service的接口。</p>
+<ol>
+  <li>引入依赖</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@SpringBootApplication</span>
+  <span class="nd">@EnableDiscoveryClient</span>
+  <span class="nd">@EnableFeignClients</span>
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderServiceApplication</span> <span class="o">{</span>
+      <span class="nd">@Bean</span>
+      <span class="nd">@LoadBalanced</span>
+      <span class="nc">RestTemplate</span> <span class="nf">restTemplate</span><span class="o">(){</span>
+          <span class="k">return</span> <span class="k">new</span> <span class="nf">RestTemplate</span><span class="o">();</span>
+      <span class="o">}</span>
+      
+      <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">OrderServiceApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+      <span class="o">}</span>
+      
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>创建一个接口
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nd">@FeignClient</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"goods-service"</span><span class="o">,</span> <span class="n">fallback</span> <span class="o">=</span> <span class="nc">Fallback</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">configuration</span> <span class="o">=</span> <span class="nc">FeignConfig</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">GoodsApi</span> <span class="o">{</span>
+   <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/goods/reduceStock"</span><span class="o">)</span>
+   <span class="kd">public</span> <span class="nc">Integer</span> <span class="nf">reduceStock</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>controller中调用接口
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nd">@RestController</span>
+   <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/order"</span><span class="o">)</span>
+   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderController</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Logger</span> <span class="n">log</span> <span class="o">=</span> <span class="nc">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nc">OrderController</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+      
+  <span class="nd">@Autowired</span>
+  <span class="nc">GoodsApi</span> <span class="nc">GoodsApi</span><span class="o">;</span>
+       
+  <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/orderPayment"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nc">Integer</span> <span class="nf">orderPayment</span><span class="o">(){</span>
+      <span class="nc">Integer</span> <span class="n">result1</span> <span class="o">=</span> <span class="nc">GoodsApi</span><span class="o">.</span><span class="na">reduceStock</span><span class="o">();</span>
+      <span class="k">return</span> <span class="n">result1</span><span class="o">;</span>
+  <span class="o">}</span>
+   <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="如何在调用失败后执行回调函数">如何在调用失败后执行回调函数</h2>
+<ol>
+  <li>需要在@FeignClient注解中声明fallback要使用的类
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@FeignClient</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"goods-service"</span><span class="o">,</span> <span class="n">fallback</span> <span class="o">=</span> <span class="nc">Fallback</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>定义Fallback类
+2.1 Fallback类实现FallbackFactory接口
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntegralFallback</span> <span class="kd">implements</span> <span class="nc">IntegralApi</span><span class="o">{</span>
+   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Logger</span> <span class="no">LOGGER</span><span class="o">=</span> <span class="nc">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nc">IntegralFallback</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nc">Integer</span> <span class="nf">addIntegral</span><span class="o">()</span> <span class="o">{</span>
+       <span class="no">LOGGER</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"addIntegral failed!!"</span><span class="o">);</span>
+       <span class="k">throw</span> <span class="k">new</span> <span class="nf">NoFallbackAvailableException</span><span class="o">(</span><span class="s">"Boom!"</span><span class="o">,</span> <span class="k">new</span> <span class="nc">RuntimeException</span><span class="o">());</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntegralFallbackFactory</span> <span class="kd">implements</span>  <span class="nc">FallbackFactory</span><span class="o">&lt;</span><span class="nc">IntegralFallback</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="nc">IntegralFallback</span> <span class="nf">create</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">cause</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nf">IntegralFallback</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <p>2.2 Fallback类实现@FeignClient修饰的类</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fallback</span> <span class="kd">implements</span> <span class="nc">GoodsApi</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Logger</span> <span class="no">LOGGER</span><span class="o">=</span> <span class="nc">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nc">Fallback</span><span class="o">.</span> <span class="kd">class</span><span class="err">);</span>
+    <span class="err">@</span><span class="nc">Override</span>
+    <span class="kd">public</span> <span class="nc">Integer</span> <span class="nf">reduceStock</span><span class="o">()</span> <span class="o">{</span>
+        <span class="no">LOGGER</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"reduceStock failed!!"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="如何覆盖默认配置">如何覆盖默认配置</h1>
+<p>在@FeignClient注解中声明configuration属性，指定配置类。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@FeignClient</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"goods-service"</span><span class="o">,</span> <span class="n">configuration</span> <span class="o">=</span> <span class="nc">FeignConfig</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h1 id="如何设置重试">如何设置重试</h1>
+<p>老版本需要设置Ribbon的重试和指定重试策略。
+新版本中需要在在FeignConfig中声明Retryer属性。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">feign.Retryer</span><span class="o">;</span>
+
+<span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="nc">Retryer</span> <span class="nf">feignRetryer</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// 参数：间隔时间(ms)、最大间隔时间、最大尝试次数（包含首次调用）</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nc">Retryer</span><span class="o">.</span><span class="na">Default</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">1000</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<h1 id="如何设置重试策略">如何设置重试策略</h1>
+<p>新版本设置LoadBalancerClient的负载均衡策略。
+老版本在Ribbon中设置重试策略。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 负载均衡策略（Spring Cloud LoadBalancer）</span>
+<span class="nd">@Configuration</span>
+<span class="nd">@LoadBalancerClient</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"order-service"</span><span class="o">,</span> <span class="n">configuration</span> <span class="o">=</span> <span class="nc">CustomLoadBalancerConfig</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CustomLoadBalancerConfig</span> <span class="o">{</span>
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="nc">ReactorLoadBalancer</span><span class="o">&lt;</span><span class="nc">ServiceInstance</span><span class="o">&gt;</span> <span class="nf">randomLoadBalancer</span><span class="o">(...)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">RandomLoadBalancer</span><span class="o">(...);</span> <span class="c1">// 随机策略</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[记录OpenFeign的设计、实现和应用]]></summary></entry><entry><title type="html">SpringBean的加载和实现</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBean/" rel="alternate" type="text/html" title="SpringBean的加载和实现" /><published>2025-03-25T18:41:36+08:00</published><updated>2025-03-25T18:41:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBean</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBean/"><![CDATA[<h1 id="bean的容器ioc">Bean的容器（IoC）：</h1>
+<p>ApplicationContext、BeanFactory、WebApplicationContext</p>
+<h1 id="bean的命名">Bean的命名</h1>
+<h1 id="bean的实例化">Bean的实例化</h1>
+<ol>
+  <li>构造函数</li>
+  <li>工厂方法
+    <h1 id="依赖注入di">依赖注入（DI）</h1>
+  </li>
+  <li>构造函数注入</li>
+  <li>setter方法注入</li>
+</ol>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringBean的加载和实现]]></summary></entry><entry><title type="html">SpringBoot自动加载机制</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBoot%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" rel="alternate" type="text/html" title="SpringBoot自动加载机制" /><published>2025-03-25T18:41:36+08:00</published><updated>2025-03-25T18:41:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBoot%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringBoot%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"><![CDATA[<p>官方文档：https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/features.html#features.developing-auto-configuration</p>
+<ol>
+  <li>定义<code class="language-plaintext highlighter-rouge">AutoConfiguration</code>类</li>
+  <li>定义<code class="language-plaintext highlighter-rouge">Configuration</code>类</li>
+  <li>定义<code class="language-plaintext highlighter-rouge">KafkaProperties</code>类
+SpringBoot自动加载机制的实现主要由下面这些注解实现
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnClass({RestTemplate.class})
+@ConditionalOnBean({LoadBalancerClient.class})
+@EnableConfigurationProperties({LoadBalancerClientsProperties.class})
+@ConfigurationProperties(“spring.cloud.loadbalancer”)</li>
+</ol>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringBoot自动加载机制的实现]]></summary></entry><entry><title type="html">Eureka设计与实现</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/Eureka/" rel="alternate" type="text/html" title="Eureka设计与实现" /><published>2025-03-25T07:00:36+08:00</published><updated>2025-03-25T07:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/Eureka</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/Eureka/"><![CDATA[<h1 id="eureka的主要功能">Eureka的主要功能：</h1>
+<p>服务的注册和发现</p>
+
+<h1 id="eureka的实现这些功能的主要途径">Eureka的实现这些功能的主要途径：</h1>
+<h2 id="对于eureka-server">对于Eureka server</h2>
+<ol>
+  <li>需要有一个内存型的服务信息注册表</li>
+  <li>对client提供可以接收服务注册表的接口</li>
+  <li>对client提供注册、续租、取消的接口</li>
+</ol>
+
+<h2 id="对于eureka-client">对于Eureka client</h2>
+<ol>
+  <li>配置server对应的地址</li>
+  <li>请求server实现服务的注册、续租、取消</li>
+  <li>心跳机制向服务更新租约</li>
+  <li>请求服务信息，保存在本地缓存并更新服务信息</li>
+</ol>
+
+<blockquote>
+  <p>除此之外Eureka还会对服务按照zone、region进行划分，可以显示指定也可以使用默认的default</p>
+</blockquote>
+
+<p>接下来卡看Eureka是如何实现这些功能的。
+平时使用时server只需要一个@EnableEurekaServer的注解就可以开启Eureka服务，client只需要一个@EnableEurekaClient的注解就可以开启Eureka客户端。</p>
+
+<p>@EnableEurekaServer的注解会导入一个EurekaServerMarkerConfiguration配置类，这个类主要是生成一个Marker类作为springboot自动加载配置的标记。主要配置的导入、初始化是在EurekaServerAutoConfiguration类中。（@ConditionalOnBean({Marker.class})）</p>
+
+<h2 id="实现健康检查接口">实现健康检查接口</h2>
+<p>EurekaServerAutoConfiguration类中有一个healthCheckHandler的bean，这个bean实现了EurekaHealthCheckHandler接口，这个接口只有一个方法，就是healthCheck()方法，这个方法返回一个HealthCheckStatus对象，这个对象中有一个boolean类型的isHealthy属性，这个属性表示服务是否健康。</p>
+<ol>
+  <li>打开健康检查
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">eureka</span><span class="pi">:</span>
+  <span class="na">client</span><span class="pi">:</span>
+<span class="err"> </span><span class="na">healthcheck</span><span class="pi">:</span>
+   <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div>    </div>
+  </li>
+  <li>实现com.netflix.appinfo.HealthCheckHandler接口</li>
+</ol>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[记录Eureka的设计、实现和应用]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/jekyll/update/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -519,622 +752,4 @@ at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecut
 at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.69.jar:9.0.69]
 
 at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-</code></pre></div></div>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringBoot笔记]]></summary></entry><entry><title type="html">Spring笔记</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring/" rel="alternate" type="text/html" title="Spring笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/Spring/"><![CDATA[<h2 id="spring-笔记">Spring 笔记</h2>
-
-<blockquote>
-  <p><strong><em>spring 官方文档</em></strong>       <a href="https://springdoc.cn/docs/">https://springdoc.cn/docs/</a></p>
-</blockquote>
-
-<h2 id="ioc">IOC</h2>
-
-<p>对象的创建由Spring来处理</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ClassPathBeanDefinitionScanner
-会读取配置了扫描注解的类
-</code></pre></div></div>
-
-<h3 id="11-bean的创建">1.1 Bean的创建</h3>
-
-<p>依赖注入+控制反转</p>
-
-<p>IOC</p>
-
-<p>@Bean @Component @Import  @RestController @Service @Repo</p>
-
-<p>ApplicationContext通过配置 读取要代理的Bean</p>
-
-<p>BeanFactory生成Bean到容器</p>
-
-<p>默认调用无参的构造函数</p>
-
-<p>默认按照单例生成</p>
-
-<p>@Autowried</p>
-
-<p><img src="/assets/article/18e690e84c0.png" alt="" /></p>
-
-<h3 id="12-bean的生命周期">1.2 Bean的生命周期</h3>
-
-<p><img src="/assets/article/18ecdffd1e2.png" alt="" /></p>
-
-<p><img src="/assets/article/18ece0027b2.png" alt="" /></p>
-
-<h2 id="aop">AOP</h2>
-
-<ul>
-  <li>JDK：实现非Bean生命周期相关的接口而且实现方法不为0</li>
-  <li>CGlig：继承目标类</li>
-</ul>
-
-<p>引入依赖</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-aop<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div></div>
-
-<p>开启注解@EnableAspectJAutoProxy</p>
-
-<p>定义切面类@Aspect</p>
-
-<p>定义切点+切面表达式来确定切点@Pointcut</p>
-
-<p>定义通知类型@Before@After(finally)@Around@AfterReturning(后置)@AfterThrowing</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parameterType="com.hello.module.Stack" 
-</code></pre></div></div>
-
-<p><img src="/assets/article/18ed007d8ae.png" alt="" /></p>
-
-<p><a href="https:/yasinshaw.com/articles/107">https://yasinshaw.com/articles/107</a></p>
-
-<h2 id="事务">事务</h2>
-
-<p>事务的使用</p>
-
-<p>@Transactional注解</p>
-
-<p>事务的传播机制</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>REQUIRED(0),
-SUPPORTS(1),
-MANDATORY(2),
-REQUIRES_NEW(3),
-NOT_SUPPORTED(4),
-NEVER(5),
-NESTED(6);
-</code></pre></div></div>
-
-<p><img src="/assets/article/18ed015950e.png" alt="" /></p>
-
-<p>事务失效</p>
-
-<ol>
-  <li>方法没有被public修饰</li>
-  <li>类没有被Spring托管</li>
-  <li>不正确的异常捕获—事务方法抛出异常被 catch 处理了</li>
-  <li>同一类中方法调用</li>
-  <li>propagation事务传播行为配置错误</li>
-  <li>rollbackFor参数设置错误。</li>
-  <li>没有配置事务管理器</li>
-  <li>数据库本身不支持事务</li>
-</ol>
-
-<p>分布式事务失效的原因</p>
-
-<p><img src="/assets/article/18e9d36ae3a.png" alt="" /></p>
-
-<p><a href="https:/mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd">https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486668&amp;idx=2&amp;sn=0381e8c836442f46bdc5367170234abb&amp;chksm=cea24307f9d5ca11c96943b3ccfa1fc70dc97dd87d9c540388581f8fe6d805ff548dff5f6b5b&amp;token=1776990505&amp;lang=zh_CN#rd</a></p>
-
-<h2 id="监听">监听</h2>
-
-<h2 id="过滤器和拦截器">过滤器和拦截器</h2>
-
-<p><img src="/assets/article/18e69291b74.png" alt="" /></p>
-
-<p><img src="/assets/article/18ed04719c1.png" alt="" /></p>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[Spring笔记]]></summary></entry><entry><title type="html">算法笔记</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/" rel="alternate" type="text/html" title="算法笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"><![CDATA[<h1 id="图">图</h1>
-
-<p>无向图</p>
-
-<p>有向图</p>
-
-<p>加权图</p>
-
-<p>加权有向图</p>
-
-<p>顶点：vertex 边：edge</p>
-
-<p>特殊的图：自环和平行边</p>
-
-<p>深度优先DFS</p>
-
-<p>广度优先BFS</p>
-
-<h2 id="树">树</h2>
-
-<p>二叉树</p>
-
-<p>二叉搜索树</p>
-
-<p><img src="/assets/article/18f15f961a8.png" alt="" /></p>
-
-<p>平衡树</p>
-
-<p><img src="/assets/article/18f15f9e41a.png" alt="" /></p>
-
-<p>红黑树</p>
-
-<p><img src="/assets/article/18f15f8fb01.png" alt="" /></p>
-
-<p>B树</p>
-
-<p><img src="/assets/article/18f15f91f1e.png" alt="" /></p>
-
-<p>B+树</p>
-
-<p><img src="/assets/article/18f15f93a2e.png" alt="" /></p>
-
-<p><img src="/assets/article/18e9724a600.png" alt="" /><img src="/assets/article/18e971d694a.png" alt="" /></p>
-
-<p>状态</p>
-
-<p>状态转移方程</p>
-
-<p>15829247313</p>
-
-<h2 id="贪心">贪心</h2>
-
-<h3 id="原理">原理</h3>
-
-<p>‧ 贪心选择性质：只有当局部最优选择始终可以导致全局最优解时，贪心算法才能保证得到最优解。<br />
-‧ 最优子结构：原问题的最优解包含子问题的最优解。</p>
-
-<h3 id="步骤">步骤</h3>
-
-<ol>
-  <li>问题分析：梳理与理解问题特性，包括状态定义、优化目标和约束条件等。这一步在回溯和动态规划中<br />
-都有涉及。</li>
-  <li>确定贪心策略：确定如何在每一步中做出贪心选择。这个策略能够在每一步减小问题的规模，并最终解<br />
-决整个问题。</li>
-  <li>正确性证明：通常需要证明问题具有贪心选择性质和最优子结构。这个步骤可能需要用到数学证明，例<br />
-如归纳法或反证法等。</li>
-</ol>
-
-<h3 id="相关问题">相关问题</h3>
-
-<p>‧ 硬币找零问题：在某些硬币组合下，贪心算法总是可以得到最优解。<br />
-‧ 区间调度问题：假设你有一些任务，每个任务在一段时间内进行，你的目标是完成尽可能多的任务。如<br />
-果每次都选择结束时间最早的任务，那么贪心算法就可以得到最优解。<br />
-‧ 分数背包问题：给定一组物品和一个载重量，你的目标是选择一组物品，使得总重量不超过载重量，且<br />
-总价值最大。如果每次都选择性价比最高（价值 / 重量）的物品，那么贪心算法在一些情况下可以得到<br />
-最优解。<br />
-‧ 股票买卖问题：给定一组股票的历史价格，你可以进行多次买卖，但如果你已经持有股票，那么在卖出<br />
-之前不能再买，目标是获取最大利润。<br />
-‧ 霍夫曼编码：霍夫曼编码是一种用于无损数据压缩的贪心算法。通过构建霍夫曼树，每次选择出现频率<br />
-最低的两个节点合并，最后得到的霍夫曼树的带权路径长度（编码长度）最小。<br />
-‧ Dijkstra 算法：它是一种解决给定源顶点到其余各顶点的最短路径问题的贪心算法。</p>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[记录算法重点]]></summary></entry><entry><title type="html">SpringSecurity笔记</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringSecurity/" rel="alternate" type="text/html" title="SpringSecurity笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringSecurity</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringSecurity/"><![CDATA[<p><img src="/assets/article/18e93596ecb.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23aff24f.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23b21864.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23bbab15.png" alt="" /></p>
-
-<p><img src="/assets/article/18f23b897ca.png" alt="" /></p>
-
-<p>@EnableGlobalMethodSecurity和@EnableSecurity在Spring Security框架中各自扮演不同的角色，具有不同的功能和用途。</p>
-
-<p>@EnableGlobalMethodSecurity是Spring Security框架中的一个注解，用于启用全局方法级别的安全配置。这个注解允许开发者在方法上使用特定的注解（如@PreAuthorize、@PostAuthorize等）来定义安全规则。这些注解会在方法调用前后执行权限检查，确保只有满足特定条件的用户才能调用这些方法。该注解适用于需要在方法级别进行细粒度安全控制的场景，例如在业务逻辑中，某些敏感操作（如修改用户信息、删除订单等）可能只允许具有特定角色或权限的用户执行。此外，它还会配置一个全局的AuthenticationManager，用于管理用户的认证过程。</p>
-
-<p>然而，关于@EnableSecurity这个注解，目前在Spring Security的官方文档和常见资料中并没有明确的描述。可能是因为它并非Spring Security框架中的一个标准注解，或者是一个特定项目、库或框架中自定义的注解。在缺乏具体上下文的情况下，无法准确解释@EnableSecurity的功能和用途。</p>
-
-<p>总的来说，@EnableGlobalMethodSecurity是Spring Security框架中用于启用全局方法级别安全配置的注解，而@EnableSecurity可能是一个特定上下文中的自定义注解，其功能和用途需要根据具体项目或框架来确定。因此，在使用这两个注解时，建议查阅相关文档或参考项目代码以了解其确切含义和用法。</p>
-
-<p><img src="/assets/article/18f2a9a3db3.png" alt="" /></p>
-
-<h2 id="表">表</h2>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">database</span> <span class="k">user</span><span class="p">;</span>
-<span class="n">use</span> <span class="k">user</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`users`</span> <span class="p">(</span>
-                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                         <span class="nv">`username`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`password`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span> <span class="c1">-- 存储密码的哈希值</span>
-                         <span class="nv">`email`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`phone`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_username`</span> <span class="p">(</span><span class="nv">`username`</span><span class="p">),</span>
-                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_email`</span> <span class="p">(</span><span class="nv">`email`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`roles`</span> <span class="p">(</span>
-                         <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                         <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                         <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                         <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                         <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user_roles`</span> <span class="p">(</span>
-                              <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                              <span class="nv">`user_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                              <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                              <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                              <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                              <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_user_role`</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">,</span> <span class="nv">`role_id`</span><span class="p">),</span>
-                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`users`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
-                              <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`permissions`</span> <span class="p">(</span>
-                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`role_permissions`</span> <span class="p">(</span>
-                                    <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                                    <span class="nv">`role_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                                    <span class="nv">`permission_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                                    <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                                    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                                    <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_unique_role_permission`</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">,</span> <span class="nv">`permission_id`</span><span class="p">),</span>
-                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`role_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`roles`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
-                                    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`permission_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`permissions`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`departments`</span> <span class="p">(</span>
-                               <span class="nv">`id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-                               <span class="nv">`name`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`description`</span> <span class="nb">TEXT</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-                               <span class="nv">`created_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="nv">`updated_at`</span> <span class="nb">TIMESTAMP</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-                               <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-                               <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="nv">`idx_name`</span> <span class="p">(</span><span class="nv">`name`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
-
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`department_id`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="nb">UNSIGNED</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">AFTER</span> <span class="nv">`phone`</span><span class="p">;</span>
-
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="nv">`users`</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_id`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_type`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_token`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="nv">`third_party_expires_at`</span> <span class="nb">DATETIME</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">;</span>
-
-</code></pre></div></div>
-
-<h2 id="table">table</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>基于之前讨论的数据模型设计，以下是一些可能的MySQL建表语句示例。请注意，这些语句是简化的，并且可能需要根据你的具体需求进行调整。
-
-1. 表格 (tables)
-
-sql
-CREATE TABLE `tables` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `name` VARCHAR(255) NOT NULL,  
-  `description` TEXT,  
-  PRIMARY KEY (`id`)  
-);
-2. 表格列 (table_columns)
-
-sql
-CREATE TABLE `table_columns` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `table_id` INT NOT NULL,  
-  `name` VARCHAR(255) NOT NULL,  
-  `type` VARCHAR(50) NOT NULL, -- 例如：text, number, date, checkbox, radio, select  
-  `is_special` BOOLEAN DEFAULT FALSE,  
-  `special_type` VARCHAR(50), -- 例如：single_select, multi_select, input  
-  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-3. 表格行 (table_rows)
-
-sql
-CREATE TABLE `table_rows` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `table_id` INT NOT NULL,  
-  FOREIGN KEY (`table_id`) REFERENCES `tables`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-4. 单元格数据 (cell_data)
-
-sql
-CREATE TABLE `cell_data` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `row_id` INT NOT NULL,  
-  `column_id` INT NOT NULL,  
-  `value` VARCHAR(255), -- 对于非文本类型，可以存储ID或其他标识符  
-  `text_value` TEXT, -- 对于文本输入框等，存储实际文本  
-  FOREIGN KEY (`row_id`) REFERENCES `table_rows`(`id`) ON DELETE CASCADE,  
-  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-5. 特殊类型选项 (special_type_options)
-
-sql
-CREATE TABLE `special_type_options` (  
-  `id` INT NOT NULL AUTO_INCREMENT,  
-  `column_id` INT NOT NULL,  
-  `label` VARCHAR(255) NOT NULL,  
-  `value` VARCHAR(255) NOT NULL, -- 对于单选、多选等，存储选项的值  
-  `is_selected` BOOLEAN DEFAULT FALSE, -- 对于当前行是否选中该选项  
-  FOREIGN KEY (`column_id`) REFERENCES `table_columns`(`id`) ON DELETE CASCADE,  
-  PRIMARY KEY (`id`)  
-);
-在这些建表语句中，我们使用了外键约束来确保数据的引用完整性。例如，table_columns表的table_id字段引用tables表的id字段，表示该列属于哪个表格。同样，cell_data表的row_id和column_id字段分别引用table_rows和table_columns表的相应字段。
-
-请注意，这里的type字段用于存储列的基本数据类型（如文本、数字、日期等），而special_type字段用于标识特殊类型的列（如单选、多选等）。value字段在cell_data表中用于存储非文本类型的数据的值（如选项的ID），而text_value字段用于存储文本输入框的实际文本内容。
-
-最后，special_type_options表用于存储特殊类型列的选项，如单选框或复选框的选项。is_selected字段用于跟踪哪些选项在特定行中被选中。
-
-这些表结构提供了一个灵活的框架，可以根据需要扩展和定制。在实际应用中，你可能还需要考虑其他因素，如性能优化、索引创建、数据验证和安全性等。
-</code></pre></div></div>
-
-<p><a href="https:/www.youtube.com/watch?v=-3W5CQzc81s">https://www.youtube.com/watch?v=-3W5CQzc81s</a></p>
-
-<p><a href="http:/www.youtube.com/get_video?video_id=*******&amp;t=*******">http://www.youtube.com/get_video?video_id=</a>-3W5CQzc81s[&amp;t=<strong>**</strong><em>](http:/www.youtube.com/get_video?video_id=</em><strong>**</strong>&amp;t=<strong>**</strong>*)</p>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringSecurity笔记]]></summary></entry><entry><title type="html">Nacos笔记</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/Nacos/" rel="alternate" type="text/html" title="Nacos笔记" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/Nacos</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/Nacos/"><![CDATA[<h2 id="表结构">表结构</h2>
-
-<p><img src="/assets/article/18ec8c71009.png" alt="" /></p>
-
-<p><img src="/assets/article/18ec8c74112.png" alt="" /></p>
-
-<h2 id="请求入参处理">请求入参处理</h2>
-
-<h2 id="权限注解校验">权限注解校验</h2>
-
-<h2 id="心跳">心跳</h2>
-
-<h2 id="全局异常处理">全局异常处理</h2>
-
-<h2 id="aop">AOP</h2>
-
-<h2 id="自定义注解">自定义注解</h2>
-
-<h2 id="接口返回数据结构">接口返回数据结构</h2>
-
-<h2 id="log的打印">log的打印</h2>
-
-<h2 id="异常的处理">异常的处理</h2>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[Nacos笔记]]></summary></entry><entry><title type="html">SpringCloud alibaba</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba/" rel="alternate" type="text/html" title="SpringCloud alibaba" /><published>2025-03-10T23:00:36+08:00</published><updated>2025-03-10T23:00:36+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/SpringCloudAlibaba/"><![CDATA[<p>spring cloud alibaba官方文档：</p>
-
-<p><a href="https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/">https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/</a></p>
-
-<p><a href="https:/www.bilibili.com/read/cv10201049/">https://www.bilibili.com/read/cv10201049/</a></p>
-
-<h2 id="nacos">Nacos</h2>
-
-<blockquote>
-  <p>官网：<a href="https:/nacos.io/">https://nacos.io/</a></p>
-
-  <p>1.微服务的注册中心</p>
-
-  <p>2.配置中心</p>
-</blockquote>
-
-<p>相当于spring cloud netfliex的eureka和spring cloud config</p>
-
-<h3 id="配置db">配置DB</h3>
-
-<p><code class="language-plaintext highlighter-rouge">nacos\conf\application.properties</code>中配置DB相关字段</p>
-
-<p>容易忽略的参数：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;&lt;span style="color:rgba(244,63,94,1)"&gt;spring.datasource.platform=mysql	&lt;/span&gt;&lt;/b&gt;
-</code></pre></div></div>
-
-<p><b><span style="color:rgba(244,63,94,1)">	db.num=1</span></b></p>
-
-<h3 id="配置集群">配置集群</h3>
-
-<p><code class="language-plaintext highlighter-rouge">nacos\conf\cluster.conf</code>中配置所有的节点</p>
-
-<h3 id="配置nginx">配置Nginx</h3>
-
-<p><a href="https:/blog.csdn.net/A0415_1119/article/details/134496259?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%257Edefault%257ECTRLIST%257ERate-1-134496259-blog-123233138.235%255Ev43%255Epc_blog_bottom_relevance_base7&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%257Edefault%257ECTRLIST%257ERate-1-134496259-blog-123233138.235%255Ev43%255Epc_blog_bottom_relevance_base7&amp;utm_relevant_index=2">https://blog.csdn.net/A0415_1119/article/details/134496259?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-134496259-blog-123233138.235%5Ev43%5Epc_blog_bottom_relevance_base7&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-134496259-blog-123233138.235%5Ev43%5Epc_blog_bottom_relevance_base7&amp;utm_relevant_index=2</a></p>
-
-<p>docker部署</p>
-
-<p><a href="https:/blog.csdn.net/m0_53151031/article/details/123118920">https://blog.csdn.net/m0_53151031/article/details/123118920</a></p>
-
-<p>差异：</p>
-
-<p>nacos启动报错</p>
-
-<p>问题：本地启动报错</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Caused by: java.net.UnknownHostException: jmenv.tbsite.net
-        at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:221)
-        at java.base/java.net.PlainSocketImpl.connect(PlainSocketImpl.java:148)
-        at java.base/java.net.Socket.connect(Socket.java:591)
-        at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
-        at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
-        at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
-        at java.base/sun.net.www.http.HttpClient.&lt;init&gt;(HttpClient.java:242)
-        at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
-        at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
-        at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1242)
-        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1181)
-        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1075)
-        at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1009)
-        at com.alibaba.nacos.common.http.client.request.JdkHttpClientRequest.execute(JdkHttpClientRequest.java:112)
-        at com.alibaba.nacos.common.http.client.NacosRestTemplate.execute(NacosRestTemplate.java:482)
-        at com.alibaba.nacos.common.http.client.NacosRestTemplate.get(NacosRestTemplate.java:72)
-        at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.syncFromAddressUrl(AddressServerMemberLookup.java:143)
-        at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.run(AddressServerMemberLookup.java:111)
-        ... 125 common frames omitted
-2024-02-20 20:21:52,238 WARN [WatchFileCenter] start close
-</code></pre></div></div>
-
-<p>解决：<a href="https://blog.csdn.net/ityw520/article/details/123149849">https://blog.csdn.net/ityw520/article/details/123149849</a></p>
-
-<p>读取不到extension-configs的配置文件–TODO</p>
-
-<h3 id="源码">源码</h3>
-
-<ul>
-  <li>登陆和权限spring security+JWT token</li>
-  <li>config版本控制</li>
-  <li>如何实现的注册和配置</li>
-</ul>
-
-<h2 id="sentinel">Sentinel</h2>
-
-<blockquote>
-  <p>官网：<a href="https:/sentinelguard.io/">https://sentinelguard.io/</a></p>
-
-  <p>1.限流</p>
-
-  <p>2.熔断</p>
-
-  <p>3.服务降级</p>
-</blockquote>
-
-<p>限流报错的内容自定义—通过@SentinelResource中fallback或者fallback class定义的方法名称去匹配和返回</p>
-
-<p><a href="https:/zhuanlan.zhihu.com/p/446532710">https://zhuanlan.zhihu.com/p/446532710</a></p>
-
-<p><a href="https:/www.cnblogs.com/FlyGoldfish/articles/1">https://www.cnblogs.com/FlyGoldfish/articles/14269621.html</a></p>
-
-<p>SentinelResource的value要和接口请求的路径一样吗—-不用直接通过value中的值进行设置就行</p>
-
-<p><img src="/assets/article/18dfab29676.png" alt="" /></p>
-
-<h3 id="持久化">持久化</h3>
-
-<p>TODO</p>
-
-<h3 id="问题">问题</h3>
-
-<ul>
-  <li>
-    <p>创建流控规则时报错，而且显示的IP不正确</p>
-
-    <p><img src="/assets/article/18df7f39b4d.png" alt="" /></p>
-
-    <pre><code class="language-log">2024-02-29 21:46:11.917 ERROR 2421 --- [pool-2-thread-1] c.a.c.s.dashboard.metric.MetricFetcher   : Failed to fetch metric from &lt;http://169.254.54.211:9001/metric?startTime=1709261036000&amp;endTime=1709261042000&amp;refetch=false&gt; (ConnectionException: Connection timed out)
-2024-02-29 21:46:18.958 ERROR 2421 --- [pool-2-thread-1] c.a.c.s.dashboard.metric.MetricFetcher   : Failed to fetch metric from &lt;http://169.254.54.211:9001/metric?startTime=1709261043000&amp;endTime=1709261049000&amp;refetch=false&gt; (ConnectionException: Connection timed out)
-  
-</code></pre>
-
-    <p>原因：sentinel的dashboard会安装<a href="http://client-ip:port%E6%8B%89%E5%8F%96%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%B2%A1%E6%9C%89%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%9D%E4%BC%9A%E5%88%86%E9%85%8D%E4%B8%80%E4%B8%AA">http://client-ip:port拉取数据，没有配置的话会分配一个</a></p>
-
-    <p>解决：在yaml配置文件中加上client-ip和client-ip</p>
-
-    <p><img src="/assets/article/18df7fa2898.png" alt="" /></p>
-
-    <p>参考链接：<a href="https:/blog.csdn.net/hjg719/article/details/128095358">https://blog.csdn.net/hjg719/article/details/128095358</a></p>
-  </li>
-</ul>
-
-<h2 id="gateway">Gateway</h2>
-
-<blockquote>
-  <p>1.路由请求</p>
-
-  <p>2.整合Nacos和Ribbon实现动态服务治理和负载均衡</p>
-
-  <p>3.整合Sentinel实现Sentinel的防护效</p>
-</blockquote>
-
-<h3 id="灰度发布">灰度发布</h3>
-
-<h3 id="问题-1">问题</h3>
-
-<ol>
-  <li>
-    <p>启动失败</p>
-
-    <pre><code class="language-log">parameter 0 of method modifyrequestbodygatewayfilterfactory in org.springfra
-</code></pre>
-
-    <p>原因：是由于依赖冲突，spring-cloud-starter-gateway与spring-boot-starter-web和spring-boot-starter-webflux依赖冲突</p>
-
-    <p>解决：</p>
-
-    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;dependency&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>org.springframework.cloud<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-gateway<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;exclusions&gt;</span>
-                <span class="nt">&lt;exclusion&gt;</span>
-                    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-                    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
-                <span class="nt">&lt;/exclusion&gt;</span>
-                <span class="nt">&lt;exclusion&gt;</span>
-                    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
-                    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-webflux<span class="nt">&lt;/artifactId&gt;</span>
-                <span class="nt">&lt;/exclusion&gt;</span>
-            <span class="nt">&lt;/exclusions&gt;</span>
-        <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>整合Sentinel启动失败</p>
-
-    <p>原因：高版本的需要引入Sentinel对于Spring Cloud Gateway的依赖，注意版本解决冲突可以处理掉一些启动失败和报错的问题</p>
-  </li>
-</ol>
-
-<h2 id="openfegin">OpenFegin</h2>
-
-<blockquote>
-  <p>让服务间的调用变简单</p>
-</blockquote>
-
-<h2 id="dubbo">Dubbo</h2>
-
-<blockquote>
-  <p>RPC，服务间调用通过RPC协议，性能更好</p>
-</blockquote>
-
-<h3 id="3问题">3.问题</h3>
-
-<ol>
-  <li>
-    <p>启动报错: Address already in use: bind</p>
-
-    <p>原因：dubbo消费放的dubbo端口被占用，配置上新的的端口号就行</p>
-  </li>
-  <li>服务放调用不到接口</li>
-  <li>nacos上消费方的ip不是主机的ip</li>
-</ol>
-
-<h2 id="spring-stream">Spring Stream</h2>
-
-<blockquote>
-  <p>封装使用MQ的代码，简化MQ的使用</p>
-</blockquote>
-
-<h2 id="seata">Seata</h2>
-
-<h2 id="skywalking">Skywalking</h2>
-
-<blockquote>
-  <p>ARM，服务间的监控</p>
-</blockquote>
-
-<p><a href="https:/zhuanlan.zhihu.com/p/660828898">https://zhuanlan.zhihu.com/p/660828898</a></p>
-
-<ul>
-  <li>JDK 11</li>
-  <li>Elasticsearch <a href="https:/www.elastic.co/cn/downloads/past-releases/elasticsearch-7-17-1">https://www.elastic.co/cn/downloads/past-releases/elasticsearch-7-17-1</a></li>
-  <li>Skywalking <a href="https:/archive.apache.org/dist/skywalking/8.9.0/">https://archive.apache.org/dist/skywalking/8.9.0/</a></li>
-</ul>
-
-<h2 id="docker">Docker</h2>
-
-<h2 id="kubernets">Kubernets</h2>
-
-<h2 id="jenkins">Jenkins</h2>
-
-<h2 id="splunk">Splunk</h2>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringCloud alibaba笔记]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="后端" /><summary type="html"><![CDATA[SpringBoot笔记]]></summary></entry></feed>

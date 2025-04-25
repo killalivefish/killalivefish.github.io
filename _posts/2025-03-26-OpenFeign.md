@@ -13,6 +13,7 @@ excerpt: 记录OpenFeign的设计、实现和应用
 # 如何使用：
   现在有两个微服务一个order-service,一个goods-service。order-service调用goods-service的接口，那么在order-service中引入goods-service的依赖，然后通过@FeignClient注解声明一个接口，接口中的方法就是调用goods-service的接口。
   1. 引入依赖
+   
   ```java 
   @SpringBootApplication
   @EnableDiscoveryClient
@@ -30,7 +31,8 @@ excerpt: 记录OpenFeign的设计、实现和应用
       
   }
   ```
-  2. 创建一个接口
+
+  1. 创建一个接口
    ```java
    @FeignClient(value = "goods-service", fallback = Fallback.class, configuration = FeignConfig.class)
     public interface GoodsApi {
@@ -38,7 +40,8 @@ excerpt: 记录OpenFeign的设计、实现和应用
         public Integer reduceStock();
     }
    ```
-  3. controller中调用接口
+
+  2. controller中调用接口
    ```java
    @RestController
    @RequestMapping("/order")
@@ -55,6 +58,7 @@ excerpt: 记录OpenFeign的设计、实现和应用
        }
    }
    ```
+
 ## 如何在调用失败后执行回调函数
 1. 需要在@FeignClient注解中声明fallback要使用的类
    ```java
@@ -92,11 +96,13 @@ excerpt: 记录OpenFeign的设计、实现和应用
        }
    }
    ```
+
 # 如何覆盖默认配置
 在@FeignClient注解中声明configuration属性，指定配置类。
 ```java
 @FeignClient(value = "goods-service", configuration = FeignConfig.class)
 ```
+
 # 如何设置重试
 老版本需要设置Ribbon的重试和指定重试策略。
 新版本中需要在在FeignConfig中声明Retryer属性。
